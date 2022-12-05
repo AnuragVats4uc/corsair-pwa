@@ -1,0 +1,64 @@
+.root {
+    :global {
+        .form-grid {
+            @apply grid grid-cols-2 gap-4;
+        }
+        .form-group {
+            @apply mb-6 md:mb-5;
+        }
+        label.heading {
+            @apply block uppercase text-xs font-semibold mb-2 relative;
+        }
+        .asterisk {
+            @apply text-alert-danger mx-1 text-lg absolute -top-1.5;
+        }
+        input[type='text'],
+        input[type='number'],
+        input[type='tel'],
+        input[type='email'],
+        input[type='password'],
+        .form-select,
+        textarea {
+            @apply appearance-none w-full border rounded py-3 px-4 focus:shadow-none focus:border-accents-5 text-lg pb-2;
+        }
+        .error {
+            @apply text-alert-danger text-xs italic;
+        }
+        .form-checkbox {
+            @apply h-5 w-5 text-p-2 rounded-none border-secondary;
+        }
+        .form-select {
+            @apply w-full;
+        }
+        .checkbox-container {
+            @apply flex;
+            label.label {
+                @apply px-2;
+            }
+        }
+        .box-info {
+            @apply mb-5;
+            &-title {
+                @apply font-primary font-normal text-xl;
+            }
+            span {
+                @apply block text-p-1;
+            }
+            .action-container {
+                @apply pt-3;
+                a {
+                    @apply inline-block underline pr-3 text-base;
+                }
+            }
+        }
+        .form-grid-col {
+            @apply w-full md:w-1/2 md:pr-5 mb-5;
+            &:last-child {
+                @apply md:pl-5 pr-0;
+            }
+            &-wrap {
+                @apply pt-2 mb-4 md:flex my-2;
+            }
+        }
+    }
+}

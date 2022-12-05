@@ -1,0 +1,313 @@
+@mixin cta-container {
+    @apply z-30;
+    padding: 16px;
+    border-radius: 24px;
+    @screen md {
+        padding: 32px;
+    }
+}
+
+@mixin cta-button {
+    @apply text-black border-0 normal-case bg-white;
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.3s;
+    width: 280px;
+    height: 52px;
+    &:hover {
+        @apply bg-black text-white;
+    }
+}
+
+@mixin logo-container {
+    transition-property: width;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.3s;
+    padding-right: 8px;
+    margin-top: -4px;
+    max-width: 100%;
+}
+
+@mixin logo-cta {
+    width: 32px;
+    height: 32px;
+}
+
+@mixin cta-text {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.3s;
+    font-size: 0.75rem;
+    letter-spacing: 0.2rem;
+    line-height: 1rem;
+    display: inline-block;
+}
+
+@mixin background {
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    object-fit: cover;
+}
+
+.unite-container {
+    margin-bottom: 56px;
+
+    .unite-inner {
+        padding: 56px 0px 24px 0px;
+    }
+
+    .unite-inner-section {
+        max-width: 896px;
+    }
+
+    .unite-inner-container {
+        padding: 0px 16px 0px 16px;
+    }
+
+    .unite-logo {
+        margin-bottom: 16px;
+        height: 50px;
+        width: 97px;
+    }
+
+    .unite-logo-video {
+        width: 183px;
+        height: 94px;
+        margin-bottom: 48px;
+    }
+
+    .unite-header {
+        font-size: 3.75rem;
+        letter-spacing: 0;
+        line-height: 3.75rem;
+        margin-bottom: 16px;
+    }
+
+    .unite-body {
+        font-size: 1rem;
+        letter-spacing: 0.05rem;
+        line-height: 1.5rem;
+    }
+}
+
+.unite-background {
+    height: 100vw;
+}
+
+.unite-background-media {
+    min-width: 295%;
+    height: 329.5px;
+    transform: translate(-41%, -23%) scale(0.5);
+    transition-duration: 0.3s;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.desktop-background {
+    @include background;
+    span {
+        display: block !important;
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+}
+
+.video-banner {
+    @apply w-full h-full object-center opacity-100;
+    @include background;
+}
+
+.unite-cta-container-lower-left,
+.unite-cta-container-lower-right {
+    @include cta-container;
+    .unite-cta-button {
+        @include cta-button;
+
+        span {
+            @apply flex items-center;
+        }
+    }
+    .unite-logo-container {
+        @include logo-container;
+    }
+
+    .unite-cta-inner-video {
+        width: 280px;
+    }
+
+    .unite-logo-cta {
+        @include logo-cta;
+    }
+
+    .unite-cta-text {
+        @include cta-text;
+    }
+}
+
+.unite-cta-container-video-lower-left,
+.unite-cta-container-video-lower-right,
+.unite-cta-container-video {
+    @include cta-container();
+    @apply absolute;
+    bottom: 40px;
+    .unite-cta-button {
+        @include cta-button;
+        span {
+            @apply flex items-center;
+        }
+    }
+    .unite-logo-container {
+        @include logo-container;
+    }
+
+    .unite-cta-inner-video {
+        width: 280px;
+    }
+
+    .unite-logo-cta {
+        @include logo-cta;
+    }
+
+    .unite-cta-text {
+        @include cta-text;
+    }
+}
+
+.unite-cta-container-video-top,
+.unite-cta-container-top {
+    @include cta-container;
+    @apply mt-4 mx-auto;
+    width: 334px;
+
+    .unite-cta-button {
+        @include cta-button;
+        span {
+            @apply flex items-center;
+        }
+    }
+    .unite-logo-container {
+        @include logo-container;
+    }
+
+    .unite-cta-inner-video {
+        width: 280px;
+    }
+
+    .unite-logo-cta {
+        @include logo-cta;
+    }
+
+    .unite-cta-text {
+        @include cta-text;
+    }
+}
+
+.has-animate {
+    @apply opacity-0;
+    transform: translateY(50px);
+    transition: 250ms transform ease-in, 350ms opacity ease-in;
+    &.onScreen {
+        @apply opacity-100;
+        transform: translateY(0);
+    }
+}
+
+@screen md {
+    .unite-container {
+        .unite-inner-section {
+            margin-bottom: 40px;
+        }
+        .unite-inner-container {
+            @apply p-0;
+            max-width: 768px;
+        }
+        .unite-header {
+            font-size: 6rem;
+            line-height: 5.6rem;
+            white-space: nowrap;
+        }
+        .unite-body {
+            font-size: 1.3rem;
+            line-height: 2.25rem;
+        }
+        .unite-logo {
+            margin-bottom: 16px;
+            height: 64px;
+            width: 125px;
+        }
+    }
+    .unite-cta-container-top,
+    .unite-cta-container-video-top {
+        backdrop-filter: blur(20px);
+
+        .unite-cta-text {
+            font-size: 1rem;
+        }
+    }
+    .unite-cta-container-lower-right,
+    .unite-cta-container-video-lower-right,
+    .unite-cta-container-video {
+        @apply w-auto absolute;
+        right: 40px;
+        padding: 32px;
+        bottom: 40px;
+        backdrop-filter: blur(20px);
+
+        .unite-cta-text {
+            font-size: 1rem;
+        }
+    }
+    .unite-cta-container-lower-left,
+    .unite-cta-container-video-lower-left {
+        @apply w-auto absolute;
+        left: 40px;
+        padding: 32px;
+        bottom: 40px;
+        backdrop-filter: blur(20px);
+
+        .unite-cta-text {
+            font-size: 1rem;
+        }
+    }
+}
+
+@screen lg {
+    .unite-container {
+        .unite-inner-section {
+            @apply mb-0;
+        }
+        .unite-inner-container {
+            @apply px-0;
+            max-width: 1024px;
+        }
+        .unite-header {
+            font-size: 7rem;
+            margin-bottom: 24px;
+        }
+    }
+    .unite-cta-container {
+        .unite-cta-text {
+            font-size: 0.875rem;
+        }
+    }
+}
+
+@screen xl-1440 {
+    .unite-background {
+        @apply h-full;
+    }
+    .desktop-background {
+        span {
+            height: 100% !important;
+        }
+    }
+}
+
+@media (max-height: 900px) {
+    .unite-container {
+        .unite-inner {
+            padding: 56px 0px 0px 0px;
+        }
+    }
+}

@@ -1,0 +1,126 @@
+.slider-container {
+    @apply relative flex flex-col w-full overflow-hidden;
+    height: 400px;
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, black 0%, transparent 16%, transparent 84%, black 100%);
+        }
+        
+    .slider-container > img {
+        @apply object-contain;
+    }
+}
+
+.image-container {
+    //Image container must have position relative
+    @apply relative block w-full overflow-hidden;
+    height: 150px;
+}
+
+.extra-info-container {
+    @apply w-full flex flex-col z-5 text-white;
+    background-color: #2e2e2e;
+    padding: 20px 18px 20px 18px;
+
+    .heading {
+        @apply uppercase font-bebasNeue;
+        font-size: 32px;
+        font-weight: 400;
+    }
+
+    .sub-heading {
+        @apply uppercase font-aktivGrotesk;
+        color: #ece81a;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        line-height: 18px;
+        margin-bottom: 5px;
+    }
+
+    .description {
+        @apply font-aktivGrotesk;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.8px;
+        line-height: 20px;
+        margin: 8px 0;
+    }
+}
+
+@screen md {
+    .main-container {
+        @apply flex flex-row overflow-hidden;
+    }
+    .slider-container {
+        &:after {
+            background: none;
+        }}
+    .image-container {
+        @apply w-full;
+        margin-left: -3rem;
+    }
+    .extra-info-container {
+        @apply relative flex flex-col;
+        padding-top: 10%;
+        .heading {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.1em;
+        }
+        .sub-heading {
+            font-size: 14px;
+            letter-spacing: 1.5px;
+            line-height: 18px;
+            margin: 5px 0 8px 0;
+        }
+        .description {
+            @apply absolute overflow-hidden;
+            width: 80%;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.8px;
+            margin-top: 17.5%;
+            line-height: 24px;
+            margin-bottom: 8px;
+        }
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .main-container {
+        @apply relative;
+        padding-left: 50px;
+        width: 100%;
+    }
+    .slider-container {
+        @apply h-full;
+        min-height: 600px;
+    }
+    .image-container {
+        //Image container must have position relative
+        height: 200px;
+        width: 200px;
+        margin-left: 0;
+    }
+    .extra-info-container {
+        padding: 17.5% 70px 20px 30px;
+        .heading {
+            width: 90%;
+            font-size: 32px;
+            font-weight: 400;
+        }
+        .sub-heading {
+            width: 90%;
+        }
+        .description {
+            width: 75%;
+            margin-top: 7.5vh;
+        }
+    }
+}

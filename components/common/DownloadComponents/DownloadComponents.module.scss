@@ -1,0 +1,280 @@
+.download-header {
+    background-position: 100% 100%;
+    background-size: 100% 100% !important;
+    padding: 0 0 5%;
+
+    @screen md {
+        padding: 5% 0px 5%;
+    }
+
+    .download-hero-header {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .download-hero-wrapper {
+            h1 {
+                letter-spacing: 0.1em;
+                font-weight: 100;
+                padding: 4% 1em;
+                font-size: 6rem;
+                line-height: 1.3;
+                font-size: 8.5vw;
+                font-family: sans-serif;
+
+                @screen md {
+                    padding: 4% 1em 6%;
+                }
+
+                @screen xl {
+                    font-size: 6rem;
+                }
+            }
+        }
+
+        .download-search-wrapper {
+            width: 90%;
+            margin: 0 5%;
+
+            @media only screen and (min-width: 1320px) {
+                max-width: 1200px;
+                width: 100%;
+            }
+        }
+
+        .download-form-wrapper {
+            margin: 0 auto;
+            width: 100%;
+
+            @screen md {
+                @apply w-10/12;
+            }
+
+            .download-custom-dropdown {
+                width: 100%;
+                background-image: url(https://www.corsair.com/_ui/responsive/cdn/image/icon-arrow-down.png);
+                background-position: 97% center;
+                border-bottom: 1px solid #ddd;
+                background-size: 15px;
+
+                @screen md {
+                    width: 51%;
+
+                    &.documentation-custom-dropdown {
+                        @apply w-full;
+                    }
+                }
+
+                span {
+                    color: #333;
+                    letter-spacing: 0.1rem;
+                }
+
+                .dowload-dropdown-wrapper {
+                    flex-direction: column;
+                    top: 43px;
+                    padding: 5px;
+                    border: 1px solid #ddd;
+                    border-top: 0px;
+
+                    input {
+                        background-image: url(https://www.corsair.com/_ui/responsive/cdn/image/icon-search.png);
+                        border: 1px solid #ddd;
+                        background-position: 98% center;
+                        color: #999;
+                        font-size: 13px;
+
+                        &::placeholder {
+                            font-size: 13px;
+                            color: #555;
+                            font-weight: 500;
+                            @apply font-aktivGrotesk;
+                        }
+                    }
+                }
+
+                ul {
+                    max-height: 400px;
+                    overflow-y: scroll;
+
+                    li {
+                        &.active {
+                            button {
+                                background-color: #999;
+                                span {
+                                    color: #fff;
+                                }
+                            }
+                        }
+
+                        button {
+                            outline: none;
+                            transition: all 0.1s ease-in-out;
+                            &:hover {
+                                background-color: #999;
+                                span {
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.active {
+                    .dowload-dropdown-wrapper {
+                        display: flex;
+                    }
+                }
+
+                .download-custom-select-value {
+                    font-size: 16px;
+                    letter-spacing: 0.05em !important;
+                    color: #333;
+                }
+            }
+
+            .download-input {
+                width: 100%;
+                min-width: 43px;
+                color: #999;
+                font-weight: 600;
+                letter-spacing: 0.05em;
+                max-height: 43px;
+
+                @screen md {
+                    width: 49%;
+                }
+
+                &::placeholder {
+                    font-size: 13px;
+                    color: #757575;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+.download-card {
+    @apply w-full flex text-left;
+    background-color: #212121;
+    min-height: 146px;
+    position: relative;
+}
+
+.download-card-image {
+    background: rgb(4, 47, 56);
+    background: linear-gradient(
+        143deg,
+        rgba(4, 47, 56, 1) 0%,
+        rgba(6, 14, 26, 1) 68%,
+        rgba(5, 16, 34, 1) 100%
+    );
+    position: relative;
+    height: 146px;
+    width: 146px;
+
+    @screen md-max {
+        height: 210px;
+        width: 100%;
+    }
+
+    span {
+        @apply m-auto #{!important};
+        max-width: 146px;
+        max-height: 146px;
+    }
+}
+
+.download-button {
+    width: 144px;
+    height: 40px;
+    right: 40px;
+    top: 53px;
+
+    @screen md-max {
+        height: 40px;
+        width: 40px;
+        right: 24px;
+        bottom: 24px;
+        top: unset;
+    }
+
+    span {
+        @apply font-bold font-aktivGrotesk;
+        letter-spacing: .05rem;
+        line-height: 18px;
+    }
+}
+
+.download-info {
+    padding: 24px;
+}
+
+.download-title {
+    letter-spacing: 0.6px;
+    line-height: 24px;
+    max-width: 55%;
+
+    @screen md-max {
+        @apply max-w-none;
+        font-size: 16px;
+    }
+
+    @media (max-width: 940px) {
+        max-width: 304px;
+    }
+}
+
+.download-description {
+    letter-spacing: 0.8px;
+    line-height: 18px;
+    margin-bottom: -4px;
+
+    @media (max-width: 940px) {
+        max-width: 322px;
+    }
+
+    @screen md-max {
+        max-width: 264px;
+    }
+}
+
+.download-version {
+    color: #b3b3b3;
+    letter-spacing: 0.8px;
+}
+
+.download-icon {
+    background: #fff url(/icons/icon-download-sm.svg);
+    background-size: 12px 12px;
+    width: 12px;
+    height: 12px;
+    margin-left: 6px;
+
+    @screen md-max {
+        background-size: 16px 16px;
+        width: 16px;
+        height: 16px;
+        margin-left: 0;
+    }
+}
+
+.load-more-button {
+    @apply px-6 py-2 font-light tracking-widest inline-block cursor-pointer my-4 mx-auto;
+    background: #fff;
+    color: #000;
+    transition: all 200ms ease;
+    -webkit-transition: all 200ms ease;
+}
+
+.results-info {
+    @apply tracking-widest leading-6;
+
+    @screen md-max {
+        @apply text-base;
+    }
+}
+
+.documentation-accordion {
+    background-color: #212121;
+}

@@ -1,0 +1,140 @@
+/**
+ * HTML Block Smalcode Panel Discover More
+ */
+
+// .panel-discover-more
+.panel-discover-more {
+    @apply relative overflow-hidden;
+    height: 100vh;
+    height: calc(var(--vh) * 100);
+    background-color: #4a4a4c;
+
+    @media only screen and (max-width: 767px) {
+        height: 70vh;
+        height: calc(var(--vh) * 70);
+    }
+
+    // .panel-discover-more .bg-layer
+    .bg-layer {
+        @apply absolute w-full h-full left-0 top-0 opacity-0;
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+
+        // .panel-discover-more .bg-layer.active
+        &.active {
+            @apply opacity-100
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+
+    // .panel-discover-more .img-wrap
+    .img-wrap {
+        @apply absolute h-full w-full left-0 bottom-0;
+
+        // .panel-discover-more .img-wrap img
+        img {
+            @apply w-auto absolute bottom-0 opacity-0;
+            height: 90%;
+            right: 10vw;
+            -webkit-transition: 0.3s ease-out;
+            transition: 0.3s ease-out;
+            will-change: opacity;
+
+            @media only screen and (max-width: 767px) {
+                @apply h-auto;
+                width: 110%;
+                right: 55%;
+                -webkit-transform: translate(50%, 0);
+                transform: translate(50%, 0);
+            }
+
+            // .panel-discover-more .img-wrap img.active
+            &.active {
+                @apply opacity-100;
+            }
+        }
+    }
+
+    // .panel-discover-more .text-layer
+    .text-layer {
+        @apply absolute top-1/2 left-0 w-full text-center;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+
+        @media only screen and (max-width: 767px) {
+            @apply top-0;
+            -webkit-transform: none;
+            transform: none;
+        }
+
+        // .panel-discover-more .text-layer .discover-headeline
+        .discover-headline {
+            @apply uppercase font-normal font-verveineRegular;
+            font-size: 60px;
+            line-height: 60px;
+            margin-top: 40px;
+            margin-bottom: 70px;
+
+            @media only screen and (max-width: 767px) {
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-top: 30px;
+                margin-bottom: 130px;
+                font-size: 40px;
+                line-height: 48px;
+            }
+        }
+
+        // .panel-discover-more .text-layer [class^='col-']
+        [class^='col-'] {
+            @media only screen and (max-width: 767px) {
+                @apply pl-0 pr-0;
+            }
+        }
+
+        // .panel-discover-more .text-layer .menu-items-wrap
+        .menu-items-wrap {
+            @apply uppercase font-bebasNeue font-bold;
+            font-size: 40px;
+
+            @media only screen and (max-width: 767px) {
+                font-size: 30px;
+            }
+
+            // .panel-discover-more .text-layer .menu-items-wrap a
+            a {
+                @apply opacity-50;
+                margin-right: 50px;
+                -webkit-transition: 0.2s ease-out;
+                transition: 0.2s ease-out;
+                will-change: opacity;
+
+                @media only screen and (max-width: 767px) {
+                    @apply block mr-0 w-full;
+                }
+
+                // .panel-discover-more .text-layer .menu-items-wrap a.active
+                &.active {
+                    @apply opacity-100;
+                }
+
+                // .panel-discover-more .text-layer .menu-items-wrap a:last-of-type
+                &:last-of-type {
+                    @apply mr-0;
+
+                    @media only screen and (max-width: 767px) {
+                        @apply mr-0;
+                    }
+                }
+
+                // .panel-discover-more .text-layer .menu-items-wrap a:not(.active)
+                &:not(.active) {
+                    @media only screen and (max-width: 767px) {
+                        @apply pointer-events-none;
+                    }
+                }
+            }
+        }
+    }
+}

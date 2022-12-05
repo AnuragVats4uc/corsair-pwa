@@ -1,0 +1,73 @@
+/**
+ * HTML Block Smalcode Panel Programable
+ */
+
+// .panel-programmable
+.panel-programmable {
+    @apply relative;
+    padding-top: 120px;
+    padding-bottom: 40px;
+
+    @media only screen and (max-width: 1023px) {
+        @apply pb-0;
+        padding-top: 65px;
+    }
+
+    // .panel-programmable .row-icue-usps
+    .row-icue-usps {
+        margin-top: 40px;
+    }
+
+    // .panel-programmable .usp-outer-wrap
+    .usp-outer-wrap {
+        @apply flex justify-end;
+        display: -webkit-box;
+        -webkit-box-pack: end;
+
+        @media only screen and (max-width: 1023px) {
+            @apply block;
+        }
+    }
+
+    // .panel-programmable .element-usp-wrap-1
+    .element-usp-wrap-1 {
+        margin-right: 50px;
+
+        @media only screen and (max-width: 1023px) {
+            @apply mr-0;
+        }
+    }
+
+    // .panel-programmable .element-usp-wrap-1,
+    // .panel-programmable .element-usp-wrap-2
+    .element-usp-wrap-1,
+    .element-usp-wrap-2 {
+        @media only screen and (max-width: 1023px) {
+            margin-top: 40px;
+        }
+    }
+
+    // .panel-programmable .element-zoom-image
+    .element-zoom-image {
+        margin-top: 40px;
+    }
+
+    // .panel-programmable .element-usp-wrap
+    .element-usp-wrap {
+        margin-top: 50px;
+    }
+
+    // .panel-programmable .col-text
+    .col-text {
+        @media only screen and (min-width: 1024px) {
+            padding-right: 50px;
+        }
+    }
+
+    // .panel-programmable .element-icue-software
+    .element-icue-software {
+        @media only screen and (max-width: 1023px) {
+            margin-top: 50px;
+        }
+    }
+}

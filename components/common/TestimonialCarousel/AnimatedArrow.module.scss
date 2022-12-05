@@ -1,0 +1,86 @@
+.animated-arrow {
+    @apply block m-auto absolute pointer-events-none left-6/12;
+    bottom: 35px;
+    height: 10px;
+    transform: translateX(-50%);
+    width: 150px;
+    .arrow {
+        @apply right-0 absolute top-6/12;
+        height: 37px;
+        transform: translateY(-50%);
+        width: 25px;
+        animation-duration: 1200ms;
+        animation-iteration-count: infinite;
+        animation-name: swipe;
+        -webkit-animation-name: swipe;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-duration: 1200ms;
+
+        &::before {
+            @apply h-px top-6/12 w-6/12 absolute left-px;
+            background-color: var(--component-color);
+            content: '';
+            transform-origin: 0 50%;
+            transform: rotate(45deg) translateY(-0.5px);
+        }
+        &::after {
+            @apply h-px left-px top-6/12 w-6/12 absolute;
+            background-color: var(--component-color);
+            content: '';
+            transform-origin: 0 50%;
+            transform: rotate(-45deg) translateY(-0.5px);
+        }
+    }
+    .line {
+        background: linear-gradient(
+            135deg,
+            var(--component-color) 0%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        top: 60%;
+        height: 1px;
+        position: absolute;
+        transform: translateY(-50%);
+        transform-origin: 100% 0;
+        width: 100%;
+        -webkit-animation: 1200ms swipe-line infinite;
+        -webkit-animation-direction: normal;
+        animation: 1200ms swipe-line infinite;
+        animation-direction: normal;
+    }
+    @keyframes swipe {
+        0% {
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+        10% {
+            transform: translateY(-50%);
+        }
+        50% {
+            transform: translateY(-50%) translateX(-125px);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-50%) translateX(-125px);
+            opacity: 0;
+        }
+    }
+
+    @keyframes swipe-line {
+        0% {
+            transform: translateY(-1.5px) scaleX(0);
+            opacity: 1;
+        }
+        10% {
+            transform: translateY(-1.5px) scaleX(0);
+        }
+        50% {
+            transform: translateY(-1.5px) scaleX(0.98);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-1.5px) scaleX(0.98);
+            opacity: 0;
+        }
+    }
+}

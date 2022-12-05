@@ -1,0 +1,94 @@
+.imageTwoTile{
+    padding-bottom: 20vh;
+
+    &-subHeading{
+        color: var(--dark-bg-btn-primary);
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+
+        @screen md {
+            font-size: 14px;
+        }
+    }
+    &-Description{
+        letter-spacing: .0625rem;
+    }
+
+    &-BackgroundImage{
+        margin: 0 auto;
+    }
+
+}
+
+.Heading{
+    letter-spacing: 2px;
+    font-size:30px;
+    @screen lg{
+        font-size: 4.5rem;
+    }
+}
+
+.Background-Gradient{
+    position: relative;
+    background: linear-gradient(135deg, rgba(24, 46, 40, 0), #000 33%, #000 66%, transparent);
+    background-attachment: fixed;
+}
+
+.has-animate {
+    @apply opacity-0;
+    transform: translateY(50px);
+    transition: 250ms transform ease-in, 350ms opacity ease-in;
+
+    &.onScreen {
+        @apply opacity-100;
+        transform: translateY(0);
+    }
+}
+.Image-Col-two{
+    &.has-animate-image{ 
+        transition-property: transform;
+        transition-duration: .3s;
+
+        &.onScreen{            
+            transform: translateY(5vh);
+            transition: all .3s ease-out;
+
+        }
+    }
+}
+
+@screen sm {
+    .imageTwoTile{
+        max-width: 640px;
+    }
+}
+@screen md {
+    .imageTwoTile{
+        max-width: 768px;
+    }
+    .imageTwoTile-Description{
+        font-size: 1.75rem;
+    }
+    .imageTwoTile-imageContainer{
+        .Image-Col-one,.Image-Col-two{
+            flex:0 1 50%;
+        }
+        
+    }
+}
+@screen lg {
+    .imageTwoTile{
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+}
+@screen xl {
+    .imageTwoTile{
+        max-width: 1280px;
+    }
+}
+@screen 2xl{
+    .imageTwoTile{
+        max-width: 1440px;
+    }
+}

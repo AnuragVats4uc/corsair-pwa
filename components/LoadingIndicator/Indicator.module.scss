@@ -1,0 +1,25 @@
+.loading-container {
+    @apply text-center my-8;
+}
+
+.loading-message {
+    @apply inline-block w-20 h-20;
+    &:after {
+        content: "";
+        @apply block w-20 h-20 m-2 border-solid border-secondary;
+        border-radius: 50%;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-width: 6px;
+        animation: loading-animation 1.2s linear infinite;
+    }
+}
+
+@keyframes loading-animation {
+	0% {
+		transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(1turn)
+	}
+}

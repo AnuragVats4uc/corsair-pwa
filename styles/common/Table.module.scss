@@ -1,0 +1,56 @@
+.root {
+    :global {
+        .table-responsive {
+            @apply block w-full overflow-x-auto;    
+        }
+    }
+    table {
+        @apply w-full bg-primary overflow-hidden;
+        thead {
+            @apply text-p-1;
+            tr {
+                @apply sm:table-row mb-2 sm:mb-0;
+            }
+            th {
+                @apply p-3 text-left border-b;
+            }
+            :global {
+                .action {
+                    @apply w-40;
+                }
+            }
+        }
+        tbody {
+            @apply text-p-1;
+            tr {
+                @apply sm:table-row mb-2 sm:mb-0 border-t md:border-t-0;
+                border-style: solid;
+                
+                &:nth-child(1) {
+                    @apply border-t-0;
+                }
+            }
+            td {
+                @apply border-t border-b px-3 py-5;
+                
+            }
+            :global {
+                .order-id {
+                    @apply font-semibold;
+                }
+                .action {
+                    @apply w-40;
+                    .actions {
+                        @apply flex space-x-1 justify-end md:justify-start font-semibold;
+                    }
+                    a,
+                    .link {
+                        &:not(.no-link) {
+                            @apply cursor-pointer underline inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,186 @@
+/**
+ * HTML Block Index
+ * Note: the order of these import is essential
+ */
+#HtmlBlock {
+    :global {
+        h1,
+        .h1,
+        h2,
+        .h2,
+        h3,
+        .h3,
+        h4,
+        .h4,
+        p,
+        a,
+        span,
+        div {
+            font-size: 12px;
+        }
+
+        .pdpWrapper {
+            /**
+             * Globals
+             */
+            @import './globals/global.module';
+            @import './globals/container.module';
+            @import './globals/backgrounds.module';
+            @import './globals/tables.module';
+            @import './globals/utilities.module';
+            @import './globals/content.module';
+            @import './globals/typography.module';
+            @import './globals/keyframes.module';
+            @import './globals/buttons.module';
+            @import './globals/icons.module';
+            @import './globals/variant.module';
+            @import './globals/label.module';
+            @import './globals/price.module';
+
+            /**
+             * Components
+             */
+            @import './components/item.module';
+            @import './components/cart.module';
+            @import './components/cta.module';
+            @import './components/slick-slider.module';
+            @import './components/full-pic.module';
+            @import './components/white-popup.module';
+            @import './components/videos.module';
+            @import './components/gallery.module';
+            @import './components/indabox.module';
+            @import './components/bundle.module';
+            @import './components/promotion.module';
+            @import './components/tab.module';
+            @import './components/reviews.module';
+            @import './components/notification.module';
+            @import './components/blades.module';
+            @import './components/interest-points.module';
+
+            /**
+             * Templates
+             */
+            @import './templates/panel.module';
+            @import './templates/panel-award.module';
+            @import './templates/panel-1.module';
+            @import './templates/panel-2.module';
+            @import './templates/panel-3.module';
+            @import './templates/panel-4.module';
+            @import './templates/panel-5.module';
+            @import './templates/panel-6.module';
+            @import './templates/panel-hero.module';
+            @import './templates/chosen.module';
+            @import './templates/tab-awards.module';
+            @import './templates/mft.module';
+            @import './templates/testimonial.module';
+            @import './templates/product-details.module';
+            @import './templates/tab-overview.module';
+            @import './templates/care.module';
+            @import './templates/btr.module';
+            @import './templates/warrenty.module';
+            @import './templates/find-retailer.module';
+            @import './templates/versatile.module';
+            @import './templates/lighting.module';
+
+            /**
+             * Page
+             */
+            @import './page/product.module';
+
+            /**
+             * Virtuoso
+             */
+            @import './virtuoso/index.module';
+
+            #panel2 .content #pdpWrapper div #smalcode {
+                @apply w-full px-4 m-auto;
+                @screen md {
+                    @apply w-auto mr-0;
+                }
+            }
+        }
+
+        /**
+         * Smalcode
+         */
+        #custom-smalcode {
+            @apply relative;
+            --vh: 1vh;
+            z-index: 1;
+
+            // #custom-smalcode.wingsuit-root .lg\.lg\:smal-w-2\/4
+            &.wingsuit-root {
+                // #custom-smalcode.wingsuit-root *
+                * {
+                    box-sizing: border-box !important;
+                    border: 0 solid #e5e5e5;
+                }
+
+                // #custom-smalcode.wingsuit-root .lg\.lg\:smal-w-2\/4
+                .lg\:smal-w-2\/4 {
+                    width: 48%;
+                }
+            }
+
+            @import './smalcode/helpers.module';
+            @import './smalcode/typography.module';
+            @import './smalcode/element.module';
+            @import './smalcode/text.module';
+            @import './smalcode/cta.module';
+            @import './smalcode/panel-hero.module';
+            @import './smalcode/panel-comfort.module';
+            @import './smalcode/panel-connectivity.module';
+            @import './smalcode/panel-features.module';
+            @import './smalcode/panel-programable.module';
+            @import './smalcode/panel-hero-cateogry.module';
+            @import './smalcode/panel-meet-the-family.module';
+            @import './smalcode/panel-audio-quality.module';
+            @import './smalcode/product-sequence.module';
+            @import './smalcode/panel-category-sticky.module';
+            @import './smalcode/panel-programmable-black.module';
+
+            /**
+             * The CSS below this line is intentional and should remain on the
+             * bottom of this style sheet.
+             */
+            // .#custom-smalcode.device-is-touch
+            &.device-is-touch {
+                // .#custom-smalcode.device-is-touch .touch-hide
+                .touch-hide {
+                    @apply hidden;
+                }
+
+                // .#custom-smalcode.device-is-touch .mobile-touch-show
+                .mobile-touch-show {
+                    @apply block;
+                }
+            }
+
+            // #custom-smalcode:not(.device-is-touch)
+            &:not(.device-is-touch) {
+                // #custom-smalcode:not(.device-is-touch) .touch-show
+                .touch-show {
+                    @apply hidden;
+                }
+            }
+
+            // #custom-smalcode.device-is-touch .touch-hide,
+            // #custom-smalcode:not(.device-is-touch) .touch-hide
+            &.device-is-touch .touch-hide,
+            &:not(.device-is-touch) .touch-hide {
+                @media only screen and (max-width: 767px) {
+                    @apply hidden;
+                }
+            }
+
+            // #custom-smalcode.device-is-touch .mobile.touch-show,
+            // #custom-smalcode:not(.device-is-touch) .mobile-touch-show
+            &.device-is-touch .mobile.touch-show,
+            &:not(.device-is-touch) .mobile.touch-show {
+                @media only screen and (max-width: 767px) {
+                    @apply block;
+                }
+            }
+        }
+    }
+}

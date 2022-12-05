@@ -1,0 +1,15 @@
+.related-products {
+    @apply pt-10;
+    .heading-container {
+        @apply py-5;
+        .title {
+            @apply uppercase text-xl;
+        }
+    }
+    .products-list {
+        @apply -mx-2.5;
+        .product-item {
+            @apply inline-block focus:outline-none p-2.5;
+        }
+    }
+}

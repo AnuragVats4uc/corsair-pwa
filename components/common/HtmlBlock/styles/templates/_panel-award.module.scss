@@ -1,0 +1,267 @@
+/**
+ * HTML BlockPanel Award
+ */
+
+// #panel-award
+#panel-award {
+    @apply relative min-h-0;
+    background: #f9f9f9;
+    background: -moz-linear-gradient(
+        -45deg,
+        rgba(249, 249, 249, 1) 40%,
+        rgba(177, 177, 177, 1) 97%
+    );
+    background: -webkit-linear-gradient(
+        -45deg,
+        rgba(249, 249, 249, 1) 40%,
+        rgba(177, 177, 177, 1) 97%
+    );
+    background: linear-gradient(
+        135deg,
+        rgba(249, 249, 249, 1) 40%,
+        rgba(177, 177, 177, 1) 97%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#b1b1b1',GradientType=1);
+    height: 400px;
+    padding: 8em 0;
+    z-index: 2;
+
+    // #panel-award::before
+    &::before {
+        @apply h-full absolute top-0 left-0;
+        background: url('//cwsmgmt.corsair.com/pdp/k95-rgb-xt/images/k95_rgb_xt_award.png')
+            left no-repeat;
+        content: '';
+        width: 75%;
+
+        @media only screen and (max-width: 992px) {
+            @apply bg-contain w-full;
+        }
+    }
+
+    // #panel-award h3
+    h3 {
+        font-size: 1.7em;
+        line-height: 1.35em;
+    }
+
+    // #panel-award .text-black
+    .text-black {
+        @apply font-semibold;
+        color: black; // Cannot use @apply - creates a circular dependency
+        font-size: 1.7em;
+        letter-spacing: 0;
+        text-transform: none;
+    }
+
+    // #panel-award .text-gray
+    .text-gray {
+        color: #686868;
+
+        // #panel-award .text-gray a
+        a {
+            @apply text-black;
+            font-size: 15px;
+        }
+    }
+
+    // #panel-award .container
+    .container {
+        @apply h-full mx-0 my-auto relative text-center w-full;
+        max-width: 1200px;
+    }
+
+    // #panel-award .half
+    .half {
+        @apply inline-block align-middle w-1/2;
+
+        @media only screen and (max-width: 992px) {
+            width: calc(50% - 10px);
+        }
+
+        // #panel-award .half.left
+        &.left {
+            @apply h-full;
+
+            @media only screen and (max-width: 992px) {
+                width: calc(100% - 478px);
+            }
+
+            @media only screen and (max-width: 768px) {
+                width: 1px;
+            }
+        }
+
+        // #panel-award .half.right
+        &.right {
+            @apply relative;
+
+            @media only screen and (max-width: 992px) {
+                width: 478px;
+            }
+
+            @media only screen and (max-width: 768px) {
+                @apply align-bottom;
+                margin-bottom: 4em;
+                width: 478px;
+            }
+
+            @media only screen and (max-width: 400px) {
+                width: 330px;
+            }
+
+            // #panel-award .half.right .background
+            .background {
+                @apply h-full absolute bg-contain;
+                background: url('//cwsmgmt.corsair.com/_ui/responsive/common/images/panel-award-quotation.png')
+                    no-repeat center;
+                left: 60px;
+                width: calc(100% - 120px);
+            }
+
+            // #panel-award .half.right .spacer
+            .spacer {
+                @apply relative;
+                height: 400px;
+            }
+
+            // #panel-award .half.right .quote
+            .quote {
+                @apply left-1/2 opacity-0 absolute top-0 w-full;
+                max-width: 420px;
+                pointer-events: none;
+                transform: translateX(-50%);
+                transition: 1500ms opacity;
+
+                @media only screen and (max-width: 992px) {
+                    max-width: 400px;
+                }
+
+                @media only screen and (max-width: 400px) {
+                    max-width: 260px;
+                }
+
+                // #panel-award .half.right .quote.selected
+                &.selected {
+                    @apply opacity-100;
+                    pointer-events: unset;
+                }
+
+                // #panel-award .half.right .quote .author
+                .author {
+                    @apply font-semibold;
+                    font-size: 1.25em;
+                    letter-spacing: 0.15em;
+                    padding-top: 25px;
+                }
+            }
+
+            // #panel-award .half.right .icon
+            .icon {
+                @apply relative;
+                margin: 0 auto 25px;
+                height: 180px;
+                width: 180px;
+            }
+
+            // #panel-award .half.right .arrow
+            .arrow {
+                @apply bg-white cursor-pointer absolute top-1/2;
+                border-radius: 50%;
+                height: 35px;
+                transform: translateY(-50%);
+                width: 35px;
+
+                // #panel-award .half.right .arrow .hover
+                .hover {
+                    @apply h-full absolute w-full;
+                    background: #dcdcdc;
+                    border-radius: 50%;
+                    transform: scale(0);
+                    transition: 250ms transform;
+                }
+            }
+
+            // #panel-award .half.right .dots-bar
+            .dots-bar {
+                @apply relative inline-block;
+
+                // #panel-award .half.right .dots-bar .dot
+                .dot {
+                    @apply inline-block cursor-pointer;
+                    background: #707070;
+                    border-radius: 50%;
+                    height: 8px;
+                    margin-right: 9.6px;
+                    width: 8px;
+
+                    // #panel-award .half.right .dots-bar .dot.selected
+                    &.selected {
+                        background: #fdd000;
+                    }
+                }
+            }
+        }
+    }
+
+    // #panel-award .arrow
+    .arrow {
+        // #panel-award .arrow .container
+        .container {
+            @apply p-0 relative;
+            background: url('//cwsmgmt.corsair.com/_ui/responsive/common/images/panel-award-arrow.png')
+                no-repeat center;
+            background-size: 50%;
+            height: 35px;
+            opacity: 0.4;
+            width: 35px;
+            transform: scale(1);
+            transition: 500ms transform, 500ms opacity;
+
+            // #panel-award .arrow .container::before
+            &::before {
+                transform: rotate(45deg);
+                transform-origin: 100% 0%;
+            }
+
+            // #panel-award .arrow .container::after
+            &::after {
+                left: 33%;
+                transform: rotate(-45deg);
+            }
+        }
+
+        // #panel-award .arrow.prev
+        &.prev {
+            @apply left-0;
+
+            // #panel-award .arrow.prev .container
+            .container {
+                transform: rotate(180deg);
+            }
+        }
+
+        // #panel-award .arrow.next
+        &.next {
+            @apply right-0;
+        }
+    }
+}
+
+// section#panel-award
+section#panel-award {
+    min-height: 600px;
+
+    @media only screen and (max-width: 992px) {
+        @apply p-0;
+    }
+
+    @media only screen and (max-width: 768px) {
+        @apply p-0;
+        min-height: 113vw;
+    }
+
+    @media only screen and (max-width: 600px) {
+        min-height: 125vw;
+    }
+}

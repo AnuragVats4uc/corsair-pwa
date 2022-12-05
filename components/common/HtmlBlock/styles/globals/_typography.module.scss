@@ -1,0 +1,134 @@
+/**
+ * HTML Block Typography
+ */
+
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    @apply font-medium;
+    font-family: inherit;
+    line-height: 1.3;
+}
+
+// h1
+h1 {
+    @media only screen and (max-width: 992px) {
+        font-size: 3em;
+    }
+}
+
+// .top-prodcut-des h1, h1, h3
+.top-prodcut-des h1 h2,
+h3 {
+    line-height: unset;
+    margin-top: unset;
+    margin-bottom: unset;
+}
+
+// h3, .h3
+h3,
+.h3 {
+    @apply uppercase;
+    font-size: unset;
+}
+
+// header
+header {
+    // header h4
+    h4 {
+        @apply text-black;
+    }
+}
+
+// section
+section {
+    // section h1,
+    // section h2
+    h1,
+    h2 {
+        @apply font-bold uppercase;
+        letter-spacing: 0.6px;
+    }
+
+    // section h1
+    h1 {
+        @apply font-bold;
+        font-size: 1.8em;
+        line-height: 1.2;
+
+        // section h1.bebas
+        &.bebas {
+            @apply font-bebasNeue font-semibold;
+            font-size: 3.75rem;
+            letter-spacing: 0.1rem;
+            line-height: 3.75rem;
+
+            @media only screen and (max-width: 768px) {
+                font-size: 30px;
+            }
+        }
+    }
+
+    // section h2
+    h2 {
+        // section h2.bebas
+        &.bebas {
+            @apply font-bebasNeue font-semibold;
+            font-size: 3.75rem;
+            letter-spacing: 0.1rem;
+            line-height: 3.75rem;
+        }
+    }
+
+    // section h3
+    h3 {
+        @apply font-normal;
+    }
+
+    // section p
+    p {
+        @apply font-normal font-aktivGrotesk;
+        font-size: 15.6px;
+        letter-spacing: 0.8px;
+        line-height: 24px;
+
+        @screen md {
+            font-size: 20.8px;
+            line-height: 36px;
+        }
+
+        @screen lg {
+            font-size: 15.6px;
+            letter-spacing: 0.78px;
+            line-height: 28.08px;
+        }
+
+        // section p.centered
+        &.centered {
+            font-size: 18px;
+            letter-spacing: 0.03em;
+            line-height: 1.8;
+            margin: 18px auto 0;
+            max-width: 1200px;
+
+            @media only screen and (max-width: 992px) {
+                @apply text-left;
+            }
+        }
+    }
+}
+
+// .text-out-of-stock
+.text-out-of-stock {
+    @apply hidden;
+    padding-bottom: 15px;
+    color: #ec7205;
+}

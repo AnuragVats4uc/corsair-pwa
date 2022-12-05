@@ -1,0 +1,58 @@
+image: atlassian/default-image:2
+clone:
+    depth: full # SonarCloud scanner needs the full history to assign issues properly
+
+definitions:
+    caches:
+        sonar: ~/.sonar/cache # Caching SonarCloud artifacts will speed up build
+        next: .next
+    steps:
+        - step: &build-test-sonarcloud
+              size: 2x
+              name: Build, test and analyze on SonarCloud
+              caches:
+                  - sonar
+              script:
+                  - pipe: sonarsource/sonarcloud-scan:1.2.0
+                    variables:
+                        SONAR_TOKEN: ${SONAR_TOKEN}
+                        EXTRA_ARGS: '-Dsonar.sources=./'
+    services:
+        docker:
+            memory: 7128
+pipelines:
+    custom:
+        sonar-cloud-scan:
+            - step: *build-test-sonarcloud
+        capture-lighthouse-stats:
+            - step:
+                  name: Lighthouse
+                  image: corra/lighthouse-ci-docker
+                  script:
+                      - echo "Capturing Lighthouse Stats"
+                      - export LHCI_BUILD_CONTEXT__CURRENT_BRANCH=lighthouse
+                      - lhci autorun --upload.token=$LHCI_BUILD_TOKEN_NODE --buildContext.currentBranch=customPipeline --collect.url=https://corsair.pwa.corralive.com/ --collect.url=https://corsair.pwa.corralive.com/category/clothing --collect.url=https://corsair.pwa.corralive.com/product/heathered-jacket.html || true
+    branches:
+        develop:
+            - step:
+                  name: Deploy to Dev Instance
+                  image: node:16
+                  deployment: DEV
+                  size: 2x
+                  caches:
+                      - node
+                      - next
+                  script:
+                      - npm i -g pipelines-private-npm
+                      - build-setup -r https://registry.yarnpkg.com  -o corratech -a https://www.npmjs.com
+                      - bash -xe deploy/aws-node-dev.sh
+            - step:
+                  name: Lighthouse
+                  image: corra/lighthouse-ci-docker
+                  script:
+                      - echo "Capturing Lighthouse Stats"
+                      - export LHCI_BUILD_CONTEXT__CURRENT_BRANCH=develop
+                      - lhci autorun --upload.token=$LHCI_BUILD_TOKEN_NODE --buildContext.currentBranch=customPipeline --collect.url=https://corsair.pwa.corralive.com/ --collect.url=https://corsair.pwa.corralive.com/category/clothing --collect.url=https://corsair.pwa.corralive.com/product/heathered-jacket.html || true
+    pull-requests:
+        '**':
+            - step: *build-test-sonarcloud

@@ -1,0 +1,174 @@
+.caption {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.5rem;
+    @screen md {
+        font-size: 1.3rem;
+    }
+}
+.logos {
+    width: 1.539rem;
+    height: 1.539rem;
+}
+
+.learn-more {
+    margin-top: 2px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.2rem;
+    @apply font-medium;
+    @screen md {
+        font-size: 1rem;
+        @apply font-semibold;
+    }
+    @screen lg {
+        font-size: 0.875rem;
+    }
+
+    .right-arrow-wrapper {
+        width: 10px;
+        height: 10px;
+        margin-left: 5px;
+    }
+}
+
+.logo-upper-right {
+    @apply w-full h-full px-4;
+}
+
+.logo-container-lower-left {
+    @apply flex space-x-2.5 absolute bottom-5 md:bottom-2.5 lg:bottom-5;
+}
+
+.logo-container-upper-right {
+    @apply flex space-x-2.5 absolute top-5 md:top-2.5 lg:top-5 right-5;
+}
+
+.logo-container-lower-right {
+    @apply flex space-x-2.5 absolute bottom-5 md:bottom-2.5 lg:bottom-5 right-5;
+}
+
+.logo-container-center {
+    @apply flex space-x-2.5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2;
+}
+
+.cta-link-center {
+    @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2;
+}
+
+.cta-link-lower-left {
+    @apply absolute bottom-5 md:bottom-2.5 lg:bottom-5;
+}
+
+.cta-link-lower-right {
+    @apply flex justify-end absolute bottom-5 md:bottom-2.5 lg:bottom-5 right-5;
+}
+
+.cta-lower-right {
+    @apply justify-end;
+}
+
+.cta-center {
+    @apply justify-center;
+}
+
+.cta-lower-left {
+    @apply justify-start;
+}
+
+.caption-position-cta {
+    @apply w-full absolute bottom-12 md:bottom-10 lg:bottom-12;
+}
+
+.caption-position-logo {
+    @apply w-full absolute bottom-14 md:bottom-12 lg:bottom-14;
+}
+
+.caption-position {
+    @apply bottom-5 md:bottom-2.5 lg:bottom-5;
+}
+
+.grid-class {
+    @apply grid h-full mx-auto p-4 gap-4;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    grid-template-rows: auto;
+    .primary-grid {
+        min-width: 335px;
+        min-height: 503px;
+        @apply relative;
+    }
+    .secondary-grid {
+        aspect-ratio: 335/335;
+        @apply relative;
+    }
+}
+.grid-class-2 {
+    @apply grid h-full mx-auto my-0 p-4 gap-4;
+    grid-template-rows: auto;
+
+    .primary-grid-2 {
+        min-height: 503px;
+        min-width: 335px;
+        @apply relative;
+    }
+    .secondary-grid-2 {
+        aspect-ratio: 335/335;
+        @apply relative;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .grid-class {
+        @apply m-32 gap-4;
+        grid-auto-flow: column;
+        .primary-grid {
+            min-width: unset;
+            min-height: unset;
+            grid-row: span 2;
+        }
+        .secondary-grid {
+            aspect-ratio: 394/256;
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 1240px) {
+    .grid-class-2 {
+        grid-template-rows: none;
+        grid-auto-flow: column;
+        @apply gap-4 p-5 my-32;
+        .primary-grid-2 {
+            grid-row: span 2;
+            min-width: unset;
+            min-height: unset;
+        }
+        .secondary-grid-2 {
+            aspect-ratio: 394/240;
+        }
+    }
+}
+@media screen and (min-width: 1024px) {
+    .grid-class {
+        @apply my-32 justify-center gap-4;
+        grid-template-columns: repeat(2, 394px);
+        .primary-grid {
+            grid-row: span 2;
+        }
+        .secondary-grid {
+            aspect-ratio: 394/256;
+        }
+    }
+}
+@media screen and (min-width: 1241px) {
+    .grid-class-2 {
+        @apply gap-4 justify-center my-32;
+        grid-template-columns: repeat(3, 394px);
+        .primary-grid-2 {
+            min-width: unset;
+            min-height: unset;
+            grid-row: span 2;
+        }
+        .secondary-grid-2 {
+            aspect-ratio: 394/240;
+        }
+    }
+}

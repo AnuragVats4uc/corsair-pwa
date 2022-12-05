@@ -1,0 +1,78 @@
+.pagination {
+    @apply bg-black;
+
+    @screen md {
+        @apply my-0 mx-auto;
+        max-width: 300px;
+    }
+
+    .button {
+        @apply text-white uppercase;
+        font-size: 12px;
+        letter-spacing: 1.25px;
+
+        &[data-disabled] {
+            @apply pointer-events-none cursor-not-allowed;
+            color: #989899;
+            font-size: 15px;
+
+            &.button--text {
+                font-size: 12px;
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .item {
+        @apply relative;
+
+        .last {
+            margin-top: 1px;
+        }
+    }
+
+    .column {
+        @apply text-white;
+        width: 1px;
+        height: 13px;
+    }
+
+    .back-arrow,
+    .next-arrow {
+        @apply relative;
+        min-height: 32px;
+        min-width: 19px;
+
+        &::after {
+            content: "";
+            height: 6px;
+            width: 6px;
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+            transform: translateY(-50%) rotate(-45deg);
+            margin-top: 2px;
+            @apply mb-0 mx-auto absolute top-1/2 left-0 right-0;
+        }
+
+        &[data-disabled]::after {
+            @apply pointer-events-none cursor-not-allowed;
+            border-color: #989898;
+        }
+    }
+
+    .next-arrow::after {
+        transform: translateY(-50%) rotate(135deg);
+    }
+
+    .list {
+        @apply flex items-center justify-between my-0 mx-auto;
+        max-width: 70%;
+
+        @screen md {
+            @apply max-w-full m-auto;;
+        }
+    }
+}

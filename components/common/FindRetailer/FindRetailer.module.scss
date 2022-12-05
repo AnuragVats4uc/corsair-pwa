@@ -1,0 +1,147 @@
+.btn-modal {
+    &:hover {
+        @apply underline;
+    }
+
+    &:focus {
+        outline: 1px;
+    }
+}
+
+.find-retailer-modal {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 24px;
+    transform: translateY(0%);
+    z-index: 1;
+
+    &.modal-hidden {
+        @apply hidden;
+    }
+
+    &.in-transition {
+        @apply opacity-100;
+
+        .find-retailer-box-modal {
+            transform: translateY(0%);
+        }
+    }
+
+    .find-retailer-box-modal {
+        box-shadow: 0px 8px 48px rgba(0, 0, 0, 0.8);
+        background-color: rgba(61, 61, 61, 1);
+        padding: 80px 0 0px;
+        height: fit-content;
+        max-width: 936px;
+        max-height: 95%;
+        transform: translateY(-20%);
+
+        .close-modal-btn {
+            background: transparent url('/icons/button-circle-close.svg')
+                no-repeat center;
+            width: 24px;
+            height: 24px;
+            top: 24px;
+            right: 24px;
+        }
+
+        .product-info {
+            margin-bottom: 48px;
+            padding: 0 46px;
+
+            .product-image {
+                margin-bottom: 35px;
+                padding-bottom: 100%;
+                max-height: 240px;
+
+                @screen sm {
+                    @apply m-auto pb-0;
+                    margin-bottom: 35px;
+                    width: 308px;
+                    height: 240px;
+                }
+
+                @screen lg {
+                    @apply pb-0;
+                    margin: unset;
+                    margin-right: 38px;
+                    margin-bottom: 0px;
+                    width: 308px;
+                    height: 240px;
+                }
+            }
+
+            .product-details {
+                > div {
+                    li {
+                        margin-bottom: 10px;
+                        font-size: 14px;
+                        line-height: 18px;
+                    }
+                }
+
+                .title {
+                    font-size: 32px;
+                    line-height: 32px;
+                    margin-bottom: 10px;
+                    padding-top: 10px;
+                }
+
+                .sub-title {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+
+        .retailers-list {
+            padding: 0 5px;
+            .retailer-container {
+                margin: 0 40px 30px;
+
+                @screen lg {
+                    width: 50%;
+                    margin: 0 24px 28px 24px;
+                    max-width: 388px;
+                }
+
+                .retailer-image {
+                    padding: 28px;
+                    height: 200px;
+                    margin-bottom: 7px;
+
+                    > span {
+                        @apply items-center justify-center;
+                        position: relative !important; //override span next image
+                        width: 100% !important; //override span next image
+                        height: 100% !important; //override span next image
+                        display: flex !important; //override span next image
+
+                        img {
+                            position: relative !important; //override img next image
+                            width: 55% !important; //override img next image
+                            height: auto !important; //override img next image
+                            min-width: auto !important; //override img next image
+                            min-height: auto !important; //override img next image
+                            max-height: 100% !important; //override img next image
+                            margin: 0 auto !important; //override img next image
+                        }
+                    }
+                }
+
+                .retailer-link-label {
+                    padding: 0 25px;
+                    font-size: 14px;
+
+                    &:after {
+                        @apply block absolute right-0 bg-yellow;
+                        content: '';
+                        top: -1px;
+                        width: 24px;
+                        height: 24px;
+                        -webkit-mask-image: url('/icons/arrow-right.svg');
+                        mask-image: url('/icons/arrow-right.svg');
+                    }
+                }
+            }
+        }
+    }
+}

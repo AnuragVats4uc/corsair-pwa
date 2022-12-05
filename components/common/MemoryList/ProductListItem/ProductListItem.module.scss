@@ -1,0 +1,55 @@
+.container {
+    padding-left: 27px;
+    padding-right: 27px;
+
+    @screen md {
+        @apply px-0;
+    }
+}
+
+.name {
+    @screen md {
+        margin-right: 0px;
+        flex: 2;
+        max-width: 128px;
+        min-width: 128px;
+    }
+
+    @screen lg {
+        margin-right: 56px;
+        min-width: 228px;
+        max-width: 228px;
+    }
+}
+
+
+.specs {
+    color: #CCCCCC;
+}
+
+.ctaContainer {
+    :global {
+        .product-price {
+            @apply flex items-center;
+
+            span {
+                @apply text-base tracking-wider leading-none font-aktivGrotesk md:text-white;
+                color: #B3B3B3;
+            }
+        }
+    }
+}
+
+.cta {
+    font-size: 10px;
+    line-height: 1.2;
+
+    @screen md {
+        width: 112px;
+        height: 28px;
+        padding-top: 7px;
+        padding-left: 14px;
+        padding-right: 14px;
+        border: 1px solid;
+    }
+}

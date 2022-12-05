@@ -1,0 +1,74 @@
+/**
+ * HTML Block Keyframes
+ */
+
+@-webkit-keyframes pulsate {
+    from {
+        opacity: 0.75;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+@-webkit-keyframes indicatorLoop {
+    0% {
+        width: 26px;
+        height: 26px;
+        opacity: 1;
+    }
+    100% {
+        width: 60px;
+        height: 60px;
+        opacity: 0;
+    }
+}
+
+@keyframes indicatorLoop {
+    0% {
+        width: 26px;
+        height: 26px;
+        opacity: 1;
+    }
+    100% {
+        width: 60px;
+        height: 60px;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes heroLineMove {
+    from {
+        -webkit-transform: translate(-50%, -45px);
+        transform: translate(-50%, -45px);
+    }
+
+    to {
+        -webkit-transform: translate(-50%, 45px);
+        transform: translate(-50%, 45px);
+    }
+}
+
+@keyframes heroLineMove {
+    from {
+        -webkit-transform: translate(-50%, -45px);
+        transform: translate(-50%, -45px);
+    }
+
+    to {
+        -webkit-transform: translate(-50%, 45px);
+        transform: translate(-50%, 45px);
+    }
+}
+
+@keyframes hero-animation {
+    0% {
+        top: -100;
+    }
+
+    100% {
+        top: 0%;
+    }
+}

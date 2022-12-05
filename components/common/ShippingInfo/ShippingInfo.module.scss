@@ -1,0 +1,31 @@
+.container-message {
+    @apply mx-2 my-5 space-y-4;
+}
+
+.message-truck {
+    font-size: 12px;
+    line-height: 18px;
+    color: #9d9d9d;
+    @apply mt-0.5;
+    @screen md {
+        font-size: 14px;
+        line-height: 20px;
+        @apply mt-1;
+    }
+}
+
+.message-box{
+    font-size: 12px;
+    line-height: 18px;
+    color: #9d9d9d;
+    @apply mt-0;
+    @screen md {
+        font-size: 14px;
+        line-height: 20px;
+        @apply mt-1;
+    }
+}
+
+.shipping-message-container{
+    @apply flex items-center space-x-4;
+}

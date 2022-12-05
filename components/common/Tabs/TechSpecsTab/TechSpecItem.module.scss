@@ -1,0 +1,30 @@
+.tableRow {
+    border-bottom: 1px solid #999;
+    margin: 0 20px;
+    padding: 16px 0 15px;
+
+    @screen lg {
+        margin: 0;
+    }
+
+    .tableHeader {
+        color: #999;
+        letter-spacing: 0.5px;
+        line-height: 1.214;
+        margin-bottom: 3px;
+
+        @screen lg {
+            flex-basis: 50%;
+        }
+    }
+
+    .tableData {
+        color: #e6e6e6;
+        letter-spacing: 0.5px;
+        line-height: 1.2514;
+
+        @screen lg {
+            flex-basis: 50%;
+        }
+    }
+}

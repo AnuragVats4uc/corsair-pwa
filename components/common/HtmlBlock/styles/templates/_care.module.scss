@@ -1,0 +1,331 @@
+/**
+ * HTML Block Care
+ */
+
+// .crs-corsair-care
+.crs-corsair-care {
+    // .crs-corsair-care h4.crs-corsair-care-heading
+    h4.crs-corsair-care-heading {
+        @apply relative overflow-hidden text-center;
+        font-size: 10px;
+        margin-top: 24px;
+        margin-bottom: 13px;
+        color: #262626;
+        line-height: 1.6;
+        letter-spacing: 1.02px;
+
+        // .crs-corsair-care h4.crs-corsair-care-heading span
+        span {
+            @apply inline relative font-medium;
+            zoom: 1;
+            vertical-align: auto;
+            padding: 0 4px;
+
+            // .crs-corsair-care h4.crs-corsair-care-heading span::before,
+            // .crs-corsair-care h4.crs-corsair-care-heading span::after
+            &::before,
+            &::after {
+                @apply block absolute;
+                content: '';
+                width: 1000px;
+                top: 48%;
+                border-top: 1px solid #777;
+            }
+
+            // .crs-corsair-care h4.crs-corsair-care-heading span::before
+            &::before {
+                @apply right-full;
+            }
+
+            // .crs-corsair-care h4.crs-corsair-care-heading span::after
+            &::after {
+                @apply left-full;
+            }
+        }
+    }
+}
+
+// .crs-corsair-care-old-price
+.crs-corsair-care-old-price {
+    @apply line-through;
+    margin-right: 4px;
+}
+
+// .crs-care-popup-main-background
+.crs-care-popup-main-background {
+    // .crs-care-popup-main-background.crs-corsaiar-care-popup-open
+    &.crs-corsair-care-popup-open {
+        @apply flex;
+    }
+}
+
+// .crs-care-popup-main
+.crs-care-popup-main {
+    width: calc(100% - 25px);
+    max-width: 692px;
+    box-shadow: 1px 1px 55px 12px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 1px 55px 12px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 1px 1px 55px 12px rgba(0, 0, 0, 0.5);
+
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+        @apply w-full h-full;
+    }
+
+    @media only screen and (max-width: 600px) {
+        @apply w-full h-full;
+    }
+}
+
+// .crs-care-main-content
+.crs-care-main-content {
+    @apply bg-white;
+
+    @media only screen and (max-width: 600px) {
+        @apply h-full;
+    }
+}
+
+// .crs-care-content-header
+.crs-care-content-header {
+    @apply block justify-end items-center;
+    height: 45px;
+    margin-right: 17px;
+}
+
+// .crs-corsair-care-header-close-btn
+.crs-corsair-care-header-close-btn {
+    @apply cursor-pointer font-semibold;
+    color: #737373;
+    font-size: 13px;
+}
+
+// .crs-main-body-care
+.crs-main-body-care {
+    padding: 0px 60px 34px 60px;
+
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+        @apply overflow-auto;
+        height: calc(100vh - 44px);
+    }
+
+    @media only screen and (max-width: 600px) {
+        @apply overflow-auto;
+        padding: 0px 20px 34px 20px;
+        height: calc(100vh - 44px);
+    }
+}
+
+// .crs-corsair-care-title span
+.crs-corsair-care-title span {
+    @apply text-black font-medium;
+    font-size: 17px;
+}
+
+// .crs-corsair-care-price
+.crs-corsair-care-price {
+    // .crs-corsair-care-price .crs-corsair-care-value
+    .crs-corsair-care-value {
+        @apply text-black font-medium;
+        font-size: 21px;
+        letter-spacing: 1px;
+        padding-right: 5px;
+    }
+
+    // .crs-corsair-care-price .crs-corsair-care-format
+    .crs-corsair-care-format {
+        @apply font-normal;
+        color: black !important; // Inherited styles from legacy site
+        font-size: 17px;
+        letter-spacing: 1px;
+        color: #808080;
+    }
+
+    // .crs-corsair-care-price .crs-corsair-care-format-old-price
+    .crs-corsair-care-format-old-price {
+        @apply text-black font-normal line-through;
+        font-size: 17px;
+        letter-spacing: 1px;
+        color: #808080;
+    }
+}
+
+// .crs-corsair-care-warrenty-period
+.crs-corsair-care-warrenty-period {
+    @apply text-black font-medium;
+    letter-spacing: 0.71px;
+    line-height: 1.333;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+// .crs-corsair-care-popup-description
+.crs-corsair-care-popup-description {
+    @apply font-normal;
+    font-size: 13px;
+    letter-spacing: 0.25px;
+    line-height: 1.308;
+    color: #262626;
+    margin-bottom: 2rem;
+
+    @media only screen and (max-width: 600px) {
+        margin-bottom: 15px;
+    }
+}
+
+// .crs-corsair-care-atc-btn-popup
+.crs-corsair-care-benefits {
+    @apply font-medium;
+    font-size: 13px;
+    letter-spacing: 0.25px;
+    line-height: 2.308;
+    color: #262626;
+    margin-bottom: 8px;
+}
+
+// .crs-corsair-care-benefits-list
+.crs-corsair-care-benefits-list {
+    @apply font-normal;
+    font-size: 13px;
+    letter-spacing: 0.25px;
+    line-height: 2.308;
+    color: #262626;
+    margin-bottom: 46px;
+    list-style-type: disc;
+    padding-left: 25px;
+
+    // .crs-corsair-care-atc-btn-popup li
+    li {
+        padding-left: 10px;
+        line-height: 1.308;
+        margin-bottom: 10px;
+    }
+}
+
+// .crs-corsair-care-atc-btn-popup
+.crs-corsair-care-atc-btn-popup {
+    @apply font-medium w-full border-none;
+    font-size: 15px;
+    letter-spacing: 1.15px;
+    line-height: 1.333;
+    padding: 1rem 0;
+    margin-bottom: 45px;
+    background: rgba(233, 230, 0, 0.3);
+    color: rgba(0, 0, 0, 0.3);
+
+    // .crs-corsair-care-atc-btn-popup.option-selected
+    &.option-selected {
+        @apply border-0;
+        background: rgba(233, 230, 0, 1);
+        color: rgba(0, 0, 0, 1);
+    }
+}
+
+// .crs-corsair-care-footer
+.crs-corsair-care-footer {
+    @apply flex justify-between;
+
+    @media only screen and (max-width: 600px) {
+        @apply items-center flex-col;
+    }
+}
+
+// .crs-corsair-care-copyright
+.crs-corsair-care-copyright {
+    @apply font-medium;
+    font-size: 11px;
+    letter-spacing: 0.21px;
+    line-height: 1.545;
+    color: #262626;
+
+    @media only screen and (max-width: 600px) {
+        margin-bottom: 12;
+    }
+}
+
+// .crs-corsair-care-FAQ a
+.crs-corsair-care-FAQ a {
+    @apply font-normal underline;
+    font-size: 11px;
+    letter-spacing: 0.25px;
+    line-height: 1.818;
+    color: #2764a2;
+}
+
+// .crs-corsair-care-popup-price-wrapper
+.crs-corsair-care-popup-price-wrapper {
+    @apply flex;
+    margin-bottom: 22px;
+
+    // .crs-corsair-care-popup-price-wrapper .crs-corsair-care-popup-price
+    .crs-corsair-care-popup-price {
+        @apply cursor-pointer bg-transparent font-medium;
+        margin-right: 10px;
+        padding: 11px 3px;
+        font-size: 11px;
+        letter-spacing: 0.3px;
+        line-height: 1.273;
+        color: #262626;
+        border: 1px solid #262626;
+        min-width: 173px;
+
+        @media only screen and (max-width: 600px) {
+            @apply w-1/2 m-0;
+            min-width: 1px;
+        }
+
+        // .crs-corsair-care-popup-price-wrapper .crs-corsair-care-popup-price:first-child
+        &:first-child {
+            @media only screen and (max-width: 600px) {
+                margin-right: 10px;
+            }
+        }
+
+        // .crs-corsair-care-popup-price-wrapper .crs-corsair-care-popup-price.selected
+        &.selected {
+            @apply text-white;
+            background-color: #262626;
+        }
+    }
+}
+
+// .crs-warrenty-atc-btn
+.crs-warrenty-atc-btn {
+    // .crs-warrenty-atc-btn:hover
+    &:hover {
+        @media only screen and (max-width: 1024px) {
+            @apply bg-transparent;
+            color: #262626;
+        }
+
+        // .crs-warrenty-atc-btn:hover::after
+        &::after {
+            @media only screen and (max-width: 1024px) {
+                @apply bg-transparent absolute w-full h-full top-0 left-0 right-0 bottom-0 flex justify-center items-center;
+                content: '';
+            }
+        }
+    }
+
+    // .crs-warrenty-atc-btn.crs-corsair-care-atc-selected
+    &.crs-corsair-care-atc-selected {
+        @apply text-white;
+        background-color: #262626;
+
+        @media only screen and (max-width: 1024px) {
+            background-color: #262626;
+            color: #262626;
+        }
+
+        // .crs-warrenty-atc-btn.crs-corsair-care-atc-selected:hover::after
+        &:hover::after {
+            @apply absolute w-full h-full left-0 top-0 bottom-0 right-0 flex justify-center items-center;
+            content: 'REMOVE PLAN';
+            background: #262626;
+
+            @media only screen and (max-width: 1024px) {
+                @apply absolute bg-transparent w-full h-full top-0 left-0 right-0 bottom-0 flex justify-center items-center;
+                content: '';
+            }
+        }
+    }
+}

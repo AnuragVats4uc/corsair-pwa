@@ -1,0 +1,26 @@
+.gift-card-container {
+    @apply border-t border-accents-3 pt-5;
+}
+.giftcard-add-to-cart {
+    @apply w-full;
+}
+.open-amount-note {
+    @apply my-1;
+}
+.giftcard-dropdown-label {
+    @apply relative flex;
+}
+.giftcard-details-dropdown {
+    @apply relative bg-transparent shadow-none border-none p-0 w-52;
+    :global {
+        .gift-item-block {
+            @apply py-0.5;
+        }
+    }
+    h3 {
+        @apply font-primary my-1 text-base font-semibold;
+    }
+    p {
+        @apply text-sm;
+    }
+}

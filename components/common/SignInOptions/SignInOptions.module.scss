@@ -1,0 +1,22 @@
+.root {
+    ul {
+        @apply flex flex-row;
+
+        li {
+            @apply flex content-center items-center pt-0.5;
+
+            button {
+                @apply whitespace-no-wrap;
+            }
+
+            svg,
+            g {
+                fill: #fff;
+            }
+
+            a {
+                @apply pt-1.5 text-white uppercase whitespace-no-wrap pl-3 font-bold text-sm;
+            }
+        }
+    }
+}

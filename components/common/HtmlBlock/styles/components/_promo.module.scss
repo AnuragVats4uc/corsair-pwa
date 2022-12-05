@@ -1,0 +1,51 @@
+/**
+ * HTML Block Promo
+ */
+
+// .ship-promo
+.ship-promo {
+    @apply flex items-center;
+    background-color: #f0f0f0;
+    margin-bottom: 8px;
+    padding: 8px;
+
+    // .ship-promo img
+    img {
+        padding: 0 8px 0px 0px;
+    }
+}
+
+// .coup-promo
+.coup-promo {
+    @apply flex items-center;
+    background-color: #f7f7ba;
+    padding: 8px;
+
+    // .coup-promo img
+    img {
+        padding: 0px 8px 0px 0px;
+    }
+
+    // .coup-promo:not(:last-child)
+    &:not(:last-child) {
+        margin-bottom: 8px;
+    }
+
+    // .coup-promo:last-child
+    &:last-child {
+        margin-bottom: 1rem;
+    }
+}
+
+// .ship-promo .promotion,
+// .coup-promo .promotion
+.ship-promo .promotion,
+.coup-promo .promotion {
+    @apply font-normal;
+    color: #4d4d4d;
+}
+
+// .promo-message
+.promo-message {
+    margin-top: 12px;
+}

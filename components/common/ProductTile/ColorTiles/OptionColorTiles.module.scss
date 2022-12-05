@@ -1,0 +1,37 @@
+.optionColorTiles {
+    @apply mt-2.5;
+
+    .selected {
+        @apply border-p-1;
+    }
+
+    li {
+        @apply inline-block align-top mb-3 rounded-full border border-transparent leading-none;
+        
+        &:hover,
+        &:focus {
+            @apply border-p-1;
+        }
+    }
+
+    a {
+        @apply text-sm border border-accents-3 text-t-4 w-5 h-5 inline-block align-top text-center no-underline;
+    }
+}
+
+.visual-swatch {
+    @apply w-5 h-5 cursor-pointer border border-accents-3 rounded-full m-1 block;
+    &:hover {
+        @apply border border-accents-3;
+    }
+    
+}
+
+// Tablet and desktop view - till 768
+@media only screen and (min-width: 768px) {
+    .option-color-tiles {
+        li {
+            @apply mr-1;
+        }
+    }
+}

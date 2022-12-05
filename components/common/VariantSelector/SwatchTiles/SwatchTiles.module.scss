@@ -1,0 +1,37 @@
+.swatch-tiles-container {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+}
+.swatch-tiles {
+    margin-left: 4px;
+
+    &.active-swatch {
+        @apply border-opacity-50;
+    }
+
+    &:first-child {
+        @apply ml-0;
+    }
+}
+.swatch-tiles-image {
+    max-width: 54px;
+    max-height: 54px;
+    padding: 4px;
+}
+.swatch-tiles-text {
+    padding: 4px 8px 2px;
+    font-size: 12px;
+}
+
+.more-tiles {
+    font-size: 20px;
+
+    & a {
+        padding: 7px;
+
+        @screen xl {
+            padding: 10px
+        }
+    }
+}

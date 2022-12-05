@@ -1,0 +1,105 @@
+.parallaxGallery {
+    display: block;
+    padding-bottom: 56px;
+    @screen xl-1440{
+        padding-bottom:0px;
+    }
+ 
+
+    .imageGallery {
+        max-height: 100vh;
+        padding-bottom: 100%;
+        height: 90vh;
+
+        @screen lg {
+            max-width: 104.615rem;
+            margin: auto;
+        }
+
+        @screen md {
+            padding-bottom: 90%;
+        }
+
+        .parallaxImage {
+            min-height: 10rem;
+            position: absolute;
+
+            
+            &:hover {
+                img {
+                    transform: scale(1.05);
+                    transform-origin: center;
+                    transition-duration: 1.5s;
+                    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+                    transition-property: transform;
+                }
+            }
+
+            img {
+                transition-duration: 1.5s;
+                transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+                transition-property: transform;
+            }
+
+            &:first-child {
+                right: 40%;
+                max-width: 16rem;
+                z-index: 2;
+                top: 0;
+                padding-bottom: 36%;
+                transform: translate(50%, 50%);
+
+                @screen sm {
+                    max-width: 30rem;
+                }
+
+                @screen lg {
+                    max-width: 53.5rem;
+                    transform: translate(50%, 0);
+                }
+            }
+
+            &:nth-child(2) {
+                right: 70%;
+                width: 40%;
+                max-width: 46.154rem;
+                z-index: 1;
+                padding-bottom: 40%;
+                transform: translate(50%, 180%);
+
+                @screen sm {
+                    transform: translate(50%, 90%);
+                }
+
+                @screen md {
+                    transform: translate(50%, 140%);
+                }
+
+                @screen lg {
+                    transform: translate(50%, 90%);
+                }
+            }
+
+            &:nth-child(3) {
+                right: 30%;
+                width: 50%;
+                max-width: 61.538rem;
+                z-index: 0;
+                padding-bottom: 34%;
+                transform: translate(50%, 270%);
+
+                @screen sm {
+                    transform: translate(50%, 132%);
+                }
+
+                @screen md {
+                    transform: translate(50%, 210%);
+                }
+
+                @screen lg {
+                    transform: translate(50%, 132%);
+                }
+            }
+        }
+    }
+}

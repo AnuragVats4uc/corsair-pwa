@@ -1,0 +1,107 @@
+.bundle-blocks-container {
+    max-width: 1110px;
+    margin-bottom: 20px;
+    padding: 35px 20px 0 20px;
+
+    @screen md {
+        padding: 80px 20px 0 20px;
+        margin-bottom: 50px;
+    }
+
+    .bundle-block {
+        border: 3px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+
+        > div {
+            @apply inline-flex;
+        }
+
+        @screen md {
+            margin: 12px 10px 0;
+        }
+
+        &.active {
+            @apply border-yellow
+        }
+
+        h2 {
+            font-size: 28px;
+            letter-spacing: 0.01em;
+            margin: 0 0 10px;
+
+            @screen lg {
+                font-size: 33px;
+            }
+        }
+
+        .previous-price,
+        .current-price {
+            @apply font-primary;
+            letter-spacing: 0.05em;
+            margin: 8px 0;
+            font-size: 17px;
+
+            & + .current-price {
+                padding-left: 20px;
+            }
+
+            @screen md {
+                font-size: 20px;
+            }
+        }
+
+        .previous-price {
+            color: #888;
+        }
+
+        .current-price {
+            @apply text-yellow;
+            text-decoration: none;
+        }
+
+        .saved-price {
+            font-size: 13px;
+            margin: 8px 0;
+            line-height: 1.5;
+
+            @screen md {
+                font-size: 15px;
+            }
+        }
+
+        .description {
+            font-size: 13px;
+            margin: 8px 0 10px;
+            line-height: 1.5;
+            letter-spacing: 0.05em;
+
+            @screen md {
+                font-size: 16px;
+            }
+        }
+
+        &:hover {
+            @apply border-yellow;
+            transform: scale(1.05);
+            transition: 1s ease;
+        }
+    }
+}
+
+.product-data-container {
+    &.in-transition {
+        @apply opacity-0;
+    }
+
+    .cta-container {
+        a {
+            @apply inline-block text-black m-0 bg-yellow;
+            padding: 1.3em 2em;
+            font-weight: 300;
+            font-size: 12px;
+            letter-spacing: 0.12em;
+        }
+    }
+}

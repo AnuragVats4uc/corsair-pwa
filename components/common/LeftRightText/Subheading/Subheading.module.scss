@@ -1,0 +1,14 @@
+.left-right-text-subheading {
+    color: var(--dark-bg-btn-primary);
+    font-family: var(--font-primary);
+    font-size: 0.75rem;
+    letter-spacing: 0.2rem;
+
+    @screen sm {
+        font-size: 1rem;
+    }
+
+    @screen lg {
+        font-size: 0.875rem;
+    }
+}

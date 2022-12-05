@@ -1,0 +1,35 @@
+.left-right-text-column {
+    &.half {
+        max-width: 50%;
+        min-width: 100%;
+    }
+
+    &-cta {
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        background-color:var(--dark-bg-btn-primary);
+        padding: 1.2rem 2.462rem 0.923rem 2.462rem;
+        color: rgba(0, 0, 0, var(--text-opacity));
+
+        @screen sm {
+            font-size: 1rem;
+            letter-spacing: 0.2rem;
+        }
+
+        @screen lg {
+            font-size: 0.875rem;
+        }
+    }
+
+    .secondary {
+        a {
+            @apply bg-white border-2 border-solid border-black;
+        }
+    }
+
+    .primary {
+        a {
+            @apply border-0 #{!important};
+        }
+    }
+}

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: pylot-frontend-${IMAGE_TYPE}-deployment
+  labels:
+    app: pylot-frontend-${IMAGE_TYPE}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pylot-frontend-${IMAGE_TYPE}
+  template:
+    metadata:
+      labels:
+        app: pylot-frontend-${IMAGE_TYPE}
+    spec:
+      containers:
+      - name: pylot-frontend-${IMAGE_TYPE}
+        image: 253900346593.dkr.ecr.us-east-1.amazonaws.com/pylot-frontend:${IMAGE_TYPE}.${TAG}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

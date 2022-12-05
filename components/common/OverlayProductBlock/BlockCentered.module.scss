@@ -1,0 +1,133 @@
+.container {
+    @apply relative flex flex-col flex-wrap justify-center;
+    padding-top: 56px;
+    padding-bottom: 56px;
+    min-height: 50vh;
+    align-items: center;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.extra-info-container {
+    max-width: 896px;
+    margin-bottom: 32px;
+    z-index: 20;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 30.8px;
+    pointer-events: none;
+}
+
+.extra-info-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.extra-info-text {
+    white-space: pre-wrap;
+}
+
+.heading {
+    @apply block font-aktivGrotesk uppercase;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 14px;
+    text-align: center;
+    color: rgb(236, 232, 26);
+}
+
+.sub-heading {
+    margin-bottom: 16px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 32px;
+    text-align: center;
+}
+
+.product-description {
+    @apply block relative font-aktivGrotesk text-white w-full;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.image-container {
+    @apply relative;
+    z-index: 1;
+
+    @screen md-max {
+        @apply m-auto;
+        max-width: 335px;
+    }
+}
+
+@media (min-width: 640px) {
+    .extra-info-wrapper {
+        max-width: 640px;
+        padding-right: 32px;
+        padding-left: 32px;
+    }
+}
+
+@screen md {
+    .container {
+        padding-top: 96px;
+        padding-bottom: 96px;
+    }
+
+    .extra-info-container {
+        width: 75%;
+        margin-bottom: 64px;
+    }
+
+    .extra-info-wrapper {
+        max-width: 768px;
+    }
+
+    .image-container {
+        margin-top: -64px;
+    }
+
+    .sub-heading {
+        margin-bottom: 32px;
+    }
+}
+
+@screen lg {
+    .container {
+        padding-top: 128px;
+        padding-bottom: 128px;
+    }
+
+    .extra-info-wrapper {
+        max-width: 1024px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .sub-heading {
+        font-size: 60px;
+        line-height: 60px;
+    }
+
+    .product-description {
+        font-size: 22px;
+        line-height: 36px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .extra-info-wrapper {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .extra-info-wrapper {
+        max-width: 1440px;
+    }
+}

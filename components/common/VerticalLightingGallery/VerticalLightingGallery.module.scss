@@ -1,0 +1,240 @@
+.vertical-lighting-gallery {
+    background: #000 url(/icons/pattern-scarif-dashboard-area.svg) 100% 100%
+        repeat;
+    background-size: 42px 68px;
+
+    > div {
+        min-height: 100vh;
+        background: linear-gradient(
+            135deg,
+            rgba(24, 46, 40, 0),
+            #000 33%,
+            #000 66%,
+            transparent
+        );
+    }
+
+    .left-panel {
+        .vertical-lighting-content {
+            max-width: 720px;
+
+            &.visible {
+                @apply pt-0 opacity-100;
+                margin-bottom: 48px;
+            }
+
+            .logo {
+                width: 155px;
+                height: 85px;
+                margin-bottom: 45px;
+
+                > span {
+                    max-width: 100%;
+                }
+            }
+
+            > h2 {
+                @apply font-semibold;
+                letter-spacing: 0.1rem;
+                font-size: 3.2rem;
+                line-height: 3.2rem;
+        
+                @screen md{
+                    font-size:3.5rem;
+                    line-height:3.5rem
+                }
+                @screen lg{
+                    line-height: 3.75rem;
+                    font-size: 3.75rem;
+                }
+            }
+
+            > p {
+                @apply font-primary;
+                font-size: 1.3rem;
+                letter-spacing: 0.05rem;
+                line-height: 2.25rem;
+                padding: 20px 0 30px;
+                @screen md-max{
+                    @apply text-base leading-6;
+                }
+            }
+
+            .controls-container {
+                + .controls-container {
+                    padding-top: 46px;
+                }
+
+                .controls-title {
+                    letter-spacing: .2rem;
+                    @apply text-xs md:text-sm font-semibold leading-4;
+                }
+
+                .controls {
+                    .control-btn {
+                        width: 108px;
+                        flex: 0 0 108px;
+
+                        &:focus,
+                        &:active {
+                            outline: 1px solid #222;
+                        }
+
+                        .control-icon {
+                            width: 50px;
+                            height: 50px;
+                            padding: 4px;
+                        }
+
+                        &.active .control-icon {
+                            border-color: #fff;
+                        }
+
+                        &.disabled {
+                            cursor: default;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .right-panel {
+        .light-profile-video {
+            height: 100%;
+            object-fit: cover;
+            object-position: 18%;
+        }
+
+        .brilliant-display-content {
+            opacity: 0;
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+@screen md-max {
+    .controls-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .vertical-lighting-gallery {
+        .left-panel {
+            > .vertical-lighting-content {
+                padding-left: 36px;
+                padding-right: 36px;
+                > h2 {
+                    font-size: 30px;
+                    line-height: 30px;
+                }
+                > p {
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1245px) {
+    .vertical-lighting-gallery {
+        .left-panel {
+            > .vertical-lighting-content {
+                .controls-container {
+                    .controls {
+                        .control-btn {
+                            flex: 0 0 75px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 995px) {
+    .vertical-lighting-gallery {
+        .left-panel {
+            > .vertical-lighting-content {
+                .controls-container {
+                    .controls {
+                        .control-btn {
+                            margin-left: 6px;
+                            margin-right: 6px;
+                            flex: 0 0 80px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .vertical-lighting-gallery {
+        > div {
+            align-items: flex-start;
+            min-height: 0;
+        }
+
+        .left-panel {
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 0;
+
+            > .vertical-lighting-content {
+                max-width: none;
+                padding-left: 0;
+                padding-right: 0;
+
+                &.visible {
+                    margin-bottom: 25px;
+                }
+
+                .logo {
+                    margin-bottom: 45px;
+                }
+
+                > h2 {
+                    margin-bottom: 20px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+
+                > p {
+                    font-size: 14px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+
+                .controls-container {
+                    + .controls-container {
+                        padding-top: 20px;
+                    }
+
+                    .controls {
+                        .control-btn {
+                            width: 22%;
+                            flex: 0 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right-panel {
+            @apply h-auto;
+
+            > div {
+                position: relative !important;
+            }
+            .light-profile-video {
+                object-fit: contain;
+            }
+        }
+    }
+}

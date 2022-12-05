@@ -1,0 +1,16 @@
+/**
+ * HTML BlockVariant
+ */
+
+// .variant-name
+.variant-name {
+    @apply hidden;
+    padding-top: 10px;
+}
+
+// .variant-selector .chosen-container .chosen-result li.active-result
+.variant-selector .chosen-container .chosen-results li.active-result {
+    @apply cursor-pointer;
+    display: list-item;
+    text-transform: unset !important; // Inherited styles from legacy site
+}

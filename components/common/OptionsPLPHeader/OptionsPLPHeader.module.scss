@@ -1,0 +1,35 @@
+.button {
+    border: 1px solid white;
+    height: 32px;
+    font-size: 12px;
+    letter-spacing: 1.6px;
+    padding: 8px 10px;
+
+    span {
+        @apply leading-none block;
+        margin-top: 2px;
+    }
+
+    svg {
+        @apply relative;
+        margin-bottom: 3px;
+        top: 2px;
+        margin-right: 7px;
+    }
+
+    &.active {
+        span {
+            @apply text-black #{!important};
+        }
+
+        @apply bg-white #{!important};
+
+        path {
+            fill: black;
+        }
+    }
+
+    path {
+        fill: white;
+    }
+}

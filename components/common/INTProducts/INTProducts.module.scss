@@ -1,0 +1,62 @@
+.int-products {
+    padding: 24px 20px;
+    &-grid {
+      margin-bottom: 64px;
+    }
+    &-heading {
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
+    &-text {
+        font-size: 16px;
+        letter-spacing: 0.8;
+        line-height: 28px;
+        max-width: 335px;
+        margin-bottom: 32px;
+    }
+
+    &-image {
+        width: 335px;
+        height: 335px;
+    }
+
+    &-cta {
+      padding: 12px 64px;
+      max-width: 253px;
+      text-align: center;
+      background-color: #ECE81A;
+      color: #000000;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 32px 0 ;
+      @apply font-aktivGrotesk;
+
+      &:active, &:visited {
+        background-color: #ECE81A !important;
+      }
+    }
+
+    @screen xl {
+      padding: 64px 0 80px;
+      &-heading {
+        font-size: 60px;
+
+      }
+      &-image {
+        width: 480px;
+        height: 480px;
+      }
+      &-text {
+        font-size: 20.8px;
+        margin-bottom: 42px;
+        max-width: 800px;
+      }
+      &-cta {
+        padding: 11px 40px;
+        margin: 0px;
+      }
+    }
+}

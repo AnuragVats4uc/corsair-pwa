@@ -1,0 +1,105 @@
+.product-content {
+    @apply container flex justify-between relative min-w-full;
+    z-index: 8;
+    padding-bottom: 128px;
+
+    @media screen and (max-width: 768px) {
+        @apply flex-col;
+        padding: 0;
+    }
+
+    @screen md {
+        max-width: 768px;
+    }
+
+    &__image {
+        @apply w-full;
+        z-index: 1;
+
+        @media screen and (max-width: 1024px) {
+            max-width: 579px;
+        }
+
+        @media screen and (max-width: 768px) {
+            @apply m-auto pt-12 w-full;
+        }
+    }
+
+    &__image-desktop {
+       @apply hidden;
+       @screen lg{
+           @apply block;
+       }
+    }
+
+    &__image-mobile{
+       @apply block;
+       @screen lg{
+           @apply hidden;
+       }
+    }
+
+    &__description {
+        width: 41.666667%;
+        color: #fff;
+        letter-spacing: 0.8px;
+        max-width: 400px;
+
+        @media screen and (max-width: 768px) {
+            @apply w-full m-auto;
+            max-width: 90%;
+        }
+
+        .logo-container {
+            @apply relative w-full text-center;
+            /* The "!importants" rule from line 58 to 81 is to override styles from 
+            corsair Image component in order to handle image resizing */
+            span {
+                margin: 0 auto !important;
+                height: 2rem !important;
+                span {
+                    height: 0 !important;
+                }
+                img {
+                    position: relative !important;
+                    width: auto !important;
+                    height: 2rem !important;
+                    @apply mx-auto #{!important};
+                }
+            }
+            @screen md {
+                @apply text-left;
+                span {
+                    height: 4rem !important;
+                    img {
+                        height: 4rem !important;
+                    }
+                }
+            }
+            @screen xl-1440 {
+                span {
+                    height: 100% !important;
+                }
+            }
+        }
+
+        p {
+            @apply text-center mt-16 font-normal;
+            line-height: 1.25rem;
+            font-size: .875rem;
+            @screen md {
+                @apply text-left;
+                line-height: 2.25rem;
+                font-size: 1.375rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .product-content {
+        &__image {
+            max-width: 1440px;
+        }
+    }
+}

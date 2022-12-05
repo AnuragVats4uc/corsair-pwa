@@ -1,0 +1,14 @@
+/*
+  Custom utility classes for jsx elements.
+  ----------------------------------------
+  * Each utility should be responsible only for one thing,
+  like text color, border style, etc.
+  * Use `components.css` to combine several utilities under one class.
+ */
+@layer utilities {
+
+  /* used for main content height */
+  .fit {
+    min-height: calc(100vh - (theme('spacing.20') + theme('spacing.2')));
+  }
+}

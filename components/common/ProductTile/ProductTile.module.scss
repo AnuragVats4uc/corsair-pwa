@@ -1,0 +1,142 @@
+.productitem-block {
+    @apply relative flex flex-col;
+    
+    .productimage-block {
+        @apply relative;
+        padding: 16px;
+        background-image: radial-gradient(circle at 20% 1.7%, #042F38 0%, #060E1A 80%, #051022 116%);
+
+        .productimg-link {
+            @apply w-full h-auto max-w-full max-h-full;
+            padding: 16px 20px;
+        }
+    }
+
+    :global {
+
+        .product-price {
+            @apply font-bebasNeue;
+            color: white;
+            font-size: 22px;
+            letter-spacing: 0.75px;
+        }
+
+        .compare-price {
+            @apply relative inline-block font-bebasNeue;
+            color: var(--text-tertiary);
+            font-size: 15px;
+            margin-left: 8px;
+            letter-spacing: 0.6px;
+
+            &:after {
+                @apply absolute top-1/2 left-0 w-full;
+                content: "";
+                height: 1px;
+                background-color: var(--text-tertiary);
+            }
+        }
+    }
+}
+
+.p-tile-details {
+    flex-grow: 1;
+    background-color: #262626;
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.product-compare {
+    @apply font-aktivGroteskBold flex uppercase;
+    font-size: 12px;
+    color: #A2A2A6;
+    letter-spacing: 1.25px;
+
+    .compare-checkbox {
+        @apply inline-block;
+        border: 1px solid #A2A2A6;
+        background-color: #262626;
+    }
+}
+
+.p-tile-add-cart-wrapper {
+            
+    .p-tile-add-to-cart-button {
+        @apply text-yellow;
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        line-height: 14px;
+        background-color: #262626;
+        padding-left: 0px;
+        border-color: transparent;
+
+        &:hover {
+            @apply text-yellow;
+            background-color: #262626;
+            border-color: transparent;
+        }
+        
+        @media (hover: hover) {
+            &:hover {
+                opacity: 50%;
+            }
+        }
+
+        &:active {
+            transform: scale(0.98);
+            opacity: 50%;
+        }
+        &:focus {
+            outline: none;
+            outline-offset: unset;
+        }
+    }
+
+    .p-tile-icon-wrapper {
+        margin-left: -6px;
+        padding-right: 3px;
+        display: flex;
+        align-items: center;
+        svg {
+            transform: translateY(-2px);
+            padding-right: 4px;
+        }
+    }
+
+    .p-tile-out-of-stock {
+        @apply font-aktivGroteskBold italic uppercase flex;
+        padding-top: 18px;
+        padding-bottom: 12px;
+        line-height: 16px;
+        letter-spacing: 1px;
+        color: #A2A2A6;
+        font-size: 14px;
+    }
+}
+
+.product-name-wrapper {
+    @apply text-base;
+    color: white;
+    padding-top: 8px;
+}
+
+.product-name,
+.productimg-link {
+    @apply cursor-pointer relative;
+}
+
+.product-name {
+    @apply font-aktivGrotesk overflow-hidden font-bold flex;
+    font-size: 15px;
+    line-height: 20px;
+    height: 60px;//line-height * 3 (product name with min and max 3 lines)
+    text-overflow: ellipsis;
+    text-align: left !important;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    a {
+        @apply block h-full;
+    }
+}

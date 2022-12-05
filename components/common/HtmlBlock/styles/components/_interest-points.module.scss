@@ -1,0 +1,14 @@
+/**
+ * HTML BlockInterest Points
+ */
+
+// .interest-points
+.interest-points {
+    // .interest-points .content_wrapper .full h2.header
+    .content_wrapper .full h2.header {
+        @apply text-white font-bebasNeue max-w-full;
+        font-size: 48px;
+        line-height: 60px;
+        margin: 48px auto;
+    }
+}

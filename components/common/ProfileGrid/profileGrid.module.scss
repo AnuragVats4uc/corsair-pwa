@@ -1,0 +1,235 @@
+.has-animate {
+    @apply opacity-0;
+    transform: translateY(50px);
+    transition: 250ms transform ease-in, 350ms opacity ease-in;
+    &.onScreen {
+        @apply opacity-100;
+        transform: translateY(0);
+    }
+}
+
+.image-container {
+    background-size: 42px 68px;
+    background-attachment: fixed;
+    color: #000;
+}
+
+.url-image {
+    position: relative;
+    background: linear-gradient(135deg, rgba(24, 46, 40, 0), #000 33%, #000 66%, transparent);
+    background-attachment: fixed;
+}
+
+.profile-container {
+    min-height: 50vh;
+    padding: 56px 0px;
+
+    .inner-container {
+        margin-bottom: 32px;
+    }
+
+    .inner-container-2 {
+        padding: 0 16px;
+    }
+
+    .heading {
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 1;
+        letter-spacing: 3px;
+        color: rgb(236, 232, 26);
+    }
+    .subHeading {
+        font-size: 30px;
+        letter-spacing: 1px;
+        line-height: 30px;
+    }
+
+    .profile-card-grid-1,
+    .profile-card-grid-2,
+    .profile-card-grid-3,
+    .profile-card-grid-4 {
+        margin-top: 128px;
+        display: grid;
+        gap: 16px;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(16, auto);
+        justify-items: start;
+    }
+
+    .card-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+        vertical-align: middle;
+    }
+    .card-number {
+        max-width: 320px;
+        font-size: 16px;
+        letter-spacing: 3px;
+        line-height: 24px;
+    }
+    .card-heading {
+        max-width: 320px;
+        margin-right: 16px;
+        font-size: 30px;
+        letter-spacing: 1px;
+        line-height: 36px;
+    }
+    .card-subHeading {
+        max-width: 320px;
+        margin-bottom: 64px;
+        margin-right: 16px;
+        padding-top: 16px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 20px;
+    }
+}
+
+@screen sm-min {
+    .inner-container-2 {
+        max-width: 640px;
+        padding-right: 32px !important;
+        padding-left: 32px !important;
+
+        .profile-card-grid-1 {
+            grid-template-rows: repeat(8, auto);
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            padding: 0px 148px;
+        }
+
+        .profile-card-grid-3,
+        .profile-card-grid-4 {
+            grid-template-rows: repeat(8, auto);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .profile-card-grid-2 {
+            grid-template-rows: repeat(4, auto);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .card-img {
+            @apply max-w-full block relative;
+            width: 21.539rem;
+            height: 21.601rem;
+            vertical-align: middle;
+        }
+        .card-number {
+            max-width: none;
+        }
+        .card-heading {
+            max-width: none;
+        }
+        .card-subHeading {
+            max-width: none;
+        }
+    }
+}
+
+@screen md {
+    .profile-container {
+        padding: 96px 0px;
+
+        .inner-container {
+            width: 75%;
+            margin-bottom: 64px;
+        }
+
+        .inner-container-2 {
+            max-width: 768px;
+        }
+
+        .subHeading {
+            margin-bottom: 32px;
+        }
+        .profile-card-grid-1 {
+            grid-template-rows: repeat(8, auto);
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            padding: 0px 132px;
+        }
+        .card-img {
+            @apply max-w-full block relative;
+            width: 100%;
+            vertical-align: middle;
+            height: auto;
+        }
+        .card-subHeading {
+            font-size: 18px;
+            letter-spacing: 1px;
+            line-height: 36px;
+        }
+    }
+}
+
+@screen lg {
+    .profile-container {
+        padding: 128px 0px;
+
+        .subHeading {
+            font-size: 60px;
+            line-height: 60px;
+        }
+
+        .inner-container-2 {
+            max-width: 1024px;
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+        }
+
+        .profile-card-grid-1 {
+            margin-top: 128px;
+            grid-template-rows: repeat(4, auto);
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            padding: 0px 294px;
+        }
+
+        .profile-card-grid-2 {
+            margin-top: 128px;
+            grid-template-rows: repeat(4, auto);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding: 0px 196px;
+        }
+
+        .profile-card-grid-3 {
+            margin-top: 128px;
+            grid-template-rows: repeat(4, auto);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            padding: 0px 97.99px;
+        }
+
+        .profile-card-grid-4 {
+            margin-top: 128px;
+            grid-template-rows: repeat(4, auto);
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .card-img {
+            margin-bottom: 48px;
+        }
+        .card-heading {
+            font-size: 35.2px;
+            line-height: 36px;
+        }
+        .card-subHeading {
+            margin-bottom: 0px !important;
+        }
+    }
+}
+
+@screen xl-1280 {
+    .profile-container {
+        .inner-container-2 {
+            max-width: 1280px;
+        }
+    }
+}
+
+@screen xl-1440 {
+    .profile-container {
+        .inner-container-2 {
+            max-width: 1440px;
+        }
+    }
+}

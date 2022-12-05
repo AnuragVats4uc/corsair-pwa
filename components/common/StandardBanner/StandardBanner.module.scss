@@ -1,0 +1,186 @@
+@mixin cta-button {
+    @apply flex items-center z-50 font-semibold leading-none m-auto;
+    background-color: var(--dark-bg-btn-primary);
+    padding: 0.923rem 2.462rem 0.723rem 2.462rem;
+    color: rgba(0, 0, 0, var(--text-opacity));
+    font-size: 1em;
+    letter-spacing: 0.1em;
+}
+
+@mixin background {
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    object-fit: cover;
+}
+
+.standard-banner {
+    padding: 3.5rem 1rem;
+    transform: translateY(3.846rem);
+    transition: 0.9s transform ease-in, 0.85s opacity ease-in;
+
+    &.onScreen {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @screen sm {
+        padding: 8rem 2rem;
+    }
+
+    @screen lg {
+        @apply m-auto;
+    }
+
+    &-logo {
+        @apply m-auto;
+        width: 11.923rem;
+        height: 6.154rem;
+    }
+    &-wrapper {
+        background-origin: content-box;
+    }
+    :global {
+        .topTextLayout {
+            padding-top: 2rem;
+        }
+
+        .alignleft {
+            .topTextLayout {
+                @apply text-left pl-0;
+                &-description {
+                    margin: unset;
+                }
+            }
+
+            .discalimer {
+                &-copy {
+                    @apply text-left pl-0 ml-0;
+                }
+            }
+
+            .standardBannerIconsBlock {
+                justify-content: left;
+
+                .standardBannerIcon {
+                    justify-content: left;
+                }
+            }
+
+            .standardBannerCTAButton {
+                @apply ml-0;
+            }
+
+            .standardBannerLogo {
+                @apply ml-0;
+            }
+        }
+    }
+
+    &-iconsBlock {
+        grid-gap: 1rem;
+        margin-top: 4rem;
+
+        @screen sm {
+            @apply flex-row;
+            height: 3rem;
+        }
+    }
+
+    &-icon {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @screen sm {
+            @apply flex;
+        }
+
+        span {
+            margin-right: 1.25rem !important;
+        }
+
+        p {
+            font-size: 0.75rem;
+            font-weight: 600;
+            line-height: 1rem;
+            color: white;
+            letter-spacing: 0.2rem;
+
+            @screen sm {
+                font-size: 0.875rem;
+            }
+        }
+    }
+
+    &-imageVideo {
+        width: fit-content;
+        margin-top: 1.25rem;
+        min-width: 100vw;
+        margin-left: calc(50% - 50vw);
+
+        @screen sm {
+            min-width: unset;
+            margin: 4rem auto auto;
+        }
+    }
+
+    &-cta {
+        margin-top: 1rem;
+    }
+
+    &-cta-button-top,
+    &-cta-button-background-top,
+    &-cta-button-lower-left,
+    &-cta-button-lower-right,
+    &-cta-button-background-lower-left,
+    &-cta-button-background-lower-right,
+    &-cta-button-image-top,
+    &-cta-button-image-lower-left,
+    &-cta-button-lower-right,
+    &-cta-button-image-lower-right {
+        @include cta-button;
+    }
+    .video-banner {
+        @apply w-full h-full object-center opacity-100;
+        @include background;
+    }
+
+    @screen md {
+        &-cta-button-lower-left {
+            @include cta-button;
+            @apply absolute;
+            bottom: 280px;
+            left: 70px;
+        }
+        &-cta-button-lower-right {
+            @include cta-button;
+            @apply absolute;
+            bottom: 280px;
+            right: 70px;
+        }
+        &-cta-button-background-lower-right {
+            @include cta-button;
+            @apply absolute bottom-10 right-5;
+        }
+
+        &-cta-button-background-lower-left {
+            @include cta-button;
+            @apply absolute bottom-10 left-5;
+        }
+        &-cta-button-image-top {
+            @include cta-button;
+        }
+        &-cta-button-image-lower-left {
+            @include cta-button;
+            @apply absolute;
+            bottom: 60px;
+            left: 40px;
+        }
+        &-cta-button-image-lower-right {
+            @include cta-button;
+            @apply absolute;
+            bottom: 60px;
+            right: 40px;
+        }
+    }
+}

@@ -1,0 +1,200 @@
+.tooltip-container {
+    @apply absolute w-full;
+    background-color: rgba(38, 38, 37, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    z-index: 25;
+    margin-top: unset;
+    max-width: 190px;
+
+    :global {
+        .has-image {
+            @apply left-0 mx-auto my-0 absolute right-0 top-0;
+
+            @screen lg {
+                @apply left-auto m-auto;
+            }
+        }
+    }
+
+    img {
+        border-top-right-radius: 2px;
+        border-top-left-radius: 2px;
+    }
+}
+
+@screen md-max {
+    .tooltip-container {
+        @apply m-auto inset-x-0 #{!important}; // override style attribute that uses .tooltip-container
+        width: 95% !important; // override w-full from .tooltip-container
+        min-width: 95% !important; // override w-full from .tooltip-container
+        max-width: 95% !important; // override w-full from .tooltip-container
+        transform: none !important; // override .position-top-left
+    }
+}
+
+@keyframes append-animate {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate {
+    animation: append-animate 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heading {
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 24px;
+}
+
+.icon-wrapper {
+    min-height: 64px;
+    border-radius: 16px;
+}
+
+.close-icon {
+    width: 8px;
+}
+
+.icon-wrapper-inner {
+    padding-top: 16px;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+
+.image-wrapper {
+    width: 24px;
+    height: 24px;
+    border-width: 1px;
+    border-radius: 9999px;
+    color: rgb(236, 232, 26);
+    border-color: rgb(236, 232, 26);
+    margin-bottom: 24px;
+}
+
+.text-wrapper {
+    padding: 16px 24px 20px 24px;
+
+    @screen md-max {
+        padding: 0 24px 20px 24px;
+    }
+
+    .heading {
+        @media screen and (max-width: 768px) {
+            padding-top: 40px;
+        }
+    }
+}
+
+.sub-heading {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 20px;
+
+    ul {
+        line-height: 28.66px;
+        font-size: 18px;
+    }
+}
+
+.image-description {
+    @apply text-gray-400;
+    font-size: 14px;
+}
+
+.image-description-2 {
+    font-size: 18px;
+}
+
+.icon-wrapper {
+    min-height: 50px;
+}
+
+.position-bottom-left,
+.position-bottom-right,
+.position-top-right,
+.position-top-left {
+    transform: translate(calc(-100% + 107px), -16px);
+
+    .image-wrapper {
+        float: none;
+    }
+}
+
+@screen md {
+    .tooltip-container {
+        z-index: 100;
+        max-width: 448px;
+    }
+
+    .heading {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .sub-heading {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .image-wrapper {
+        float: right;
+    }
+
+    .position-top-right {
+        transform: translateY(calc(-100% + 56px));
+
+        .image-wrapper {
+            float: left;
+        }
+    }
+
+    .position-bottom-left {
+        transform: translateX(calc(-100% + 72px));
+
+        .image-wrapper {
+            float: right;
+        }
+    }
+
+    .position-top-left {
+        transform: translateX(calc(-100% + 72px)) translateY(calc(-100% + 56px));
+
+        .image-wrapper {
+            float: right;
+        }
+    }
+
+    .position-bottom-right {
+        transform: translate(calc(-16% + 72px));
+
+        .image-wrapper {
+            float: left;
+        }
+
+        .tooltip-icon-header {
+            left: 0px;
+        }
+    }
+
+    .position-top-right,
+    .position-top-left {
+        .tooltip-icon-header {
+            @apply hidden;
+        }
+        .tooltip-icon-footer {
+            @apply block;
+        }
+        .icon-wrapper-inner {
+            padding-top: 10px;
+        }
+        .image-wrapper {
+            margin-bottom: unset;
+        }
+    }
+}

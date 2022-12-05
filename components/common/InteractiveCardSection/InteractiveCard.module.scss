@@ -1,0 +1,34 @@
+.interactive-card {
+    width: 335px;
+    height: 206px;
+
+    & > span {
+        transition: all 300ms;
+    }
+    & > span:hover {
+        transform: scale(1.03);
+    }
+    &-overlay {
+        pointer-events: none;
+        &-cta {
+            @apply text-yellow font-bold;
+            pointer-events: all;
+            font-size: 14px;
+        }
+    }
+
+    &-subheading-top {
+        @apply lg:self-start mb-auto lg:mb-0;
+    }
+
+    &-arrow {
+        @apply ml-2;
+        margin-top: -3px;
+    }
+    @screen xl {
+        & {
+            width: 384px;
+            height: 236px;
+        }
+    }
+}

@@ -1,0 +1,167 @@
+.banner-container {
+    padding: 56px 0;
+}
+
+.has-animate {
+    @apply opacity-0;
+    transform: translateY(50px);
+    transition: 250ms transform ease-in, 350ms opacity ease-in;
+
+    &.onScreen {
+        @apply opacity-100;
+        transform: translateY(0);
+    }
+}
+
+//important used to override a reusable video popup style
+//using parent class
+.hero-banner-modal {
+    @apply w-full h-full overflow-hidden fixed inset-0 scrolling-touch flex items-center;
+    z-index: 9999 !important;
+
+    :global {
+        .modal-content,
+        .modal-wrapper {
+            position: static !important;
+        }
+
+        .modal-content {
+            max-width: 853px !important;
+            .close-panel {
+                top: 60px;
+                right: 40px;
+                width: 50px;
+                height: 50px;
+
+                svg {
+                    @apply hidden;
+                }
+
+                &:after,  &:before{
+                    @apply bg-white absolute;
+                    left: 50%;
+                    content: ' ';
+                    height: 50px;
+                    width: 1.5px;
+                }
+
+                &:after {
+                    transform: rotate(-45deg);
+                }
+                &:before{ 
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+}
+
+
+.extra-info-container {
+    max-width: 640px;
+    padding: 0 16px;
+
+    .heading {
+        font-size: 48px;
+        line-height: 1.1em;
+        letter-spacing: 2px;
+    }
+
+    .sub-heading {
+        font-size: 24px;
+        letter-spacing: 1px;
+        line-height: 32px;
+        margin: 7px 0 16px;
+        color: rgba(236, 232, 26);
+    }
+
+    .description {
+        font-size: 48px;
+        line-height: 48px;
+    } 
+}
+
+.cta {
+    font-size: 14px;
+    padding: 48px 0;
+
+    a, button {
+        @apply font-aktivGrotesk border-none rounded-none;
+        font-size: 14px;
+        letter-spacing: 3px;
+        background-color: var(--dark-bg-btn-primary); 
+        padding: 16px 40px 12px;
+        line-height: 20px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            @apply text-black border-none;
+            background-color: var(--dark-bg-btn-primary); 
+            opacity: 0.8;
+        }
+    }
+}
+
+.logo-wrapper-mobile {
+    margin-bottom: 36px;
+}
+
+.logo-wrapper-desktop {
+    margin-bottom: 30px;
+}
+
+
+.media-mobile,
+.media-desktop {
+    & img {
+        @apply object-cover;
+        filter: brightness(0.5);
+    }
+}
+
+.slider-video {
+    filter: brightness(0.5);
+}
+
+@screen md {
+    .banner-container {
+        padding: 96px 0;
+    }
+
+    .extra-info-container {
+        max-width: 576px;
+        padding: 0 32px;
+
+        .sub-heading {
+            margin: 13px 0 36px;
+        }
+    
+        .description {
+            font-size: 60px;
+        }
+    
+        .cta {
+            padding: 56px 0;
+        }
+    }
+}
+
+@screen lg {
+    .extra-info-container {
+        max-width: 1024px;
+
+        .heading {
+            font-size: 95px;
+        }
+    }
+}
+
+@screen xl {
+    .banner-container {
+        padding: 128px 0;
+    }
+    
+    .extra-info-container { 
+        max-width: 1440px;
+    }
+}

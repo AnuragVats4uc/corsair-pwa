@@ -1,0 +1,11 @@
+/**
+ * HTML Block White Popup
+ */
+
+// .white-popup
+.white-popup {
+    @apply relative bg-white w-auto;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}

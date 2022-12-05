@@ -1,0 +1,249 @@
+.main {
+    @apply w-full pb-5 bg-black;
+}
+
+.wrapper-sort-filter div {
+    @screen md-max {
+        @apply w-full;
+    }
+}
+
+//classes to modify style only on memory category page
+.wrapper-sort-filter button {
+    color: white!important;
+    border-color: white !important;
+}
+
+.wrapper-sort-filter span {
+    color: white !important;
+    border-color: white !important;
+}
+
+.amount-wrapper span {
+    @apply text-right;
+    width: 23%!important;
+    color: white!important;
+    border-color: white !important;
+}
+
+.wrapper-dropdown > div{
+  max-width: 100%;
+}
+
+.wrapper-dropdown button span:first-child{
+    @apply text-right;
+    width: 23%;
+    padding: 0;
+    margin-right: 30px;
+    white-space: nowrap;
+}
+
+
+.wrapper-dropdown button span:nth-child(2){
+  width: 77%;
+}
+
+.amount-wrapper button{
+    max-width: 100%!important;
+    color: white!important;
+    border-color: white !important;
+}
+
+.amount-wrapper {
+  div{
+    div{
+      width: 77%!important;
+      text-align: end;
+    }
+  }
+
+}
+
+.category-header {
+    font-size: 16px;
+    letter-spacing: 0.8px;
+}
+
+.category-detail {
+    color: #ece81a;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-bottom: solid 1px #666666;
+    line-height: 18px;
+}
+
+.results-header {
+    font-size: 32px;
+    line-height: 24px;
+
+    @screen md-max {
+        @apply relative w-full text-center;
+        margin-bottom: 35px;
+    }
+}
+
+.main-page-root {
+    @screen lg {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+}
+
+.btn-label {
+    height: 48px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #4c4c4d !important;
+    color: #e6e6e6 !important;
+}
+
+.header {
+    @apply text-left max-w-screen-xl mx-auto px-5 md:px-10 xl:px-0;
+    h1 {
+        @apply text-4xl md:text-3xl my-5 mr-2 inline-block uppercase text-white;
+    }
+    p {
+        @apply text-sm md:text-xl font-bold inline-block text-p-2 font-secondary;
+    }
+}
+
+.breadcrumb-wrapper {
+    @apply max-w-screen-xl mx-auto px-5 md:px-10 xl:px-0 uppercase font-aktivGroteskBold font-normal;
+
+    color: #909090;
+}
+
+.recently-viewed {
+    @apply max-w-screen-xl mx-auto px-5 md:px-10 xl:px-0;
+}
+
+.viewing-count-label {
+    @apply text-center mt-5;
+}
+
+.load-more {
+    @apply block mt-5 w-full sm:w-64 mx-auto;
+    &-wrapper {
+        @apply mx-5 mb-5;
+    }
+    &-hidden {
+        @apply hidden #{!important};
+    }
+}
+.desktop-filters {
+    @apply hidden md:block;
+}
+.mobile-filters {
+    @apply md:hidden;
+}
+.product-listing-page {
+    @apply max-w-screen-xl mx-auto;
+}
+.sidebar-filters {
+    @apply md:flex md:items-start;
+    :global {
+        .toggle-btn {
+            @apply md:justify-between md:w-full hover:no-underline;
+            svg {
+                @apply md:order-2;
+            }
+        }
+    }
+}
+
+.compare-tile-price {
+    :global {
+        .product-price {
+            @media (max-width: 891px) {
+                margin-top: 20px;
+            }
+        }
+
+        .regular-price,
+        .compare-price {
+            .price-amount,
+            .price-decimal {
+                font-size: 11px;
+                font-weight: bold;
+                letter-spacing: 0.8px;
+                line-height: 6px;
+            }
+        }
+
+        .regular-price {
+            margin-right: 6px;
+
+            .price-amount,
+            .price-decimal {
+                color: #fff;
+            }
+        }
+
+        .compare-price {
+            .price-amount,
+            .price-decimal {
+                color: #a6a6a6;
+                text-decoration: line-through;
+            }
+        }
+    }
+}
+.toolbar-header {
+  padding: 24px 24px 27px;
+
+  @screen md {
+      padding: 24px 0px;
+  }
+}
+
+.toolbar-header-category {
+  padding: 0px 24px 27px;
+
+  @screen md {
+      padding: 24px 0px;
+  }
+}
+
+.refine-button {
+    padding-left: 27px;
+    padding-right: 27px;
+    div {
+        @apply pl-0 pr-0;
+    }
+}
+
+.plp-grid {
+    @screen lg {
+        width: 320px;
+        height: 506px;
+    }
+}
+
+.grid-firefox {
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(320px, 1fr)
+    ) !important; /* Overriding external library style */
+}
+
+.memory-filter h2{
+  @apply font-bold;
+}
+
+.memory-list {
+    @apply mt-3;
+
+    > div {
+        &:not(:first-child) {
+            @apply mt-6 md:mt-4;
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--border-light);
+
+            @screen md {
+                @apply pb-4;
+            }
+        }
+    }
+}

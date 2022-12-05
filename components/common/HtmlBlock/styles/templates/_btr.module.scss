@@ -1,0 +1,20 @@
+/**
+ * HTML Block BTR
+ */
+
+// .btr-together-desktop
+.btr-together-desktop {
+    // .btr-together-desktop .item.slick-slide-slick-active
+    .item.slick-slide.slick-active {
+        @media only screen and (min-width: 993px) {
+            width: 25% !important; // Inherited styles from legacy site
+        }
+    }
+
+    // .btr-together-desktop .slick-track
+    .slick-track {
+        @media only screen and (min-width: 993px) {
+            width: 100% !important; // Inherited styles from legacy site
+        }
+    }
+}

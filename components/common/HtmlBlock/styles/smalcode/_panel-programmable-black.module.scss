@@ -1,0 +1,97 @@
+/**
+ * HTML Block Smalcode Panel Programmable Black
+ */
+
+// .panel-programmable-black
+.panel-programmable-black {
+    @apply relative;
+    padding-bottom: 50px;
+    padding-top: 5vh;
+    background-color: #4a4a4c;
+
+    @media only screen and (max-width: 1023px) {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+
+    // .panel-programmable-black .row-with-space
+    .row-with-space {
+        margin-bottom: 50px;
+    }
+
+    // .panel-programmable-black .row-usps
+    .row-usps {
+        margin-top: 65px;
+        margin-bottom: 65px;
+
+        @media only screen and (max-width: 1023px) {
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .usp-outer-wrap {
+        @media only screen and (max-width: 1023px) {
+            @apply block;
+        }
+    }
+
+    // .panel-programmable-black .cta-white
+    .cta-white {
+        @apply text-black;
+    }
+
+    // .panel-programmable-black .legal-text
+    .legal-text {
+        @apply font-aktivGrotesk;
+        margin-top: 60px;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 0.05rem;
+        opacity: 0.7;
+
+        @media only screen and (max-width: 1023px) {
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+    }
+
+    // .panel-programmable-black .element-usp-wrap-1
+    .element-usp-wrap-1 {
+        @media only screen and (max-width: 1023px) {
+            @apply mr-0;
+        }
+    }
+
+    // .panel-programmable-black .element-usp-wrap-1,
+    // .panel-programmable-black .element-usp-wrap-2
+    .element-usp-wrap-1,
+    .element-usp-wrap-2 {
+        @media only screen and (max-width: 1023px) {
+            margin-top: 40px;
+        }
+    }
+
+    // .panel-programmable-black .element-icue-software
+    .element-icue-software {
+        margin-bottom: 50px;
+
+        @media only screen and (max-width: 1023px) {
+            margin-top: 25px;
+        }
+
+        // .panel-programmable-black .element-icue-software .icue-header
+        .icue-header {
+            @media only screen and (max-width: 1023px) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    // .panel-programmable-black .col-text
+    .col-text {
+        @media only screen and (min-width: 1024px) {
+            padding-right: 50px;
+        }
+    }
+}

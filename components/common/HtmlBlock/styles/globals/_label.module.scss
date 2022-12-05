@@ -1,0 +1,17 @@
+/**
+ * HTML Block Counter
+ */
+
+// .child-image-counter-label
+.child-image-counter-label {
+    @apply bg-yellow font-bebasNeue text-black absolute h-auto font-bold text-center;
+    top: 5%;
+    width: 115px;
+    font-size: small;
+    padding: 7px;
+}
+
+// .child-label-hidden
+.child-label-hidden {
+    @apply hidden;
+}

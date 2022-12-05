@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+      "baseUrl": ".",
+      "target": "esnext",
+      "lib": ["dom", "dom.iterable", "esnext"],
+      "allowJs": true,
+      "skipLibCheck": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noEmit": true,
+      "esModuleInterop": true,
+      "module": "esnext",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "jsx": "preserve",
+      "paths": {
+          "@lib/*": ["lib/*"],
+          "@styles/*": ["styles/*"],
+          "@config/*": ["config/*"],
+          "@components/*": ["components/*"],
+          "@pagestyles/*": ["styles/page-styles/*"],
+          "@pagestyles": ["styles/page-styles"],
+          "@commonStyles/*": ["styles/common/*"],
+          "@commonStyles": ["styles/common"],
+          "@utils/*": ["utils/*"],
+          "@commerce/*": ["framework/commerce/*"],
+          "@commerce": ["framework/commerce"],
+          "@pylot-data/*": ["framework/pylot/*"],
+          "@pylot-data": ["framework/pylot"],
+          "@preload/*": ["preload/*"],
+          "@preload": ["preload"]
+      }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "node_modules/@corratech/**/*.js",  "node_modules/@corratech/**/*.ts"],
+  "exclude": ["node_modules\/(?!@corratech).*"],
+  "ts-node": {
+      "compilerOptions": {
+          "module": "CommonJS",
+          "target": "ES6"
+      }
+  }
+}

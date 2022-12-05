@@ -1,0 +1,159 @@
+.blockHeading {
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+    letter-spacing: 0.1rem;
+
+    @screen md {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+    }
+
+    @screen lg {
+        font-size: 3.75rem;
+        line-height: 3.75rem;
+    }
+}
+.blockSubheading {
+    color: var(--dark-bg-btn-primary);
+    letter-spacing: 0.2rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    @apply uppercase;
+
+    @screen md {
+        font-size: 1rem;
+    }
+
+    @screen lg {
+        font-size: 0.875rem;
+    }
+}
+.blockDescription {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.05rem;
+    @apply font-normal;
+
+    @screen md {
+        font-size: 1.3rem;
+        line-height: 2.25rem;
+    }
+}
+.bannerCalloutBackground {
+    @apply px-6 md:px-0;
+}
+.callOutTextBlock,
+.callOutPoint {
+    @apply cursor-pointer;
+    &.active {
+        color: var(--learn-more);
+        border-color: var(--learn-more);
+        .callOutPoint {
+            color: var(--learn-more);
+            border-color: var(--learn-more);
+        }
+        .calOutText {
+            color: var(--primary);
+        }
+    }
+}
+.has-animate {
+    @apply opacity-0;
+    transform: translateY(50px);
+    transition: 0.9s transform ease-in, 0.85s opacity ease-in;
+    &.onScreen {
+        @apply opacity-100;
+        transform: translateY(0);
+    }
+}
+.has-animate-image {
+    @apply opacity-0;
+    transform: translateY(50px);
+    transition: 0.6s transform ease-in, 0.7s opacity ease-in;
+    &.onScreen {
+        @apply opacity-100;
+        transform: translateY(0);
+    }
+}
+.callOutPoint {
+    @apply text-center cursor-pointer;
+    border-radius: 9999px;
+    border-width: 2px;
+    min-width: 1.55rem;
+    height: 1.55rem;
+    line-height: 1.55rem;
+    font-size: 1rem;
+    @screen md {
+        min-width: 2.5rem;
+        height: 2.5rem;
+        padding-top: 2px;
+        line-height: 2.2rem;
+    }
+}
+.calOutText {
+    @apply font-light flex items-center text-left;
+    font-size: 14px;
+    color: #888888;
+    @screen md {
+        font-size: 16px;
+    }
+}
+.callOutPoint {
+    @apply bg-black;
+    &:hover {
+        color: var(--learn-more);
+        border-color: var(--learn-more);
+    }
+}
+.Background-Gradient {
+    background: linear-gradient(135deg, rgba(24, 46, 40, 0), #000 33%, #000 66%, transparent);
+    position: relative;
+    background-attachment: fixed;
+}
+.callOutBlock {
+    @apply p-8 md:pt-20 md:px-0;
+}
+.callOutTextBlock {
+    @apply h-12 md:h-20 flex items-center;
+}
+.Image-Block {
+    span {
+        width: 100% !important;
+    }
+}
+.corner-radius {
+    border-radius: 6px;
+}
+.Right-Image {
+    @apply flex-col-reverse;
+    @screen md {
+        @apply flex-row-reverse;
+    }
+}
+@screen md {
+    .textblockWrapper {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+@screen lg {
+    .textblockWrapper {
+        max-width: 512px;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
+@screen xl {
+    .textblockWrapper {
+        max-width: 640px;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+@screen 2xl {
+    .textblockWrapper {
+        max-width: 720px;
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}

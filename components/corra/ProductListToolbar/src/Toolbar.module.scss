@@ -1,0 +1,48 @@
+.toolbar-items {
+    padding-left:27px;
+    padding-right:27px;
+    button {
+        @apply flex items-center focus:outline-none;
+        svg {
+            @apply ml-2;
+        }
+    }
+}
+
+.toolbar-right {
+    @screen md-max {
+        padding: 20px 10px;
+    }
+}
+
+.toggle-filters {
+    @media (min-width: 768px) {
+        @apply flex flex-wrap justify-between;
+    }
+}
+
+.toggle-flex {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.btn-label {
+    height: 48px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #4c4c4d !important;
+    color: #e6e6e6 !important;
+}
+
+@screen md {
+    .toolbar-items {
+        @apply hidden;
+    }
+    .vertical {
+        @apply flex items-center justify-end space-x-10 relative z-1;
+    }
+}

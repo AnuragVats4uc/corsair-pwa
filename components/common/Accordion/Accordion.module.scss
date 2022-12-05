@@ -1,0 +1,65 @@
+.accordion-container {
+    @apply font-aktivGrotesk;
+    border: 1px solid #999999;
+    margin: 0 20px;
+
+    .accordion-body {
+        @apply max-h-0 overflow-hidden relative transform duration-300 transition-all;
+        z-index: 1;
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: 0.5px;
+
+        .accordion-content {
+            white-space: pre-wrap;
+            color: #999999;
+        }
+    }
+
+    .active {
+        .accordion-body {
+            @apply transform duration-300 transition-all;
+            padding-top: 18px;
+            max-height: 100%;
+            transition-timing-function: cubic-bezier(0.495, 0.03, 0.485, 0.22);
+        }
+    }
+}
+
+.accordion-wrapper {
+    padding: 18px 24px 18px 24px;
+
+    .header {
+        @apply w-full relative flex justify-between items-center;
+
+        .toggle {
+            @apply flex outline-none bg-none text-left relative;
+            padding-right: 24px;
+            flex: 1;
+            justify-content: unset;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .title {
+            @apply font-primary;
+            font-size: 14px;
+            color: white;
+            line-height: 20px;
+            letter-spacing: 2px;
+        }
+
+        .icon {
+            height: 20px;
+        }
+    }
+}
+
+@screen md {
+    .accordion-container {
+        margin: 0 25px;
+    }
+}

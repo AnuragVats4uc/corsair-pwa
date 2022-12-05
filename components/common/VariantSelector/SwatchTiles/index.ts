@@ -1,0 +1,1 @@
+export { SwatchTiles } from './SwatchTiles'

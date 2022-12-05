@@ -1,0 +1,45 @@
+button.btn-primary {
+  @apply bg-secondary text-secondary border-secondary pb-2 pt-3;
+  &:hover {
+    @apply bg-primary text-primary border-secondary;
+  }
+}
+button.btn-secondary {
+  @apply bg-primary text-primary border-secondary pb-2 pt-3;
+  &:hover {
+    @apply bg-secondary text-secondary border-secondary;
+  }
+}
+
+button[data-variant="flat"] {
+  @apply bg-secondary text-secondary border-secondary pb-2 pt-3;
+  &:hover {
+    @apply bg-btnyellow text-primary border-secondary;
+  }
+}
+button[data-variant="link-secondary"] {
+  @apply bg-darkbtnpri text-primary border-darkbtnpri pb-2 pt-3;
+  &:hover {
+    @apply bg-secondary text-secondary border-secondary;
+  }
+}
+button {
+  @apply font-primary text-base font-normal;
+}
+.btn-sm {
+  @apply py-1.5;
+}
+.bg-dark button[data-variant="link-secondary"] {
+  @apply bg-darkbtnpri text-secondary border-darkbtnpri pb-2 pt-3;
+  &:hover {
+    @apply bg-primary text-darkbtnpri border-darkbtnpri;
+  }
+}
+
+button.btn-tranparent {
+  @apply text-black;
+  background-color: rgba(0, 0, 0, 0);
+  &:hover {
+    @apply bg-black text-white;
+  }
+}

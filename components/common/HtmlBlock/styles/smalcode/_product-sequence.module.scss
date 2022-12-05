@@ -1,0 +1,35 @@
+/**
+ * HTML Block Smalcode Product Sequence
+ */
+
+// .product-sequence
+.product-sequence {
+    @apply relative;
+
+    // .product-sequence img
+    img
+        :not(.a100-product-sequence img)
+        :not(.lt100-product-sequence img)
+        :not(.a100-panel-collection img) {
+        @apply absolute top-0 left-0 w-full opacity-100;
+
+        // .product-sequence img:first-of-type
+        &:first-of-type {
+            @apply relative;
+        }
+    }
+}
+
+.a100-panel-collection.a100-custom {
+    .product-sequence {
+        @apply absolute;
+    }
+
+    img {
+        max-width: none;
+    }
+}
+
+.lt100-product-sequence img {
+    height: auto;
+}

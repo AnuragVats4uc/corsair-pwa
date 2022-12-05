@@ -1,0 +1,20 @@
+.productAwards {
+    padding-bottom: 55px;
+
+    .heading {
+        font-size: 24px;
+        letter-spacing: 0.02em;
+        line-height: 32px;
+        margin-bottom: 14px;
+        margin-top: 46px;
+    }
+    .list {
+        column-gap: 14.5px;
+        row-gap: 16px;
+    }
+}
+
+.productAward {
+    background-color: #1c1c1c;
+    padding: 19px 22px 18px;
+}

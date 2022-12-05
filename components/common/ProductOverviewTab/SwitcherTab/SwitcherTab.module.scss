@@ -1,0 +1,50 @@
+.product-content {
+    @apply container m-auto flex justify-between;
+    justify-content: space-between;
+    padding: 0 80px;
+
+    @media screen and (max-width: 1024px) {
+        padding: 0 54px;
+    }
+
+    @media screen and (max-width: 768px) {
+        @apply flex-col;
+        padding: 0;
+    }
+
+    &__image {
+        @apply md:w-11/12 ml-auto;
+        max-width: 724px;
+        z-index: 1;
+
+        @media screen and (max-width: 768px) {
+            @apply m-auto pt-12;
+            max-width: 90%;
+            width: 100%;
+        }
+    }
+
+    &__image-desktop {
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__description {
+        @apply w-5/12;
+        color: #fff;
+        font-size: 22px;
+        letter-spacing: 0.8px;
+        line-height: 30px;
+        max-width: 400px;
+
+        @media screen and (max-width: 768px) {
+            @apply w-full m-auto;
+            max-width: 90%;
+        }
+    }
+}
+
+.switcher-description {
+    @apply flex;
+}

@@ -1,0 +1,27 @@
+@screen md {
+    .brands-container {
+        @apply w-full md:flex flex-row;
+
+        div {
+            @apply border-l items-center relative w-auto mr-5 content-center flex;
+            padding-left: 20px;
+
+            a {
+                @apply opacity-75;
+            }
+
+            &:nth-child(1) {
+                border-color: #1a89fc;
+            }
+            &:nth-child(2) {
+                border-color: #f21c2f;
+            }
+            &:nth-child(3) {
+                border-color: #e9861c;
+            }
+            &:nth-child(4) {
+                border-color: #2cc84c;
+            }
+        }
+    }
+}

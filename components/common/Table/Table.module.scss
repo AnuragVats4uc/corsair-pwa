@@ -1,0 +1,164 @@
+.products-table, .lists-table {
+    table {
+        tr {
+            td {
+                a {
+                    @apply block overflow-x-scroll;
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.products-table {
+    margin: 0 5px;
+    width: 33%;
+
+    @media screen and (max-width: 1025px) {
+        @apply w-full m-0;
+    }
+
+    .table-wrapper {
+        table {
+            @apply bg-black mb-5 w-full;
+            table-layout: fixed;
+            border-collapse: separate;
+            border-spacing: 1px;
+            background-color: #999999;
+    
+            tr {
+                td { 
+                    @apply text-white bg-black overflow-x-scroll;
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                    font-size: 14px;
+                    letter-spacing: 0.8px;
+                    padding: 15px;
+                    min-width: 155px;
+    
+                    @media screen and (max-width: 768px) {
+                        font-size: 12px;
+                        max-width: 33%;
+                        min-width: 33%;
+                        width: 33%;
+                    }
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    .table-wrapper-light {
+        @apply bg-white;
+    
+        table {
+            @apply bg-black mb-5 w-full;
+            tr {
+                td { 
+                    @apply text-black bg-white #{!important};
+                    font-size: 14px;
+                    letter-spacing: 0.8px;
+                    padding: 15px;
+                    min-width: 155px;
+                    
+                    @media screen and (max-width: 768px) {
+                        font-size: 12px;
+                        max-width: 33%;
+                        min-width: 33%;
+                        width: 33%;
+                    }
+                }
+            }
+        }
+    }
+    .table-wrapper-transparent {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        table {
+            @apply mb-5 w-full;
+            background-color: rgba(255, 255, 255, 0.1);
+
+            tr {
+                td { 
+                    @apply text-black #{!important};
+                    background-color: rgba(255, 255, 255, 0.1) !important;
+                    font-size: 14px;
+                    letter-spacing: 0.8px;
+                    padding: 15px;
+                    min-width: 155px;
+                    
+                    @screen md-max{
+                        font-size: 12px;
+                        max-width: 33%;
+                        min-width: 33%;
+                        width: 33%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.full-size {
+    @apply w-full;
+}
+
+.multiple-headers {
+    table {
+        tr {
+            &:first-child {
+                td {
+                    @apply text-white font-bold;
+                    background-color: #737373 !important;
+                }
+            }
+        }
+    }
+}
+
+.multiple-headers-light {
+    table {
+        tr {
+            &:first-child {
+                td {
+                    @apply text-white font-bold;
+                    background-color: #f4f4f4 !important;
+                }
+            }
+        }
+    }
+}
+
+.centered-header {
+    @apply text-lg text-white font-bold text-center w-full;
+    background-color: #737373;
+    border-bottom: none;
+    letter-spacing: 1.5px;
+    line-height: 18px;
+    padding: 12px 24px 8px;
+}
+
+.centered-header-light {
+    @apply text-black;
+    background-color: #f4f4f4;
+    border: 1px solid #737373;
+    border-bottom: none;
+    min-width: 180px;
+}
+.centered-header-tranparent{
+    @apply text-black;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: none;
+    min-width: 180px;
+}

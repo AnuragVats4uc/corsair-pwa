@@ -1,0 +1,250 @@
+//Varialbes
+$hydroXColorBlack: #161616;
+$hydroXColorWhite: #fff;
+$hydroXColorYellow: #ece81a;
+//Mixins
+@mixin dottedBorders {
+    position: absolute;
+    content: ' ';
+    width: 20px;
+    height: 20px;
+    border-color: $hydroXColorYellow;
+    border-style: solid;
+}
+
+.font-white-alt {
+    color: $hydroXColorWhite;
+}
+
+.Hydro-X-Block-Container {
+    background-color: $hydroXColorBlack;
+    overflow: hidden;
+
+    .Hydro-X-Heading {
+        line-height: 1.1;
+        color: $hydroXColorWhite;
+        letter-spacing: 0.581px;
+        text-align: center;
+        font-size: 51.2px;
+
+        @screen md {
+            font-size: 56px;
+        }
+
+        @screen xl {
+            font-size: 60px;
+        }
+    }
+
+    .Hydro-X-Subtitle {
+        color: $hydroXColorWhite;
+        font-size: 1.35rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        font-size: 16px;
+
+        @screen md {
+            font-size: 22.4px;
+        }
+
+        @screen xl {
+            font-size: 24px;
+        }
+    }
+
+    .Hydro-X-Block {
+        margin: 8em auto;
+        max-width: 860px;
+        width: calc(100% - 60px);
+        z-index: 2;
+    }
+
+    .ImageWithText {
+        img {
+            filter: grayscale(100%);
+            transition: 500ms opacity, 500ms filter;
+            opacity: 0.2;
+        }
+    }
+
+    .StartKit,
+    .designLoop {
+        height: 120px;
+        width: 100%;
+    }
+
+    .designLoop {
+        font-size: 20.8px;
+        &::after,
+        &::before {
+            @include dottedBorders;
+        }
+
+        &::before {
+            top: 0;
+            left: 0;
+            border-width: 1px 0 0 1px;
+        }
+
+        &::after {
+            top: 0;
+            right: 0;
+            border-width: 1px 1px 0 0;
+        }
+        a {
+            display: flex;
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+        }
+        .Cta-Design {
+            &::after,
+            &::before {
+                @include dottedBorders;
+            }
+            &::before {
+                bottom: 0;
+                right: 0;
+                border-width: 0 1px 1px 0;
+            }
+            &::after {
+                bottom: 0;
+                left: 0;
+                border-width: 0 0 1px 1px;
+            }
+        }
+    }
+}
+
+.Hydro-X-Col-1 {
+    flex: 1 1 60%;
+    grid-gap: 25px;
+}
+
+.Hydro-X-Col-2 {
+    flex: 1 1 40%;
+}
+
+.Cta-Design {
+    border: 2px dashed $hydroXColorYellow;
+    width: 80%;
+    color: $hydroXColorYellow;
+}
+
+.Cta-shopButton {
+    .Cta-ButtonDiv {
+        background-color: $hydroXColorYellow;
+        padding: 12px 32px;
+        margin-left: 5px;
+
+        .right-arrow-wrapper {
+            width: 12px;
+            margin-left: 20px;
+
+            svg {
+                background-color: $hydroXColorYellow;
+                g {
+                    polygon {
+                        fill: #000;
+                    }
+                }
+            }
+        }
+        &:hover {
+            color: #154259;
+        }
+    }
+    .CtaButtonText {
+        padding-top: 0;
+        letter-spacing: 1.6px;
+        font-size: 14px;
+    }
+}
+
+.Hydro-X-Bg-Image {
+    bottom: 0;
+    left: 50%;
+    position: absolute;
+    transform: translate3d(-50%, 0, 0);
+    width: 2880px;
+}
+
+@screen md {
+    .hydroXblock-fonts {
+        line-height: 2rem;
+        letter-spacing: 0.224px;
+        font-size: 20.8px;
+    }
+    .HydroXSubtitle {
+        color: $hydroXColorWhite;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .Hydro-X-Col-1 {
+        flex: 1 1 60%;
+    }
+    .Hydro-X-Col-2 {
+        flex: 1 1 40%;
+    }
+
+    .Hydro-X-Col-1 {
+        grid-gap: 20px;
+    }
+    .Hydro-X-Block-Container {
+        .StartKit,
+        .designLoop {
+            height: 103px;
+            width: 100%;
+        }
+    }
+
+    .Hydro-X-Col-2 {
+        padding-left: 20px;
+    }
+
+    .designLoop {
+        margin-top: 30px;
+    }
+
+    .ImageWithText {
+        img {
+            height: 110px !important;
+        }
+    }
+}
+@media (min-width: 551px) and (max-width: 767px) {
+    .Hydro-X-Col-1 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .hydroXblock-fonts {
+        font-size: 19.2px;
+        line-height: 1.5rem;
+    }
+
+    .Hydro-X-Block {
+        width: calc(100% - 30px);
+    }
+
+    .Hydro-X-Col-1 {
+        a {
+            &:nth-child(3) {
+                order: 5;
+            }
+            &:nth-child(4) {
+                order: 3;
+            }
+            &:nth-child(5) {
+                order: 4;
+            }
+            &:nth-child(6) {
+                order: 6;
+            }
+        }
+    }
+}

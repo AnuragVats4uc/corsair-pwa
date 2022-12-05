@@ -1,0 +1,38 @@
+.wrapper {
+    .item {
+        margin-bottom: 10px;
+        line-height: 1.8;
+
+        &::before {
+            top: 13px;
+        }
+
+        &:last-child {
+            @apply mb-0;
+        }
+    }
+
+    .header {
+        letter-spacing: 0.6px;
+        line-height: 21.6px;
+    }
+
+    .list {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .copy {
+        color: #4d4d4d;
+        flex-basis: calc(100% - 24px);
+        letter-spacing: 0.96px;
+        margin-left: 10px;
+    }
+
+    .return {
+        background-color: #f7f7ba;
+        padding: 8px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+}

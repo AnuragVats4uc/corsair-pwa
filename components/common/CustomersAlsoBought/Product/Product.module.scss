@@ -1,0 +1,121 @@
+.product-cab {
+    max-width: 345px;
+
+    @screen md {
+        @apply m-0;
+        max-width: 300px;
+    }
+}
+
+.cta-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+
+    button {
+        @apply cursor-pointer bg-white text-black flex content-center items-center font-bold rounded;
+        font-size: 12px;
+        line-height: 18px;
+        padding: 11px 14px 6px;
+        width: 130px;
+        height: 33px;
+
+        div {
+            @apply items-start;
+        }
+
+        span {
+            padding-bottom: 0 !important;
+        }
+
+        svg {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
+
+.product-img {
+    min-height: 220px;
+
+    span {
+        @apply m-auto #{!important};
+        max-width: 225px;
+
+        @screen md {
+            max-width: 220px;
+        }
+    }
+}
+
+.product-name {
+    font-size: 18px;
+    line-height: 28px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+
+    &:hover {
+        color: #BFBFBF;
+    }
+}
+
+.product-description {
+    :global {
+        color: #F0F0F0;
+        font-size: 16px;
+        line-height: 24px;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+                line-clamp: 4; 
+        -webkit-box-orient: vertical;
+    }
+
+    &:hover {
+        color: #B3B3B3;
+    }
+
+    ul {
+        li {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}
+
+.product-price {
+    @apply cursor-default #{!important};
+
+    @screen md {
+        @apply absolute;
+        left: 24px;
+        bottom: 0;
+    }
+
+    span {
+        font-size: 24px;
+        line-height: 27.12px;
+    }
+
+    :global {
+        .compare-price {
+            @apply relative inline-block font-bebasNeue;
+            color: #a2a2a6 !important;
+            margin-left: 12px;
+            letter-spacing: 0.56px;
+
+            span {
+                @apply text-lg;
+            }
+        
+            &:after {
+                @apply absolute top-1/2 left-0 w-full;
+                content: '';
+                height: 1px;
+                background-color: var(--text-tertiary);
+            }
+        }
+    }
+}

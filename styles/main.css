@@ -1,0 +1,253 @@
+@import './variables.css';
+
+@tailwind base;
+@import './overrides.css';
+
+@tailwind components;
+@import './components.css';
+
+@tailwind utilities;
+@import './utilities.css';
+@import url('https://use.typekit.net/syi3qwd.css');
+/*
+  Base styles for the project.
+  ----------------------------
+  * Styles for body and html
+  * Styles for headings
+  * Font definitions
+ */
+@layer base {
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+    .play-button-small {
+        @apply mx-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10;
+    }
+    .play-button {
+        @apply mx-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40;
+    }
+    .play-button > button > svg {
+        @apply mt-3 w-40 h-40;
+    }
+    .play-button > button > svg > path {
+        @apply mx-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40;
+    }
+
+    /*
+     ========== Corsair Fonts Start ==========
+    */
+
+    @font-face {
+        font-family: 'Aktiv Grotesk Bold';
+        src: url('https://use.typekit.net/syi3qwd.css') format('css');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'aktiv-grotesk';
+        src: url('https://use.typekit.net/syi3qwd.css') format('css');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Bebas Neue Pro SmE Rg';
+        src: url('/fonts/BebasNeuePro/BebasNeuePro-SmEBd.woff2') format('woff2'),
+            url('/fonts/BebasNeuePro/BebasNeuePro-SmEBd.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Bebas Neue Pro Expanded Bold';
+        src: url('/fonts/BebasNeuePro/BebasNeueProExpandedBold.woff2')
+                format('woff2'),
+            url('/fonts/BebasNeuePro/BebasNeueProExpandedBold.woff')
+                format('woff');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Bebas Neue Pro SmE Extra Bold';
+        src: url('/fonts/BebasNeuePro/BebasNeueProSemiExpXBold.woff2')
+                format('woff2'),
+            url('/fonts/BebasNeuePro/BebasNeueProSemiExpXBold.woff')
+                format('woff');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Bebas Neue Pro Middle';
+        src: url('/fonts/BebasNeuePro/BebasNeueProMiddle.woff2') format('woff2'),
+            url('/fonts/BebasNeuePro/BebasNeueProMiddle.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Verveine-Regular';
+        src: url('/fonts/Verveine/Verveine-Regular.woff2') format('woff2'),
+            url('/fonts/Verveine/Verveine-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    /*
+     ========== Corsair Fonts End ==========
+    */
+
+    html {
+        height: 100%;
+        touch-action: manipulation;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-tap-highlight-color: transparent;
+
+        &.push-menu-active,
+        &.push-menu-active body {
+            @screen md-max {
+                @apply overflow-hidden h-full box-border;
+            }
+        }
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        font-family: aktiv-grotest, sans-serif;
+        font-size: var(--base-font);
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        @apply bg-primary font-primary box-border;
+    }
+
+    body {
+        @apply min-h-full m-0 overflow-x-hidden text-base font-normal;
+    }
+
+    a {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    ol,
+    ul {
+        @apply font-primary text-base font-normal;
+    }
+    h1.hero-h1 {
+        @apply font-secondary text-7.5xl font-semibold tracking-tight;
+    }
+    h1 {
+        /* use tailwind selectors in order to make sure that all of the sizes and classes
+    are the same in every place, meaning that any jsx element with className="text-2xl"
+    & has the same size as h1 headings */
+        @apply text-5xl;
+    }
+
+    h2 {
+        @apply text-4xl;
+    }
+
+    h3 {
+        @apply text-3xl;
+    }
+
+    h4 {
+        @apply text-1.5xl;
+    }
+
+    /* Should not be used at all */
+    h5 {
+        @apply text-1.1xl;
+    }
+
+    h6 {
+        @apply text-base;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-secondary font-semibold tracking-tight;
+    }
+    .bg-dark {
+        @apply bg-primary text-primary;
+    }
+    .mobileMenuOpen {
+        height: 100vh;
+        overflow-y: hidden;
+    }
+    .zoom-open,
+    .zoom-open body,
+    .modal-active body {
+        @apply overflow-hidden;
+    }
+    .modal-open-mob {
+        @apply overflow-hidden md:overflow-auto;
+    }
+    .modal-open-mob .nav-sticky,
+    .zoom-open .nav-sticky {
+        @apply z-0 !important;
+    }
+    .zoom-open .full-screen-mode {
+        z-index: 9999999999;
+    }
+    .zoom-open #pdp-left-container {
+        z-index: 3;
+    }
+    .modal-active #contentarea > main,
+    .zoom-open #container-classes,
+    .zoom-open #contentarea > main {
+        z-index: 9999999;
+    }
+    .modal-active #container-classes {
+        z-index: 12;
+    }
+    .link {
+        @apply underline;
+        &.disabled {
+            @apply select-none opacity-50 pointer-events-none;
+        }
+    }
+    input,
+    optgroup,
+    select,
+    textarea,
+    .form-input {
+        @apply font-primary text-base font-normal;
+    }
+    .form-checkbox,
+    .form-radio {
+        padding-bottom: 0 !important;
+    }
+
+    /* Hide the closed OneTrust button */
+    .ot-floating-button {
+        display: block;
+    }
+
+    .lock-y {
+        @screen md-max {
+            @apply overflow-y-hidden;
+        }
+    }
+    .lock-body-scroll #header {
+        z-index: 1001;
+    }
+}

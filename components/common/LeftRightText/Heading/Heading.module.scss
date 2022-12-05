@@ -1,0 +1,35 @@
+.left-right-text-heading {
+    h1 {
+        @apply font-bold tracking-normal;
+        font-size: 3.75rem;
+        line-height: 3.75rem;
+
+        @screen sm {
+            @apply font-bold;
+            font-size: 6rem;
+            line-height: 5.6rem;
+        }
+
+        @screen lg {
+            font-size: 7rem;
+        }
+    }
+
+    h2 {
+        @apply font-bold;
+        font-size: 3.2rem;
+        letter-spacing: 0.1rem;
+        line-height: 3.2rem;
+
+        @screen sm {
+            @apply font-bold;
+            font-size: 3.5rem;
+            line-height: 3.5rem;
+        }
+
+        @screen lg {
+            font-size: 3.75rem;
+            line-height: 3.75rem;
+        }
+    }
+}

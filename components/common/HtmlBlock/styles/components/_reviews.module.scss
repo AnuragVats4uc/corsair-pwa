@@ -1,0 +1,9 @@
+/**
+ * HTML BlockReviews
+ */
+
+// .reviews h4
+.reviews h4 {
+    @apply uppercase leading-normal;
+    font-size: 12px;
+}

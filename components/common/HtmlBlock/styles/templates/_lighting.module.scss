@@ -1,0 +1,377 @@
+/**
+ * HTML Block Lighting
+ * Note: all of the commented-out code is intention, please do not delete or
+ * remove comments (//)
+ */
+
+// section.lighting h1,
+// section.lighting .h1
+section.lighting h1,
+section.lighting .h1 {
+    @apply font-bebasNeue mb-0;
+    font-size: 3.5em !important;
+    letter-spacing: 0.05em !important;
+
+    @media only screen and (max-width: 768px) {
+        font-size: 25px !important;
+    }
+
+    @media only screen and (max-width: 960px) {
+        margin-top: 6em;
+    }
+}
+
+// .lighting
+.lighting {
+    // .lighting .dots-container
+    .dots-container {
+        // .lighting .dots-container li .tag-text
+        li .tag-text {
+            @media only screen and (max-width: 960px) {
+                top: 69.3px;
+            }
+        }
+    }
+}
+
+// // .lighting
+// #pdp .lighting {
+//     @apply bg-black;
+//     padding: 7vw;
+
+//     @media only screen and (max-width: 960px) {
+//         @apply relative;
+//         padding: 7em 0 2em;
+//     }
+
+//     @media only screen and (max-width: 1330px) {
+//         padding: 5vw 0;
+//     }
+
+//     @media only screen and (min-width: 2500px) {
+//         @apply overflow-hidden;
+//     }
+
+//     // .lighting::before
+//     &::before {
+//         @media only screen and (max-width: 960px) {
+//             @apply absolute w-full top-0 left-0 h-full;
+//             content: '';
+//             opacity: 0.6;
+//         }
+//     }
+
+//     // .lighting .slick-dots
+//     .slick-dots {
+//         @media only screen and (max-width: 960px) {
+//             margin-top: 3em;
+//         }
+//     }
+
+//     // .lighting .dots-container
+//     .dots-container {
+//         @apply relative;
+//         margin-top: 0em;
+
+//         // .lighting .dots-container ul
+//         ul {
+//             @apply pl-0;
+//         }
+
+//         // .lighting .dots-container ul li
+//         li {
+//             @apply cursor-pointer inline-block static;
+//             height: 10em;
+//             margin-right: 18px;
+
+//             // .lighting .dots-container ul li .tag-text
+//             .tag-text {
+//                 @apply left-0 opacity-0 absolute uppercase whitespace-no-wrap;
+//                 font-size: 0.7em;
+//                 letter-spacing: 0.2em;
+//                 margin-top: -4px !important;
+//                 top: 9em;
+//                 transition: 250ms opacity;
+//             }
+
+//             // .lighting .dots-container ul li.active .tag-text
+//             &.active .tag-text {
+//                 @apply opacity-100;
+//             }
+
+//             // .lighting .dots-container ul li .dot
+//             .dot {
+//                 @apply inline-block outline-none;
+//                 background: #39b5fb;
+//                 border: none;
+//                 border-radius: 50%;
+//                 font-size: 0px;
+//                 height: 12px;
+//                 width: 12px;
+//             }
+
+//             // .lighting .dots-container ul li:not(.active) .dot
+//             &:not(.active) .dot {
+//                 background: #6d6d6d !important;
+//             }
+//         }
+//     }
+
+//     // .lighting .content_wrapper
+//     .content_wrapper {
+//         @apply mx-0 my-auto w-full;
+//         max-width: 1200px;
+
+//         @media only screen and (max-width: 960px) {
+//             @apply m-0 relative;
+//             z-index: 1;
+//         }
+
+//         @media only screen and (max-width: 1600px) {
+//             margin: 0 auto;
+//         }
+
+//         @media only screen and (min-width: 2500px) {
+//             margin: 0 auto;
+//         }
+
+//         // .lighting .content_wrapper .half
+//         .half {
+//             @apply inline-block align-middle;
+//             width: 55%;
+
+//             @media only screen and (max-width: 960px) {
+//                 @apply w-auto;
+//                 margin-top: 5%;
+//             }
+//         }
+
+//         // .lighting .content_wrapper right.
+//         .right {
+//             box-sizing: border-box !important;
+//             margin-right: 55%;
+//             width: 44%;
+//             z-index: 2;
+
+//             @media only screen and (max-width: 960px) {
+//                 @apply ml-0 relative text-center w-full;
+//                 margin-bottom: 4em;
+//                 margin-top: -1vw;
+//                 padding-left: 10px;
+//                 padding-right: 10px;
+//                 transform: none !important;
+//             }
+
+//             // .lighting .content_wrapper .right p
+//             p {
+//                 @apply font-hairline;
+//                 margin-top: 2em;
+
+//                 @media only screen and (max-width: 960px) {
+//                     @apply mt-0 w-auto;
+//                 }
+
+//                 // .lighting .content_wrapper .right p.description
+//                 &.description {
+//                     @media only screen and (max-width: 960px) {
+//                         margin-top: 2em;
+//                     }
+//                 }
+//             }
+
+//             // .lighting .content_wrapper .right h1
+//             h1 {
+//                 @media only screen and (max-width: 960px) {
+//                     margin-top: 5em;
+//                 }
+//             }
+
+//             // .lighting .content_wrapper .right .center
+//             .center {
+//                 @media only screen and (max-width: 960px) {
+//                     @apply relative text-center;
+//                 }
+//             }
+
+//             .video-gradient {
+//                 background: linear-gradient(
+//                     to right,
+//                     rgba(51, 51, 51, 0) 35%,
+//                     rgba(0, 0, 0, 1) 95%
+//                 );
+//                 display: block;
+//                 height: 100%;
+//                 right: 0;
+//                 position: absolute;
+//                 top: 0;
+//                 width: 100%;
+//                 z-index: 1;
+//             }
+
+//             // .lighting .content_wrapper .left .dots-container
+//             .dots-container {
+//                 @media only screen and (max-width: 960px) {
+//                     @apply absolute w-full;
+//                     top: 2em;
+//                 }
+
+//                 // .lighting .content_wrapper .left .dots-container p
+//                 p {
+//                     @apply text-white;
+//                 }
+
+//                 // .lighting .content_wrapper .left .dots-container li
+//                 li {
+//                     @media only screen and (max-width: 960px) {
+//                         @apply static;
+//                     }
+
+//                     // .lighting .content_wrapper .left .dots-container li .tag-text
+//                     .tag-text {
+//                         @media only screen and (max-width: 960px) {
+//                             @apply left-1/2 absolute;
+//                             top: 9em;
+//                             transform: translate(-50%);
+//                         }
+//                     }
+//                 }
+//             }
+
+//             // .lighting .content_wrapper .left .body-text
+//             .body-text {
+//                 width: 75%;
+
+//                 @media only screen and (max-width: 960px) {
+//                     @apply w-full;
+//                     color: #b1b1b1 !important;
+//                 }
+//             }
+
+//             // .lighting .content_wrapper .left .disclaimer
+//             .disclaimer {
+//                 @apply mt-0 font-normal;
+//                 font-size: 0.85em;
+//                 line-height: 1.6em;
+//                 width: 90%;
+//             }
+//         }
+
+//         // .lighting .content_wrapper left.
+//         .left {
+//             @apply h-full right-0 overflow-hidden absolute top-1/2;
+//             width: 65%;
+//             transform: translateY(-50%);
+
+//             @media only screen and (max-width: 960px) {
+//                 @apply block h-auto mx-0 my-auto pt-0 relative w-full;
+//             }
+
+//             @media only screen and (max-width: 1600px) {
+//                 width: 50%;
+//             }
+
+//             // .lighting .content_wrapper .left .item-rotation
+//             .item-rotation {
+//                 @apply h-full relative w-full;
+
+//                 @media only screen and (max-width: 960px) {
+//                     @apply h-auto mx-0 my-auto;
+//                     max-width: 90vw;
+//                 }
+
+//                 // .lighting .content_wrapper .left .item-rotation .spacer
+//                 .spacer {
+//                     @apply w-full;
+//                 }
+
+//                 // .lighting .content_wrapper .left .item-rotation .fan-colors
+//                 .fan-colors {
+//                     @apply h-full left-0 opacity-0 absolute top-0 transform-none w-auto;
+
+//                     // .lighting .content_wrapper .left .item-rotation .fan-colors.active
+//                     &.active {
+//                         @apply opacity-100;
+//                     }
+//                 }
+
+//                 // .lighting .content_wrapper .left .item-rotation .mobile
+//                 .mobile {
+//                     @apply hidden;
+
+//                     @media only screen and (max-width: 960px) {
+//                         @apply block;
+//                     }
+
+//                     // .lighting .content_wrapper .left .item-rotation .mobile .gif
+//                     .gif {
+//                         @media only screen and (max-width: 960px) {
+//                             @apply left-0 opacity-0 absolute top-0 w-full;
+//                             transition: 500ms opacity;
+//                         }
+
+//                         // .lighting .content_wrapper .left .item-rotation .mobile .gif img
+//                         img {
+//                             @media only screen and (max-width: 960px) {
+//                                 @apply w-full;
+//                             }
+//                         }
+
+//                         // .lighting .content_wrapper .left .item-rotation .mobile .gif img.active
+//                         &.active {
+//                             @media only screen and (max-width: 960px) {
+//                                 @apply opacity-100;
+//                             }
+//                         }
+//                     }
+//                 }
+
+//                 // .lighting .content_wrapper .left .item-rotation video
+//                 video {
+//                     @apply h-full w-auto;
+
+//                     @media only screen and (max-width: 960px) {
+//                         @apply hidden;
+//                     }
+//                 }
+
+//                 // .lighting .content_wrapper .left .item-rotation .fan-colors
+//                 .fan-colors {
+//                     @apply h-full opacity-0 absolute top-0 w-auto max-w-none;
+//                     right: -10%;
+
+//                     @media only screen and (max-width: 1600px) {
+//                         left: auto;
+//                         right: -20vh;
+//                     }
+
+//                     // .lighting .content_wrapper .left .item-rotation .fan-colors.active
+//                     &.active {
+//                         @apply opacity-100;
+//                     }
+//                 }
+//             }
+
+//             // .lighting .content-wrapper .left .video-gradient
+//             .video-gradient {
+//                 @apply block h-full right-0 absolute top-0 w-full;
+//                 background: linear-gradient(
+//                     to right,
+//                     rgba(51, 51, 51, 0) 35%,
+//                     rgba(0, 0, 0, 1) 95%
+//                 );
+//                 z-index: 1;
+
+//                 @media only screen and (max-width: 960px) {
+//                     @apply hidden;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// // .no-touch
+// .no-touch {
+//     .lighting .dots-container li:hover:not(.active) .tag-text {
+//         opacity: 0;
+//     }
+// }

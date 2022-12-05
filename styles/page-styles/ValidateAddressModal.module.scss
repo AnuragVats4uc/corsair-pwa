@@ -1,0 +1,45 @@
+.validateAddressModal {
+    :global {
+        .modal-content {
+            padding: 28px 35px;
+            max-width: 475px;
+        }
+
+        .modal-wrapper {
+            z-index: 9999;
+        }
+
+        .close-panel {
+            margin-right: 7px;
+            margin-top: 7px;
+        }
+    }
+    .heading {
+        @apply font-bold uppercase;
+        line-height: 14px;
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+
+    .header {
+        @apply font-aktivGroteskBold;
+        color: #454545;
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+
+    .button {
+        @apply bg-black text-white uppercase border-none shadow-none;
+        font-size: 14px;
+        padding: 8px 30px 9px;
+        margin-bottom: 25px;
+    }
+
+    .address {
+        @apply font-aktivGroteskBold font-semibold;
+        color: #616161;
+        font-style: normal;
+        font-size: 14px;
+        padding: 0 0 16px;
+    }
+}

@@ -1,0 +1,26 @@
+.tab {
+    &-container {
+        @apply bg-black;
+    }
+
+    &-wrapper {
+        padding-top: 1.538rem;
+        padding-bottom: 5.462rem;
+
+        @screen sm {
+            max-width: 90rem;
+            padding:  4.923rem 6.75rem 13.462rem  6.75rem;
+        }
+    }
+
+    &-accessories {
+        margin-top: 3.692rem;
+
+        &-heading {
+            @apply uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.115rem;
+            color: var(--text-accessories);
+        }
+    }
+}

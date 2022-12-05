@@ -1,0 +1,107 @@
+diff --git a/node_modules/next/dist/client/index.js b/node_modules/next/dist/client/index.js
+index d1d0e25..fb972cc 100644
+--- a/node_modules/next/dist/client/index.js
++++ b/node_modules/next/dist/client/index.js
+@@ -202,7 +202,7 @@ class Container extends _react.default.Component {
+         if (router.isSsr && // We don't update for 404 requests as this can modify
+         // the asPath unexpectedly e.g. adding basePath when
+         // it wasn't originally present
+-        page !== '/404' && page !== '/_error' && (isFallback || data.nextExport && ((0, _isDynamic).isDynamicRoute(router.pathname) || location.search || process.env.__NEXT_HAS_REWRITES) || hydrateProps && hydrateProps.__N_SSG && (location.search || process.env.__NEXT_HAS_REWRITES))) {
++        page !== '/404' && page !== '/_error' && (isFallback || data.nextExport || (localePathResult && !localePathResult?.detectedLocale) && ((0, _isDynamic).isDynamicRoute(router.pathname) || location.search || process.env.__NEXT_HAS_REWRITES) || hydrateProps && hydrateProps.__N_SSG && (location.search || process.env.__NEXT_HAS_REWRITES))) {
+             // update query on mount for exported pages
+             router.replace(router.pathname + '?' + String((0, _querystring).assign((0, _querystring).urlQueryToSearchParams(router.query), new URLSearchParams(location.search))), asPath, {
+                 // @ts-ignore
+diff --git a/node_modules/next/dist/shared/lib/i18n/detect-domain-locale.js b/node_modules/next/dist/shared/lib/i18n/detect-domain-locale.js
+index 3efe9e1..8e55539 100644
+--- a/node_modules/next/dist/shared/lib/i18n/detect-domain-locale.js
++++ b/node_modules/next/dist/shared/lib/i18n/detect-domain-locale.js
+@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", {
+     value: true
+ });
+ exports.detectDomainLocale = detectDomainLocale;
+-function detectDomainLocale(domainItems, hostname, detectedLocale) {
++function detectDomainLocale(domainItems, hostname, detectedLocale, pathname) {
+     let domainItem;
+     if (domainItems) {
+         if (detectedLocale) {
+@@ -18,6 +18,10 @@ function detectDomainLocale(domainItems, hostname, detectedLocale) {
+                 domainItem = item;
+                 break;
+             }
++            if (pathname === item.pathending) {
++                domainItem = item;
++                break;
++            }
+         }
+     }
+     return domainItem;
+diff --git a/node_modules/next/dist/shared/lib/i18n/get-locale-metadata.js b/node_modules/next/dist/shared/lib/i18n/get-locale-metadata.js
+index 3ddf396..4387420 100644
+--- a/node_modules/next/dist/shared/lib/i18n/get-locale-metadata.js
++++ b/node_modules/next/dist/shared/lib/i18n/get-locale-metadata.js
+@@ -12,7 +12,7 @@ function getLocaleMetadata(params) {
+     const { i18n  } = params.nextConfig;
+     const { cookies , headers , nextConfig , url  } = params;
+     const path = (0, _normalizeLocalePath).normalizeLocalePath(url.pathname, i18n.locales);
+-    const domain = (0, _detectDomainLocale).detectDomainLocale(i18n.domains, getHostname(url, headers));
++    const domain = (0, _detectDomainLocale).detectDomainLocale(i18n.domains, getHostname(url, headers), null, url.pathname.substring(0, 6));
+     const defaultLocale = (domain === null || domain === void 0 ? void 0 : domain.defaultLocale) || i18n.defaultLocale;
+     const preferredLocale = getAcceptPreferredLocale(i18n, headers);
+     return {
+diff --git a/node_modules/next/dist/shared/lib/i18n/normalize-locale-path.js b/node_modules/next/dist/shared/lib/i18n/normalize-locale-path.js
+index 9b6a02d..52c8cc6 100644
+--- a/node_modules/next/dist/shared/lib/i18n/normalize-locale-path.js
++++ b/node_modules/next/dist/shared/lib/i18n/normalize-locale-path.js
+@@ -14,6 +14,12 @@ function normalizeLocalePath(pathname, locales) {
+             pathname = pathnameParts.join('/') || '/';
+             return true;
+         }
++        if (pathnameParts.length >= 3 && pathnameParts[2].toLowerCase() === locale.substring(0,2).toLowerCase() && pathnameParts[1].toLowerCase() === locale.substring(3).toLowerCase()) {
++            detectedLocale = locale;
++            pathnameParts.splice(1, 2);
++            pathname = pathnameParts.join('/') || '/';
++            return true;
++        }
+         return false;
+     });
+     return {
+diff --git a/node_modules/next/dist/shared/lib/router/router.js b/node_modules/next/dist/shared/lib/router/router.js
+index 100390c..29421e7 100644
+--- a/node_modules/next/dist/shared/lib/router/router.js
++++ b/node_modules/next/dist/shared/lib/router/router.js
+@@ -42,7 +42,7 @@ function buildCancellationError() {
+     });
+ }
+ function addPathPrefix(path, prefix) {
+-    if (!path.startsWith('/') || !prefix) {
++    if (!path.startsWith('/') || !prefix || path.startsWith(prefix)) {
+         return path;
+     }
+     const pathname = pathNoQueryHash(path);
+@@ -60,12 +60,16 @@ function getDomainLocale(path, locale, locales, domainLocales) {
+         return false;
+     }
+ }
++function newLocale(locale) {
++    const parts = locale.toLowerCase().split('-')
++    return parts.length === 1 ? parts[0] : `${parts[1]}/${parts[0]}`
++}
+ function addLocale(path, locale, defaultLocale) {
+     if (process.env.__NEXT_I18N_SUPPORT) {
+         const pathname = pathNoQueryHash(path);
+         const pathLower = pathname.toLowerCase();
+         const localeLower = locale && locale.toLowerCase();
+-        return locale && locale !== defaultLocale && !pathLower.startsWith('/' + localeLower + '/') && pathLower !== '/' + localeLower ? addPathPrefix(path, '/' + locale) : path;
++        return locale && !pathLower.startsWith('/' + localeLower + '/') && pathLower !== '/' + localeLower ? addPathPrefix(path, '/' + newLocale(locale)) : path;
+     }
+     return path;
+ }
+@@ -73,7 +77,7 @@ function delLocale(path, locale) {
+     if (process.env.__NEXT_I18N_SUPPORT) {
+         const pathname = pathNoQueryHash(path);
+         const pathLower = pathname.toLowerCase();
+-        const localeLower = locale && locale.toLowerCase();
++        const localeLower = locale && newLocale(locale).toLowerCase();
+         return locale && (pathLower.startsWith('/' + localeLower + '/') || pathLower === '/' + localeLower) ? (pathname.length === locale.length + 1 ? '/' : '') + path.substr(locale.length + 1) : path;
+     }
+     return path;

@@ -1,0 +1,68 @@
+.compareTitle {
+    &:last-child {
+        @apply mr-0;
+    }
+
+    .close {
+        @apply absolute;
+        min-height: 16px;
+        min-width: 16px;
+        right: 4px;
+        top: 4px;
+
+        &::after,
+        &::before {
+            @apply left-1/2 top-1/2 absolute;
+            background-color: #fff;
+            content: '';
+            height: 11px;
+            width: 2px;
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+
+    .header {
+        @apply font-aktivGrotesk leading-4 overflow-hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        font-size: 11px;
+        letter-spacing: 0.8px;
+
+        @media (min-width: 892px) {
+            -webkit-line-clamp: 3;
+        }
+    }
+
+    .link {
+        @apply items-center flex relative w-full;
+        height: auto;
+
+        &:hover {
+            @apply cursor-pointer;
+        }
+    }
+
+    .image {
+        @apply relative;
+        min-width: 72px;
+        min-height: 72px;
+        padding-bottom: 72px;
+    }
+
+    .content {
+        margin-left: 12px;
+
+        @media (min-width: 892px) {
+            @apply flex flex-col justify-between;
+            min-height: 45px;
+        }
+    }
+}

@@ -1,0 +1,106 @@
+.callout {
+    padding: 24px 20px 0px 20px;
+    &-heading {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    &-image {
+        margin: auto;
+    }
+}
+
+@mixin accordion-tranisition {
+    opacity: 0;
+    transform: translateY(48px);
+    transition-delay: 0s;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: ease;
+}
+@mixin accordion-transition-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: ease;
+}
+
+.accordion {
+    @apply border-0 mr-0 #{!important};
+
+    :global {
+        .accordion-body {
+            @apply pl-12 font-aktivGrotesk;
+            font-size: 14px !important;
+            padding-top: 0 !important;
+            max-height: fit-content !important;
+            @include accordion-tranisition;
+        }
+
+        .accordion-content {
+            color: var(--color) !important;
+            opacity: 0;
+            @include accordion-tranisition;
+        }
+
+        .accordion-wrapper {
+            @apply p-0;
+            position: relative;
+            margin-bottom: 4.308rem;
+
+            .accordion-header {
+                @apply flex flex-row-reverse justify-end;
+                margin-bottom: 1.846rem;
+                &-title {
+                    @apply font-bebasNeue #{!important};
+                    font-size: 24px !important;
+                    color: var(--color) !important;
+                    line-height: 30px;
+                }
+            }
+
+            &.active {
+                .accordion-content,
+                .accordion-body {
+                    @include accordion-transition-active;
+                }
+            }
+        }
+    }
+}
+.circle {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    color: var(--circle-color);
+    border-color: var(--circle-color);
+
+    &-close {
+        top: 4px;
+    }
+
+    &-open {
+        top: 4px;
+        transform: rotate(45deg);
+    }
+}
+
+@screen md {
+    .callout {
+        max-width: 1440px;
+        @apply m-auto;
+        &-list {
+            margin-top: 6%;
+            width: 291px;
+        }
+    
+        &-heading {
+            font-size: 60px;
+            margin-bottom: 56px;
+        }
+        &-desktop {
+            padding-bottom: 105px;
+        }
+    }
+}

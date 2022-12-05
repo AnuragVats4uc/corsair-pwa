@@ -1,0 +1,295 @@
+.banneritem-modal {
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    top: 0;
+    left: 0;
+
+    :global {
+        .modal-wrapper {
+            @apply w-full block items-center content-center overflow-hidden outline-none;
+            background-color: rgba(0, 0, 0, 0);
+            max-height: 600px;
+            height: calc((100vw - 20px) * 0.7);
+            position: relative;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        .modal-content {
+            @apply w-full;
+            background-color: rgba(0, 0, 0, 0);
+            height: 95%;
+            max-width: 900px;
+            padding: 0rem;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: none;
+        }
+        .modal-body {
+            @apply h-full w-full;
+        }
+        .modal:focus {
+            @apply outline-none;
+        }
+        .close-panel {
+            @apply absolute m-0;
+            height: 44px;
+            background-color: rgba(0, 0, 0, 0);
+            width: 100%;
+            top: -45px;
+            cursor: pointer !important;
+            &:hover > svg {
+                color: white;
+            }
+            &:focus {
+                @apply outline-none;
+            }
+        }
+        .close-panel > svg {
+            @apply transition ease-in-out duration-150 absolute text-gray-500;
+            right: -3px;
+            top: 10px;
+            &:hover {
+                color: white;
+            }
+            &:focus {
+                @apply outline-none;
+            }
+        }
+        .focus-trap {
+            width: 100%;
+        }
+    }
+}
+
+
+.content-group-top {
+    @apply flex flex-col w-full;
+
+    .content-group-1,
+    .content-group-2 {
+        @apply flex w-full;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        height: 60vh;
+        @screen md{
+            height: 39vh;
+        }
+    }
+}
+
+.image-container-top {
+    @apply relative block w-full;
+    padding: 18px 18px 20% 18px;
+    box-shadow: inset 90px 140px 144px 0px #0000009e;
+    &:after {
+        @apply absolute overflow-hidden inset-0 w-full h-full;
+        box-shadow: inset 90px 90px 144px 0px #0000009e;
+        content: '';
+    }
+}
+
+.extra-info-container-top {
+    @apply relative z-5 text-white;
+    width: 95%;
+    margin-bottom: 3.5rem;
+    .heading {
+        @apply font-bebasNeue;
+        width: 80%;
+        font-size: 30px;
+        text-align: left;
+        line-height: 1.1;
+    }
+    .sub-heading {
+        @apply block font-aktivGrotesk font-light;
+        width: 70%;
+        margin: 16px 0;
+        font-size: 15px;
+        line-height: 1.4;
+    }
+    .cta {
+        @apply flex items-baseline font-aktivGrotesk font-medium text-yellow;
+        font-size: 15px;
+        .right-arrow-wrapper {
+            width: 12px;
+            height: 12px;
+            margin-left: 2px;
+        }
+    }
+}
+
+
+.content-group-middle {
+    @apply flex flex-col;
+    .content-group-1,
+    .content-group-2 {
+        @apply flex w-full;
+        height: 33vh;
+    }
+}
+
+.image-container-middle {
+    @apply relative px-5 w-full flex items-center;
+    padding: 2.5rem 50px;
+    border-top: 1px solid #3a3a3a;
+    &:after {
+        @apply absolute overflow-hidden inset-0 w-full h-full;
+        box-shadow: inset 90px 90px 144px 0px #0000009e;
+        content: '';
+    }
+    > button {
+        @apply w-full;
+    }
+}
+
+.image-container-middle > a > .extra-info-container-middle {
+    @apply w-full h-full;
+}
+
+.image-container-middle > a > .extra-info-container-middle > .heading {
+    @apply z-5 text-white;
+}
+
+.image-container-middle > a > .extra-info-container-middle > span {
+    @apply font-aktivGrotesk;
+}
+
+.extra-info-container-middle {
+    @apply z-5 text-white relative;
+    box-sizing: border-box;
+    .heading {
+        @apply mb-3;
+        font-size: 25px;
+        text-align: left;
+        text-shadow: 0px 1px 5px black;
+    }
+    .cta {
+        @apply flex items-baseline font-aktivGrotesk text-yellow;
+        font-size: 15px;
+        letter-spacing: 1px;
+        text-align: left;
+        text-shadow: 0px 1px 5px black;
+        .right-arrow-wrapper {
+            width: 14px;
+            height: 11px;
+        }
+    }
+}
+
+@screen sm {
+    .content-group-top {
+        .content-group-1,
+        .content-group-2 {
+            height: 50vh;
+        }
+    }
+}
+
+@screen lg {
+    .content-group-top {
+        .image-container-top {
+            @apply relative block w-full;
+            padding: 6% 4.5rem 20% 4.5rem;
+        }
+  }
+}
+
+@screen xl {
+    .content-group-top {
+        .image-container-top {
+            padding: 6% 6rem 20% 6rem;
+        }
+  }
+}
+
+@screen md {
+    .content-group-top {
+        @apply flex-row;
+        .content-group-1,
+        .content-group-2 {
+            height: 55vh;
+            width: 50%;
+        }
+        .content-group-1 {
+            margin-right: 16px;
+        }
+        .content-group-2 {
+            margin-left: 16px;
+        }
+
+    }
+    .image-container-top {
+        @apply relative block w-full;
+        padding: 6% 1.7rem 20% 1.75rem;
+    }
+    .extra-info-container-top {
+        @apply pt-3;
+        .heading {
+            font-size: calc(40.08 * 100vw/1440);
+            width:80%;
+        }
+        .sub-heading {
+            font-size: calc(18.08 * 100vw / 1440);        }
+        .cta {
+            font-size: calc(16.08 * 100vw/1440);
+            .right-arrow-wrapper {
+                filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 1));
+                width: calc(12.08 * 100vw/1440);
+                height: calc(12.08 * 100vw / 1440);
+                margin-left:6px;
+            }
+        }
+    }
+
+    .content-group-middle {
+        @apply flex flex-row;
+    }
+    .extra-info-container-middle {
+        .heading {
+            font-size: 32px;
+        }
+        .cta {
+            font-size: 18px;
+            .right-arrow-wrapper {
+                width: 18px;
+                height: 14px;
+            }
+        }
+    }
+    .image-container-middle > button > .extra-info-container-middle {
+        @apply relative z-5 text-white w-full h-full;
+        > div {
+            @apply flex relative mb-2;
+        }
+    }
+    .image-container-middle > button > .extra-info-container-middle > .heading {
+        @apply z-5 text-white mb-3;
+    }
+    .image-container-middle > button > .extra-info-container-middle > span {
+        @apply font-aktivGrotesk;
+    }
+}
+
+@screen lg {
+    .content-group-top {
+        .content-group-1,
+        .content-group-2 {
+            height: 60vh;
+        }
+    }
+}
+
+
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* Landscape */
+@media screen and (max-width: 767px) and (orientation: landscape) { 
+    .content-group-top {
+        .content-group-1,
+        .content-group-2 {
+            height: 75vh;
+        }
+    }
+
+}

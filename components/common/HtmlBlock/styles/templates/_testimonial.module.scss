@@ -1,0 +1,91 @@
+/**
+ * HTML Block Testimonial
+ */
+
+// .testimonial
+.testimonial {
+    @apply bg-cover;
+    min-height: 400px;
+
+    @media only screen and (max-width: 992px) {
+        min-height: 0;
+    }
+
+    @media only screen and (max-width: 768px) {
+        @apply min-h-0;
+        background-position: bottom right;
+    }
+
+    // .testimonial .endorser
+    .endorser {
+        @apply font-hairline relative text-right;
+        font-size: 15.6px;
+        letter-spacing: 12px;
+        line-height: 1.6;
+
+        // .testimonial .endorser em
+        em {
+            @media only screen and (max-width: 768px) {
+                @apply inline-block;
+                transform: translateY(25%);
+            }
+        }
+    }
+
+    // .testimonial .endorser-img-mobile
+    .endorser-img-mobile {
+        @apply hidden;
+
+        @media only screen and (max-width: 768px) {
+            @apply inline-block overflow-hidden align-middle;
+            background: #111;
+            border: 3px solid #222;
+            border-radius: 100px;
+            height: 130px;
+            margin-left: 15px;
+            margin-top: 25px;
+            max-width: 50%;
+            width: 130px;
+        }
+
+        // .testimonial .endorser-img-mobile img
+        img {
+            @media only screen and (max-width: 768px) {
+                margin-top: 5px;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    // .testimonial.panel-template h1
+    &.panel-template {
+        h1 {
+            @apply font-light font-aktivGrotesk;
+            border-left: 3px solid #39b5fb;
+            font-size: 1.8em !important;
+            letter-spacing: 0.024px;
+            line-height: 1.6;
+            margin-left: 15px;
+            padding: 15px 0 15px 25px;
+        }
+    }
+
+    // .testimonial.panel-template#cyborgangel-testimonial h1
+    &#cyborgangel-testimonial {
+        // .testimonial.panel-template h1
+        &.panel-template h1 {
+            @apply font-light font-aktivGrotesk;
+            border-left: 3px solid #39b5fb;
+            font-size: 1.8em !important;
+            letter-spacing: 0.024px;
+            line-height: 1.6;
+            margin-left: 15px;
+            padding: 15px 0 15px 25px;
+        }
+    }
+}
+
+// section.testimonial .col-half h1
+section.testimonial .col-half h1 {
+    font-size: 21.6px;
+}

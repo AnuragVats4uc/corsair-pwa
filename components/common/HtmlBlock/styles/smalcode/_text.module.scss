@@ -1,0 +1,20 @@
+/**
+ * HTML Block Smalcode Text
+ */
+
+// .text-fade-in-1
+.text-fade-in-1 {
+    @apply opacity-0;
+    -webkit-transform: translate(0, 100px);
+    transform: translate(0, 100px);
+    will-change: transform, opacity;
+    -webkit-transition: 0.4s ease-out;
+    transition: 0.4s ease-out;
+
+    // .text-fade-in-1.active
+    &.active {
+        @apply opacity-100 block;
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}

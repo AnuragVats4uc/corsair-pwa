@@ -1,0 +1,40 @@
+.int-products-item {
+    margin-bottom: 12px;
+    cursor: pointer;
+
+    &:hover &-image > span {
+        transform: scale(1.1);
+    }
+    &:hover &-image {
+      border-width: 2px;
+      border-style: solid;
+    }
+    &-heading {
+        font-size: 19px;
+        line-height: 89px;
+        max-width: 200px;
+    }
+    &-image {
+        transition: all 100ms;
+        & > span {
+          transition: all 300ms;
+        }
+        overflow: hidden;
+        width: 72px;
+        height: 72px;
+        margin: 0 16px 0 24px;
+    }
+
+    @screen xl {
+        &-heading {
+            font-size: 24px;
+            line-height: 100px;
+            max-width: 200px;
+        }
+        &-image {
+            width: 88px;
+            height: 88px;
+            margin: 0 24px;
+        }
+    }
+}

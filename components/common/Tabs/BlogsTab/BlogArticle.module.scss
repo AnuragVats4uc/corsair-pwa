@@ -1,0 +1,35 @@
+.blog-article {
+    max-width: 335px;
+    &-name {
+        font-size: 14px;
+        letter-spacing: 0.8px;
+        line-height: 18px;
+        color: #e6e6e6;
+        max-width: 440px;
+        margin-bottom: 8px;
+        font-weight: 700;
+    }
+
+    &-image {
+        width: 335px;
+        height: 188px;
+        margin-bottom: 20px;
+    }
+
+    &-publish-date,
+    &-author {
+        color: #999999;
+        line-height: 16px;
+        font-size: 14px;
+    }
+
+    @screen md {
+        max-width: 576px;
+        &-image {
+            width: 112px;
+            height: 63px;
+            margin-right: 24px;
+            margin-bottom: 0px;
+        }
+    }
+}

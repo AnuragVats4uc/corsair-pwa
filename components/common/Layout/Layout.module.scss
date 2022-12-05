@@ -1,0 +1,69 @@
+.root {
+    @apply mx-auto bg-black;
+}
+.cart-sidebar-container {
+    @apply relative;
+}
+.promo-banner {
+    @apply md:z-20 bg-white;
+}
+.skip-to-content {
+    @apply sr-only;
+    &:active,
+    &:focus {
+        @apply bg-accents-3 text-primary p-2.5 uppercase absolute text-center top-0 left-0 w-full h-auto not-sr-only;
+        z-index: 200;
+    }
+}
+@screen md {
+    .top-bar {
+        @apply relative md:z-20 flex-row justify-between;
+        background-color: #262626;
+        padding: 8px 8px 8px 0px !important;
+        height: 40px;
+
+        > div {
+            @apply w-full mx-auto md:flex flex-row;
+            padding-left: 20px;
+        }
+
+        .signin-options {
+            @apply pr-2;
+            ul li + li {
+                @apply ml-5 pl-5 border-l;
+                border-color: #353b46;
+            }
+
+            button {
+                @apply text-white uppercase pt-1 font-normal;
+                color: #c8c8c8 !important;
+                letter-spacing: 1px;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.top-bar {
+    @apply hidden md:flex;
+}
+
+.ribbon {
+    @apply top-0 static;
+    transition: transform 0.3s ease-out;
+}
+
+.header {
+    @apply top-0 sticky;
+    z-index: 1001;
+    transition: transform 0.3s ease-out;
+
+    @screen md {
+        @apply fixed w-full;
+    }
+}
+
+.main {
+    @apply bg-black relative;
+    z-index: 1000;
+}

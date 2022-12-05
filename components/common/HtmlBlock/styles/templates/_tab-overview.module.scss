@@ -1,0 +1,24 @@
+/**
+ * HTML Block Tab Overview
+ */
+
+// #tab-overview
+#tab-overview {
+    // #tab-overview #custom-smalcode
+    #custom-smalcode {
+        // #tab-overview #custom-smalcode.black-bgr .active
+        &.black-bgr .active {
+            @apply text-white;
+        }
+
+        // #tab-overview #custom-smalcode.white-bgr .active
+        &.white-bgr .active {
+            @apply text-black;
+        }
+
+        // #tab-overview #custom-smalcode .popup-youtube
+        .popup-youtube {
+            color: white !important; // Inherited styles from legacy site
+        }
+    }
+}

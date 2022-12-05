@@ -1,0 +1,14 @@
+/**
+ * HTML Block Panel 5
+ */
+
+// .panel5
+.panel5 {
+    padding: 20px;
+
+    // .panel5 h2
+    h2 {
+        @apply font-normal;
+        letter-spacing: 12px;
+    }
+}

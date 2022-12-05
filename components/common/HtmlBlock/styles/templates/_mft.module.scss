@@ -1,0 +1,45 @@
+/**
+ * HTML Block MFT-Wrap
+ */
+
+// .mft-wrap
+.mft-wrap {
+    // .mfp-wrap .content .half
+    .content .half {
+        @apply inline-block align-top;
+        width: 47%;
+
+        // .mfp-wrap .content .half img
+        img {
+            max-width: 90%;
+            margin: 12px auto;
+        }
+    }
+
+    // .mft-wrap.mfp-fade
+    &.mfp-fade {
+        // .mft-wrap.mfp-fade .mfp-content
+        .mfp-content {
+            @apply opacity-0;
+            -webkit-transition: all 0.15s ease-out;
+            -moz-transition: all 0.15s ease-out;
+            transition: all 0.15s ease-out;
+        }
+
+        // .mft-wrap.mfp-fade.mfp-ready .mfp-content
+        &.mfp-ready .mfp-content {
+            @apply opacity-100;
+            -webkit-transition: all 0.15s ease-out;
+            -moz-transition: all 0.15s ease-out;
+            transition: all 0.15s ease-out;
+        }
+
+        // .mft-wrap.mfp-fade.mfp-removing .mfp-content
+        &.mfp-removing .mfp-content {
+            @apply opacity-0;
+            -webkit-transition: all 0.15s ease-out;
+            -moz-transition: all 0.15s ease-out;
+            transition: all 0.15s ease-out;
+        }
+    }
+}

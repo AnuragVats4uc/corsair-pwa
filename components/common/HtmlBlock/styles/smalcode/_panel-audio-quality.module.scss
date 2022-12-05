@@ -1,0 +1,55 @@
+/**
+ * HTML Block Smalcode Panel Audio Quality
+ */
+
+// .panel-audio-quality-2
+.panel-audio-quality-2 {
+    @apply relative;
+    padding-top: 110px;
+    padding-bottom: 23vw;
+
+    @media only screen and (max-width: 767px) {
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+
+    // .panel-audio-quality-2 .element-usp-wrap
+    .element-usp-wrap {
+        margin-top: 60px;
+
+        @media only screen and (max-width: 767px) {
+            margin-top: 40px;
+        }
+
+        // .panel-audio-quality-2 .element-usp-wrap .mask
+        .mask {
+            background-color: #414141;
+        }
+    }
+
+    // .panel-audio-quality-2 .text-layer
+    .text-layer {
+        @apply relative;
+        z-index: 10;
+    }
+
+    // .panel-audio-quality-2 .element-image-mask
+    .element-image-mask {
+        @media only screen and (max-width: 767px) {
+            margin-top: 15px;
+        }
+    }
+
+    // .panel-audio-quality-2 .bg-layer
+    .bg-layer {
+        @apply bottom-0 absolute;
+        width: 70%;
+        right: 2%;
+        z-index: 5;
+
+        @media only screen and (max-width: 1023px) {
+            @apply relative w-full right-0;
+            margin-top: 20px;
+        }
+    }
+}

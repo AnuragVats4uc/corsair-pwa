@@ -1,0 +1,222 @@
+.horizontal-graph-single-bars-container {
+    background: #000 url(/icons/pattern-scarif-dashboard-area.svg) 100% 100%
+        repeat fixed;
+    background-size: 42px 68px;
+
+    > div {
+        background: linear-gradient(
+            135deg,
+            rgba(24, 46, 40, 0),
+            #000 33%,
+            #000 66%,
+            transparent
+        );
+    }
+
+    .content {
+        max-width: 1380px;
+        padding-left: 40px;
+        padding-right: 40px;
+
+        .header-container {
+            margin-bottom: 170px;
+        }
+
+        .logo-container {
+            max-width: 452px;
+
+            .logo {
+                margin-bottom: 20px;
+
+                > span {
+                    max-width: 100%;
+                }
+            }
+
+            .sub-title {
+                @apply font-bold;
+                font-size: 14px;
+                letter-spacing: 3px;
+                padding-left: 4px;
+            }
+
+            .title {
+                @apply font-bold;
+                font-size: 95px;
+                line-height: 90px;
+                margin-bottom: 30px;
+                letter-spacing: 3px;
+            }
+        }
+
+        .description-container {
+            max-width: 672px;
+            padding-top: 12px;
+            padding-left: 50px;
+
+            p {
+                font-size: 22px;
+                line-height: 36px;
+            }
+        }
+
+        .footer-description {
+            color: #9d9d9d;
+            border-top: solid 1px #9d9d9d;
+            font-size: 14px;
+            padding-top: 20px;
+            margin: 0 15px;
+            letter-spacing: 3px;
+        }
+
+        .graph-container {
+            height: 438px;
+            margin-bottom: 25px;
+        }
+
+        :global {
+            .graph-container {
+                margin-bottom: 24px;
+
+                .recharts-surface {
+                    overflow: visible;
+
+                    .chart-title {
+                        @apply font-secondary font-bold;
+                        font-size: 24px;
+                        line-height: 28px;
+                    }
+
+                    .chart-label {
+                        @apply font-secondary font-bold;
+                        font-size: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .horizontal-graph-single-bars-container {
+        .content {
+            max-width: 768px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            .header-container {
+                @apply flex-col;
+            }
+
+            .logo-container {
+                max-width: none;
+
+                .title {
+                    font-size: 48px;
+                    line-height: normal;
+                }
+            }
+
+            .description-container {
+                @apply pl-0;
+                max-width: none;
+
+                p {
+                    font-size: 14px;
+                    line-height: 19px;
+                    padding-top: 15px;
+                }
+            }
+
+            .graph-container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .footer-description {
+                @apply m-auto;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .horizontal-graph-single-bars-container {
+        .content {
+            max-width: 576px;
+
+            .header-container {
+                margin-bottom: 70px;
+            }
+
+            .logo-container {
+                max-width: none;
+
+                .logo {
+                    margin-bottom: 10px;
+                }
+
+                .sub-title,
+                .title {
+                    @apply text-center;
+                }
+            }
+
+            .description-container {
+                max-width: none;
+
+                p {
+                    @apply text-center;
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+
+            .graph-container {
+                height: 300px;
+                margin-bottom: 0;
+            }
+
+            :global {
+                .graph-container {
+                    margin-bottom: 24px;
+
+                    .recharts-surface {
+                        .chart-title {
+                            font-size: 16px;
+                            line-height: 20px;
+                        }
+
+                        .chart-label {
+                            @apply font-bold;
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .horizontal-graph-single-bars-container {
+        .content {
+            :global {
+                .graph-container {
+                    .recharts-surface {
+                        .chart-title {
+                            font-size: 13px;
+                            line-height: 16px;
+                        }
+
+                        .chart-label {
+                            @apply font-bold;
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

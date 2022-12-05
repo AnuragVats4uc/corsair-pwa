@@ -1,0 +1,55 @@
+.notFound {
+    .wrapper {
+        transform: translate(-50%, -50%);
+        padding: 0 35px;
+    }
+
+    .background {
+        min-height: 722px;
+
+        @screen lg {
+            min-height: 861px;
+        }
+    }
+
+    .logo {
+        min-width: 134px;
+
+        @screen lg {
+            max-width: 147px;
+        }
+    }
+
+    .heading {
+        font-size: 40px;
+        line-height: 48px;
+        padding: 40px 32px;
+
+        @screen lg {
+            padding: 48px 0;
+            line-height: 96px;
+            font-size: 96px;
+        }
+    }
+
+    .copy {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        line-height: 16px;
+
+        @screen lg {
+            line-height: 24px;
+            font-size: 18px;
+        }
+    }
+
+    .cta {
+        padding: 16px 48px;
+        margin: 56px auto 0;
+
+        @screen lg {
+            margin: 64px auto 0;
+            max-width: 264px;
+        }
+    }
+}

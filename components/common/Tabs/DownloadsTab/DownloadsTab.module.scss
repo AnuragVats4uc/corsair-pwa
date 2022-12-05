@@ -1,0 +1,40 @@
+.download-tab-content {
+    & > div {
+        max-width: 576px;
+    }
+
+    & > div:first-of-type {
+
+        margin-bottom: 3.75rem;
+
+        @screen md {
+            margin-right: 3.75rem;
+            margin-bottom: 0px
+        }
+    }
+
+    h3 {
+        letter-spacing: 2px;
+        color: #e6e6e6;
+        font-size: 14px;
+        margin-bottom: 10px;
+
+        @screen md {
+            margin-bottom: 23px
+        }
+
+    }
+
+    a {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        width: 100%;
+        line-height: normal;
+        color: #999999;
+    }
+
+    .download-tab--item {
+        border-bottom: 1px solid #999999;
+        padding: 1.25rem 0.5rem 1rem;
+    }
+}

@@ -1,0 +1,51 @@
+.fullPanelCards {
+    .list {
+        @apply relative z-1;
+
+        @media (min-width: 961px) {
+            @apply relative w-full;
+            display: table;
+            height: 40vw;
+            table-layout: fixed;
+        }
+    }
+
+    .background {
+        @apply bg-cover;
+        background-position: center 90%;
+        transition: opacity 1s ease;
+
+        @media (min-width: 961px) {
+            background-position: 0 0;
+            background-attachment: scroll;
+        }
+
+        &::after {
+            @apply absolute w-full opacity-75 h-full;
+            background-image: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(0, 0, 0, 0) 100%
+            );
+            content: '';
+        }
+    }
+
+    :global {
+        .backgroundDesktop {
+            display: none;
+
+            @media (min-width: 961px) {
+                display: block;
+            }
+        }
+
+        .backgroundMobile {
+            display: block;
+
+            @media (min-width: 961px) {
+                display: none;
+            }
+        }
+    }
+}

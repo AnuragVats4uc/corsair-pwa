@@ -1,0 +1,28 @@
+.interactive-card-section {
+    &-heading {
+        @apply text-yellow font-semibold;
+        font-size: 12px;
+        letter-spacing: 3.2px;
+        line-height: 16px;
+        margin-bottom: 15px;
+
+        @screen md {
+            font-size: 16px;
+        }
+
+        @screen lg {
+            font-size: 14px;
+        }
+    }
+    &-body {
+        font-size: 16px;
+        letter-spacing: 0.8px;
+        line-height: 24px;
+        max-width: 700px;
+
+        @screen md {
+            font-size: 20.8px;
+            line-height: 36px;
+        }
+    }
+}

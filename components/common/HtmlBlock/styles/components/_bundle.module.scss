@@ -1,0 +1,32 @@
+/**
+ * HTML Block Bundle
+ */
+
+// .bundle
+.bundle {
+    // .bundle *
+    * {
+        all: unset;
+    }
+
+    // .bundle .promotion
+    .promotion {
+        @apply font-bold text-black font-aktivGrotesk uppercase;
+        font-size: 9.6px;
+        letter-spacing: 12px;
+    }
+}
+
+// .bundleText
+.bundleText {
+    line-height: 1.8;
+    letter-spacing: 0.6px;
+}
+
+// .pdpBundleList
+.pdpBundleList {
+    @apply cursor-pointer;
+    list-style: disc;
+    list-style-position: inside;
+    line-height: 1.8;
+}

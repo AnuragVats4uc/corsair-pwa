@@ -1,0 +1,32 @@
+.previewCalendarContainer {
+    z-index: 99999;
+    @screen lg {
+        @apply flex-row h-12;
+    }
+}
+
+.previewCalendarLabel {
+   @screen lg {
+        @apply h-full content-center;
+   }
+}
+
+.previewCalendarP {
+    @screen lg {
+        @apply h-full;
+    }
+}
+ 
+.previewContainer {
+    z-index: 99999;
+    @screen lg {
+        @apply flex-row;
+    }
+}
+
+.previewApplyButton {
+    z-index: 99999;
+    @screen lg {
+        @apply h-12;
+    }
+}

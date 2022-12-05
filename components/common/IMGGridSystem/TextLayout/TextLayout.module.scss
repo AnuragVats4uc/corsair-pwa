@@ -1,0 +1,107 @@
+.textLayout {
+    max-width: 896px;
+    padding: 0px 16px;
+
+    .heading {
+        margin: 0px 0px 16px 0px;
+        font-size: 3.2rem;
+        line-height: 3.2rem;
+        letter-spacing: 0.1rem;
+    }
+    .subHeading {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        letter-spacing: 0.10rem;
+        margin-bottom: 15px;
+    }
+    .body {
+        font-size: 1rem;
+        letter-spacing: 0.05rem;
+        line-height: 1.5rem;
+    }
+    .disclaimer {
+        font-size: 0.7rem;
+        letter-spacing: 0.05rem;
+        line-height: 1rem;
+        margin-top: 20px;
+        color: rgb(157, 157, 157);
+        margin-bottom: 8px;
+    }
+    .cta-button {
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 0.3s;
+        text-decoration-color: rgb(0, 0, 0);
+        padding: 16px 40px 12px 40px;
+        margin-bottom: 56px;
+        letter-spacing: 0.2rem;
+        line-height: 1rem;
+        font-size: 0.75rem;
+        border-width: 1px;
+        background-color: rgb(236, 232, 26);
+        font-weight: 500;
+        height:48px;
+
+        &:hover {
+            background-color: var(--dark-bg-btn-primary);
+            opacity: 0.8;
+        }
+    }
+    .cta-text {
+        transition-property: width;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 0.3s;
+        display: inline-block;
+    }
+
+    @screen sm-min {
+        max-width: 640px;
+    }
+
+    @screen md {
+        max-width: 768px;
+
+        .heading {
+            margin-bottom: 32px;
+            line-height: 3.5rem;
+            font-size: 3.5rem;
+        }
+        .subHeading{
+            font-size:1.40rem;
+            line-height:2rem;
+        }
+        .body {
+            font-size: 1.3rem;
+            line-height: 2.25rem;
+        }
+        .disclaimer {
+            font-size: 0.875rem;
+        }
+        .cta-button {
+            font-size: 1rem;
+            font-weight:600;
+        }
+    }
+
+    @screen lg {
+        max-width:896px;
+
+        .header-box {
+            padding: 0px;
+            max-width:896px;
+        }
+        .heading {
+            font-size: 3.75rem;
+            line-height:3.75rem;
+        }
+        .subHeading{
+            font-size:1.5rem;
+        }
+        .body {
+            font-size: 1.3rem;
+            line-height: 2.25rem;
+        }
+        .cta-button{
+            font-size:0.875rem;
+        }
+    }
+}

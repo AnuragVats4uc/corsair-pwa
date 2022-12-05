@@ -1,0 +1,45 @@
+.square {
+    span {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+.two-three {
+    span {
+        aspect-ratio: 2 / 3;
+    }
+}
+
+.gallery-row {
+    gap: 1rem;
+
+    div {
+        width: 280px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .gallery-row {
+        flex-direction: column;
+
+        div {
+            width: 335px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1240px) {
+    .gallery-row {
+        div {
+            width: 280px;
+        }
+    }
+}
+
+@media screen and (min-width: 1241px) {
+    .gallery-row {
+        div {
+            width: 335px;
+        }
+    }
+}

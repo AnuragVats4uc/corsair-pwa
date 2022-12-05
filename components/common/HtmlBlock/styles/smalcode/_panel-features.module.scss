@@ -1,0 +1,137 @@
+/**
+ * HTML Block Smalcode Features
+ */
+
+// .panel-features
+.panel-features {
+    @apply text-center relative;
+    padding-top: 110px;
+    padding-bottom: 50px;
+    background-color: #f9f9f9;
+
+    @media only screen and (max-width: 1023px) {
+        padding-bottom: 35px;
+        padding-top: 65px;
+    }
+
+    // .panel-features .row-features
+    .row-features {
+        margin-top: 40px;
+    }
+
+    // .panel-features .element-features
+    .element-feature {
+        @apply text-left;
+    }
+
+    // .panel-features .headline
+    .headline {
+        @apply mb-0;
+    }
+
+    // .panel-features:not(.panel-features-4-elements) .row-features [class^='col-']
+    &:not(.panel-features-4-elements) .row-features [class^='col-'] {
+        @media only screen and (max-width: 1023px) {
+            @apply pl-0 pr-0;
+            margin-bottom: 25px;
+        }
+
+        // .panel-features:not(.panel-features-4-elements) .row-features [class^='col-']:last-of-type
+        &:last-of-type {
+            @media only screen and (max-width: 1023px) {
+                @apply mb-0;
+            }
+        }
+
+        // .panel-features:not(.panel-features-4-elements) .row-features [class^='col-']:nth-child(odd) .element-feature
+        &:nth-child(odd) .element-feature {
+            @media only screen and (max-width: 1023px) {
+                @apply flex-row-reverse;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: reverse;
+            }
+
+            // .panel-features:not(.panel-features-4-elements) .row-features [class^='col-']:nth-child(odd) .element-feature .inner-text-wrap
+            .inner-text-wrap {
+                @media only screen and (max-width: 1023px) {
+                    padding-right: 25px;
+                    padding-left: 15px;
+                }
+            }
+        }
+    }
+
+    // .panel-features.panel-features-4-elements
+    &.panel-features-4-elements {
+        // .panel-features.panel-features-4-elements .row-features
+        .row-features {
+            @media only screen and (max-width: 1023px) {
+                @apply flex flex-wrap items-start;
+                display: -webkit-box;
+                -webkit-box-align: start;
+            }
+
+            // .panel-features.panel-features-4-elements .row-features [class^='col-']
+            [class^='col-'] {
+                @media only screen and (max-width: 1023px) {
+                    width: 42%;
+                    margin-top: 30px;
+                }
+
+                @media only screen and (max-width: 767px) {
+                    @apply pl-0 pr-0 w-full mt-0;
+                    margin-bottom: 25px;
+                }
+
+                // .panel-features.panel-features-4-elements .row-features [class^='col-']:nth-child(1),
+                // .panel-features.panel-features-4-elements .row-features [class^='col-']:nth-child(2)
+                &:nth-child(1),
+                &:nth-child(2) {
+                    @media only screen and (max-width: 1023px) {
+                        @apply mt-0;
+                    }
+                }
+            }
+        }
+    }
+
+    // .panel-features:not(.panel-features-4-elements) .row-features,
+    // .panel-features.panel-features-4-elements .row-features
+    &:not(.panel-features-4-elements) .row-features,
+    &.panel-features-4-elements .row-features {
+        @media only screen and (max-width: 767px) {
+            @apply block;
+        }
+
+        // .panel-features:not(.panel-features-4-elements) .row-features [class^='col-']
+        [class^='col-'] {
+            // .panel-features:not(.panel-features-4-elements) .row-features [class^='col-']:last-of-type,
+            // .panel-features.panel-features-4-elements .row-features [class^='col-']:last-of-type
+            &:last-of-type,
+            &:last-of-type {
+                @media only screen and (max-width: 767px) {
+                    @apply mb-0;
+                }
+            }
+
+            // .panel-features:not(.panel-features-4-elements) .row-features [class^='col-']:nth-child(odd) .element-feature,
+            // .panel-feature.panel-features-4-elements .row-features [class^='col-']:nth-child(odd) .element-features
+            &:nth-child(odd) .element-feature {
+                @media only screen and (max-width: 767px) {
+                    @apply flex-row-reverse;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: reverse;
+                }
+
+                // .panel-features:not(.panel-feautres-4-elements) .row-features [class^='col-']:nth-child(odd) .element-features .inner-text-wrap
+                // .panel-features.panel-features-4-elements .row-features [class^='col-']:nth-child(odd) .element-feature .inner-text-wrap
+                .inner-text-wrap {
+                    @media only screen and (max-width: 767px) {
+                        padding-right: 25px;
+                        padding-left: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

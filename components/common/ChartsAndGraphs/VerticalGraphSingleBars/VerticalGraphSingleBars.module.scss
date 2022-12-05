@@ -1,0 +1,110 @@
+.vertical-graph-single-bars-container-transparent{
+    @apply bg-transparent mb-7;
+}
+
+.vertical-graph-single-bars-container{
+    background: #000 url(/icons/pattern-scarif-dashboard-area.svg) 100% 100%
+    repeat fixed;
+    background-size: 42px 68px;
+    @apply mb-7;
+
+    > div {
+        background: linear-gradient(
+            135deg,
+            rgba(24, 46, 40, 0),
+            #000 33%,
+            #000 66%,
+            transparent
+        );
+    }
+}
+
+.vertical-graph-single-bars-container,.vertical-graph-single-bars-container-transparent {
+
+    .left-column {
+        > div {
+            max-width: 540px;
+
+            :global {
+                .left-right-text {
+                    &-container {
+                        @apply p-0 #{!important};
+                    }
+
+                    &-column-copy-block {
+                        @apply mb-0;
+                    }
+                }
+            }
+
+            .graph-title {
+                font-weight: 700;
+                font-size: 22px;
+                padding: 64px 0 0px;
+            }
+
+            .graph-container {
+                max-width: 335px;
+            }
+
+            :global {
+                .graph-container {
+                    margin-bottom: 24px;
+
+                    .recharts-surface {
+                        @apply overflow-visible;
+
+                        .chart-title {
+                            font-size: 18px;
+                        }
+
+                        .chart-label {
+                            font-size: 22px;
+                        }
+
+                        .recharts-label-list {
+                            * {
+                                @apply overflow-visible;
+                            }
+
+                            g {
+                                p {
+                                    @apply text-white;
+                                    min-width: 300px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .vertical-graph-single-bars-container {
+        .left-column {
+            > div {
+                max-width: 540px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .vertical-graph-single-bars-container {
+        .left-column {
+            @apply max-w-full;
+            padding: 0 1.538rem 15.385rem 1.538rem;
+
+            > div {
+                @apply m-auto;
+                max-width: 640px;
+
+                .graph-container {
+                    max-width: 75%;
+                }
+            }
+        }
+    }
+}

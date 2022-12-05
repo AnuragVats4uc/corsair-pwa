@@ -1,0 +1,332 @@
+.account-container {
+    @apply overflow-hidden;
+}
+.account-block {
+    @apply w-full mt-3 mb-10;
+    &-grid {
+        @apply md:grid md:grid-cols-2;
+    }
+}
+.account-grid-container {
+    @apply md:flex;
+}
+.account-grid {
+    @apply w-full md:w-1/2 md:pr-5 mb-5;
+    &:last-child {
+        @apply md:pl-5 pr-0;
+    }
+}
+.account-page {
+    @apply flex flex-wrap w-full mx-auto max-w-screen-xl bg-white;
+}
+.page-title {
+    @apply font-secondary font-semibold tracking-tight;
+}
+.sub-header {
+    @apply border-b border-accents-3 py-1 mb-4;
+    .sub-heading {
+        @apply inline-block text-2xl font-normal;
+    }
+}
+.subhead-link {
+    @apply inline-block underline ml-3 cursor-pointer;
+}
+.myaccount-content {
+    @apply h-full flex-col w-full md:w-3/4 lg:w-4/5 px-5 py-5 md:pl-10 md:pt-0 md:pb-5;
+}
+.myaccount-sidebar {
+    @apply w-full md:w-1/4 lg:w-1/5 px-4 pt-2 pb-5 md:pt-0 md:px-0 border-accents-3;
+}
+.sidebar-inner {
+    @apply md:block pt-3 pb-4 md:pt-0 md:pb-2 md:overflow-y-auto;
+    li {
+        @apply py-1 px-3 md:px-5;
+        &.active {
+            @apply font-semibold md:font-normal;
+
+            .item-name {
+                @apply font-semibold;
+            }
+        }
+    }
+}
+
+.sidebar-title {
+    @apply px-5 py-3 md:px-7 sm:p-2 md:py-2 mb-3 md:mb-5 uppercase bg-q-2 border-accents-3 text-1.5xl;
+
+    & span {
+        @apply md:hidden;
+    }
+}
+.item-icon,
+.item-name {
+    @apply text-primary;
+}
+.wishlist-icon {
+    svg {
+        @apply w-6 h-6;
+    }
+}
+.item-icon {
+    @apply inline-block;
+}
+.item-name {
+    @apply inline-block px-3 text-left focus:font-semibold cursor-pointer;
+}
+.sidebar-links {
+    @apply text-xl flex items-start;
+    padding: 0 !important;
+    &:focus {
+        @apply outline-none;
+    }
+    &:hover {
+        @apply no-underline;
+    }
+}
+
+.order-block {
+    @apply w-full mt-3 mb-10;
+    &-grid {
+        @apply sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8;
+    }
+}
+
+.status-badge {
+    @apply py-1 px-2 uppercase border-2 border-accents-3 inline-block align-top ml-2 text-sm rounded;
+}
+
+.order-invoice {
+    @apply absolute right-0 top-full font-normal text-sm underline mt-2 cursor-pointer;
+}
+
+.orderd-items-container {
+    @apply relative w-full overflow-hidden pt-5 border-b-2 border-accents-3;
+
+    .order-items-body-table {
+        border-collapse: separate;
+        border-spacing: 0 3px;
+        table-layout: fixed;
+
+        th:nth-child(2) {
+            width: 22%;
+        }
+
+        th:nth-child(3) {
+            width: 10%;
+        }
+
+        th:nth-child(4) {
+            width: 5%;
+        }
+
+        tr {
+            margin-top: 3px;
+        }
+
+        th {
+            padding: 0.75rem 0.55rem;
+        }
+
+        .row-with-border > td {
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+
+            &:first-child {
+                border-left: 1px solid gray;
+            }
+
+            &:last-child {
+                border-right: 1px solid gray;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .row-with-border > td {
+                &:first-child {
+                    border: none;
+                }
+
+                &:last-child {
+                    border: none;
+                }
+            }
+        }
+    }
+    &:last-child {
+        @apply border-b-0;
+    }
+}
+.order-total-label {
+    @apply font-light text-xl;
+}
+
+.order-total-amount {
+    @apply font-bold text-base;
+}
+
+.billing-info-header {
+    @apply text-xl font-thin mt-10 mb-10 tracking-wider;
+}
+
+.address-label {
+    @apply font-extrabold text-2xl uppercase mb-2;
+}
+
+.order-list-table-header {
+    @apply text-white font-thin uppercase;
+}
+
+.order-number {
+    @apply flex flex-row text-xl font-bold tracking-wider pb-4 border-b-2 border-accents-3 relative;
+
+    .order-status {
+        @apply flex-col ml-2 underline;
+        text-decoration-color: #ebe81a;
+    }
+}
+
+.order-sort-by {
+    @apply mb-6 mt-14 flex justify-end;
+
+    .sort-dropdown {
+        @apply block appearance-none w-full max-w-xs md:w-1/3 border-2  text-p-1 py-3 px-4 pr-8 rounded focus:shadow-none focus:border-accents-2;
+    }
+}
+.divider {
+    width: 1px;
+    height: 20px;
+    margin-left: 10px;
+    margin-right: 5px;
+    background-color: lightgray;
+}
+
+.orderd-items-header {
+    @apply ml-3 my-0.5 inline-block;
+    h3 {
+        @apply inline-block;
+    }
+}
+.item-options {
+    @apply text-accents-7;
+}
+.track-shipment {
+    @apply absolute right-2.5 top-6 underline;
+}
+.track-all-shipment {
+    @apply float-right mr-2.5 mt-2.5 text-lg underline;
+}
+.shipment-tracking-number-seq {
+    @apply ml-3 my-2 relative;
+}
+.order-number-title {
+    @apply flex flex-wrap items-center my-4;
+
+    & p:last-child {
+        margin-bottom: -5px;
+        letter-spacing: 0.2em;
+    }
+}
+.order-data-tab {
+    @apply mt-6;
+}
+.btn-container {
+    @apply flex justify-start items-center py-5 space-x-2;
+}
+.order-list-table {
+    .price-totals {
+        @apply mt-8 mb-6;
+        width: 33%;
+        float: right;
+        text-align: left;
+        line-height: 3rem;
+    }
+    thead {
+        @apply hidden md:contents;
+
+        .action {
+            @apply text-left;
+        }
+    }
+    tbody {
+        tr {
+            @apply mb-0 #{!important};
+        }
+        tr,
+        td {
+            @apply block border-none md:table-cell md:text-left;
+        }
+
+        td:before {
+            @apply float-left;
+            content: attr(data-th) ' ';
+            @screen md {
+                content: none;
+            }
+        }
+        :global {
+            .action {
+                @apply w-full md:w-40 #{!important};
+            }
+            .price {
+                @apply font-semibold;
+            }
+        }
+    }
+
+    .order-table-root {
+        tbody {
+            td {
+                @apply px-3 py-1 md:py-5;
+
+                &:nth-child(2) {
+                    @apply pb-5;
+                }
+            }
+
+            tr {
+                @apply py-5 md:py-0;
+
+                &:first-child {
+                    @apply pt-0;
+                }
+            }
+        }
+    }
+}
+
+.newsletter-container {
+    @apply xl:w-1/2;
+}
+.gift-card-form {
+    @apply mt-3;
+}
+.giftcard-btn-container {
+    @apply flex flex-col md:flex-row justify-start items-center space-y-4 md:space-x-2 md:space-y-0;
+    button {
+        @apply w-full md:w-auto;
+    }
+}
+.gift-card-balance-container {
+    @apply mt-3 mb-5 text-lg;
+}
+.store-credit-container {
+    @apply mt-2;
+}
+.signout-list-item {
+    @apply border-t mt-3;
+}
+.signout-link {
+    @apply px-2 pt-3;
+    padding: 11px 15px 8px 15px;
+    svg {
+        @apply mr-2;
+    }
+}
+
+@screen md {
+    .tracking-info {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

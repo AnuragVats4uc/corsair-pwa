@@ -1,0 +1,49 @@
+/* Checkout Signin Form */
+.checkout-form-signin {
+    @apply w-full mx-auto max-w-xl p-3;
+}
+.checkout-form {
+    :global {
+        .form-group {
+            label.heading {
+                @apply text-xl normal-case font-normal;
+            }
+            input {
+                @apply font-secondary;
+            }
+        }
+    }
+    svg {
+        @apply cursor-pointer;
+    }
+}
+.sign-in-btn {
+    @apply mr-10 w-56 mb-3;
+}
+.forgot-btn {
+    @apply border-secondary border-b border-secondary;
+    &:hover {
+        @apply border-b-2 no-underline;
+    }
+}
+.tooltip-wrap {
+    @apply relative;
+}
+.info-wrap {
+    @apply absolute -right-6 top-4;
+    svg {
+        @apply hidden md:block;
+    }
+}
+.eye-wrap {
+    @apply absolute right-5 top-5 text-t-2;
+    &.show {
+        &:after {
+            content: '';
+            @apply border-t-2 absolute left-1.5 top-0.5 transform -rotate-45 w-7 h-7;
+        }
+    }
+}
+.message-wrap {
+    @apply -mt-3 mb-4 font-secondary;
+}

@@ -1,0 +1,535 @@
+.smart-home-container {
+    overflow: hidden;
+    margin: 16px 0px;
+    video {
+        transform: scale(1.5);
+
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 0.4s;
+        will-change: opacity;
+
+       @screen lg {
+            transform: scale(1);
+            position: relative;
+        }
+    }
+
+    &.smart-home-container--zoom {
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        overflow: hidden !important;
+
+        @media screen and (max-width: 768px) {
+            .smart-home-left-container,
+            .smart-home-right-container {
+                display: none;
+            }
+        }
+
+        .smart-home-dot-item {
+            opacity: 0;
+        }
+
+        video {
+            transform: scale(2);
+        }
+    }
+
+    background: #151335;
+
+    .smart-home-center-container-devider {
+        background: linear-gradient(
+            180deg,
+            #151335,
+            #151335,
+            transparent
+        ) !important;
+        height: 10px;
+        width: 100%;
+        z-index: 50;
+    }
+
+    .smart-home-left-container {
+        width: 100%;
+        background: #151335;
+        padding-bottom: 1rem;
+
+        &-image {
+            max-width: 165px;
+            margin-bottom: 5px;
+        }
+
+        @screen md-max{
+            padding-left:18px;
+            padding-right:18px;
+        }
+
+        @screen md {
+            padding: 1rem 1.75rem 1rem 1.75rem;
+            max-height: 540px;
+        }
+        @screen lg{
+            padding-left:4.5rem;
+            padding-right:4.5rem;
+        }
+        @screen xl{
+            @apply px-24;
+        }
+
+        a {
+            @apply text-yellow;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+        p {
+            max-width: 60%;
+            margin: 1rem 0;
+            font-size: 15px;
+
+            @screen md-max {
+                font-size: 1rem;
+            }
+        }
+
+        .right-arrow-wrapper {
+            width: 10px;
+            height: 10px;
+            margin-left: 2px;
+            margin-bottom: 3px;
+        }
+
+        &::before {
+            content: '';
+            background: linear-gradient(
+                180deg,
+                #151335,
+                #151335,
+                transparent
+            ) !important;
+            height: 10%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            z-index: 50;
+            bottom: -15px;
+        }
+
+        @screen lg {
+            width: 30%;
+            &::before {
+                display: none;
+            }
+
+            h2 {
+                font-size: calc(40.08 * 100vw/1440);
+            }
+
+            p {
+                font-size: calc(18.08 * 100vw / 1440);
+                max-width: 70%;
+                margin: 1rem 0px;
+            }
+
+            a {
+                font-size: calc(16.08 * 100vw/1440);
+                .right-arrow-wrapper {
+                    width: calc(12.08 * 100vw/1440);
+                    height: calc(12.08 * 100vw / 1440);
+                    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 1));
+                    margin-left:6px;
+                    margin-bottom: 4px;
+                }
+            }
+        }
+    }
+
+    .smart-home-right-container {
+        width: 100%;
+        padding-bottom: 85%;
+
+        background: linear-gradient(
+            180deg,
+            #000,
+            #000 3%,
+            rgba(0, 0, 0, 0.5998774509803921) 14%,
+            rgba(0, 0, 0, 0.4654236694677871) 18%,
+            transparent 24%,
+            hsla(0, 0%, 100%, 0)
+        );
+
+        @screen lg {
+            width: 70%;
+            padding-bottom: 0px !important;
+        }
+    }
+
+    
+
+    .smart-home-product-carousel {
+        position: relative;
+        margin: 0 auto;
+
+        .smart-home-product-carousel-wrapper {
+            padding: 11.5rem 16px 3rem;
+            margin: 0 auto;
+            z-index: 999;
+
+            :global {
+                .slick-slider {
+                    padding: 0 32px;
+                }
+                .slick-arrow {
+                    height: 100%;
+
+                    button {
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                    }
+
+                    &::before {
+                        display: none;
+                    }
+
+                    &.slick-disabled {
+                        @apply opacity-50;
+                    }
+
+                    &.slick-prev {
+                        left: -4px;
+                    }
+                    &.slick-next {
+                        right: -4px;
+                    }
+                }
+            }
+
+            @screen md {
+                padding: 10rem 5rem 1rem;
+
+                :global {
+                    .slick-slider {
+                        padding: 0 52px;
+                    }
+                    .slick-arrow {
+                        &.slick-prev {
+                            left: 0;
+                        }
+                        &.slick-next {
+                            right: 0;
+                        }
+                    }
+                }
+            }
+
+            button {
+                outline: none;
+            }
+
+            .smart-home-product-carousel-label {
+                &.active {
+                    button {
+                        opacity: 1;
+                    }
+                }
+
+                button {
+                    line-height: 1.75rem;
+                    outline: none;
+                    transition-property: opacity;
+                    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                    transition-duration: 0.3s;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            max-width: 1024px;
+        }
+
+        @media screen and (min-width: 1240px) {
+            max-width: 1440px;
+        }
+
+        @media screen and (min-width: 1640px) {
+            max-width: 1840px;
+        }
+    }
+
+    .smart-home-overlay-image-wrap {
+        will-change: transform;
+
+        div {
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 0.3s;
+            transition-delay: 0.5s;
+            transform-style: preserve-3d;
+            transition-property: transform;
+
+            span:first-child {
+                width: 100% !important;
+                height: auto !important;
+                position: relative !important;
+                top: 0;
+                left: 0;
+
+                span {
+                    position: relative !important;
+                }
+            }
+        }
+    }
+
+    .smart-home-overlay-image {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 0.3s;
+        transition-delay: 0.3s;
+
+        div {
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 0.3s;
+            transition-delay: 0.5s;
+            transform-style: preserve-3d;
+            transition-property: transform;
+        }
+    }
+
+    .smart-home-products-cards {
+        height: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        .smart-home-products-wrapper {
+            max-width: 1440px;
+            margin: auto;
+            height: 100%;
+            position: relative;
+            width: 100%;
+
+            .smart-home-product-item {
+                background: rgba(38, 38, 37, 0.5);
+                transition-property: opacity;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 0.3s;
+                transition-delay: 0.1s;
+                -webkit-backdrop-filter: blur(20px);
+                backdrop-filter: blur(20px);
+                padding: 2rem;
+                margin-bottom: 1rem;
+
+                .smart-home-product-item-image-wrapper {
+                    @apply hidden;
+                    max-width: 115px;
+                    max-height: 160px;
+
+                    @screen lg {
+                        @apply flex;
+                    }
+
+                    @screen 2xl {
+                        max-width: 246px;
+                        max-height: 250px;
+                    }
+
+                    @media screen and (min-height: 870px) {
+                        @apply flex;
+                        max-width: 246px;
+                        max-height: 250px;
+                    }
+                }
+
+                .smart-home-product-card {
+                    h4 {
+                        line-height: 3rem;
+                        font-size: 40px;
+                        letter-spacing: 1px;
+                    }
+
+                    p {
+                        line-height: 1.75rem;
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+
+                    a {
+                        padding-top: 1.5rem;
+                        transition-property: background-color, border-color,
+                            color, fill, stroke;
+                        transition-timing-function: cubic-bezier(
+                            0.4,
+                            0,
+                            0.2,
+                            1
+                        );
+                        transition-duration: 0.3s;
+                        letter-spacing: 0.1875rem;
+                        line-height: 1.25rem;
+                        font-size: 14px;
+                        font-weight: 300;
+                    }
+                }
+
+                @screen md {
+                    padding: 4rem 5rem;
+                    margin-bottom: 5.5rem;
+
+                    h4 {
+                        font-size: 2.5rem;
+                        margin-top: 2rem;
+                    }
+
+                    h4,
+                    p {
+                        text-align: center;
+                        max-width: 90%;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+
+                @screen 2xl {
+                    margin-top: 4rem;
+                }
+            }
+
+            @media screen and (min-width: 768px) {
+                min-height: unset;
+                a {
+                    max-width: 296px;
+                }
+
+                .smart-home-product-close-button {
+                    top: 3.5rem;
+                    right: 3.5rem;
+                }
+
+                .smart-home-product-item {
+                    left: 0;
+                    transform: none;
+                    max-width: 544px;
+                }
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            max-width: 768px;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            min-height: 760px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            max-width: 1024px;
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+
+        @media screen and (min-width: 1280px) {
+            max-width: 1280px;
+            padding-left: 6rem;
+            padding-right: 6rem;
+
+            .smart-home-product-item {
+                margin-bottom: 6rem;
+            }
+        }
+
+        @media screen and (min-width: 1440px) {
+            max-width: 1440px;
+        }
+
+        @media screen and (min-width: 1840px) {
+            max-width: 1840px;
+        }
+    }
+
+    .smart-home-product-close-button {
+        z-index: 9999;
+        top: 14rem;
+        right: 2rem;
+
+        button {
+            padding: 1.25rem;
+            color: #ece81a;
+            border: 1px solid #ece81a;
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+    &.smart-home-full-width {
+        @screen md {
+            .smart-home-left-container {
+                display: none;
+            }
+        }
+
+        .smart-home-right-container {
+            width: 100%;
+        }
+    }
+}
+
+.smart-home-dot-item {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.3s;
+    transition-delay: 0.4s;
+    will-change: opacity;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+
+    button {
+        box-shadow: 0 0 0 0 #9d9d9d;
+        height: 24px;
+        width: 24px;
+        transform: scale(1);
+        -webkit-animation: smal-pulse-back 2s infinite;
+        animation: smal-pulse-back 2s infinite;
+
+        & span {
+            font-size: 13px;
+            line-height: 13px;
+            margin-top: 1px;
+        }
+    }
+}
+
+@keyframes smal-pulse-back {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 hsl(0deg 0% 62% / 80%);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px hsl(0deg 0% 62% / 0%);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 hsl(0deg 0% 62% / 0%);
+    }
+}

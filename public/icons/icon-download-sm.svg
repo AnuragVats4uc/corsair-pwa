@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-download-sm</title>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Downloads" transform="translate(-905.000000, -313.000000)" fill="#000000">
+            <g id="item-2" transform="translate(120.000000, 246.000000)">
+                <g id="download-button" transform="translate(668.000000, 53.000000)">
+                    <path d="M117,25.9997 L129,25.9997 L129,24.3997 L117,24.3997 L117,25.9997 Z M122.2002,14 L122.2002,19.937 L119.8892,17.626 L118.7582,18.757 L123.0002,23 L127.2432,18.757 L126.1112,17.626 L123.7992,19.937 L123.7992,14 L122.2002,14 Z" id="icon-download-sm"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

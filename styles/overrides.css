@@ -1,0 +1,38 @@
+@import './override/button.css';
+/*
+  Component style overrides-old.
+  ----------------------------------------
+  * Override styles for any of the components
+  * Override styles for any theme - default, dark, other
+  * For overriding theme colors for the entire project
+  or adding themes use `tailwind.confing.js` file.
+ */
+
+/* EXAMPLE:
+@layer base {
+  // default theme
+  html {
+    & .megaMenuCms {
+      // change the value of the variable
+      --secondary: var(--tertiary);
+
+      // or use tailwind utilities for new styles
+      @apply bg-blue;
+    }
+  }
+
+  // dark theme (see './variables.css')
+  [data-theme='dark'] {
+    & .megaMenuCms {
+      // or use vanilla css (not recommended)
+      background: pink;
+
+      // or target children elements
+      & div {
+        color: green;
+      }
+    }
+  }
+} */
+
+@layer base {}

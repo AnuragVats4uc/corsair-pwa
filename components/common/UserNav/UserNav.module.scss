@@ -1,0 +1,82 @@
+.root {
+    @apply relative;
+    max-width: 50%;
+}
+
+.list {
+    @apply flex h-full items-center;
+}
+
+.item {
+    @apply cursor-pointer relative transition ease-in-out duration-100 flex items-center outline-none text-primary;
+
+    &:hover {
+        @apply text-accents-6 transition scale-110 duration-100;
+    }
+
+    &:last-child {
+        @apply mr-0;
+    }
+
+    &:focus,
+    &:active {
+        @apply outline-none;
+    }
+
+    &.bag-btn-container {
+        @apply cursor-default;
+    }
+}
+
+.auth-links {
+    @apply px-3 hidden md:flex md:items-center leading-none;
+    & a {
+        @apply pt-1;
+    }
+    & svg {
+        @apply mr-2;
+    }
+}
+.bag-btn {
+    @apply hover:no-underline md:pt-0 md:h-12;
+    @screen md {
+        width: auto;
+    }
+    svg {
+        @apply h-full;
+    }
+    &[disabled] {
+        @apply cursor-default;
+    }
+}
+@screen md {
+    .bag-btn-light {
+        &::after {
+            @apply absolute w-full -top-4 md:bg-white;
+            height: calc(100% + 2.1rem);
+            width: calc(100% + 0.1rem);
+            content: '';
+            z-index: -1;
+        }
+    }
+}
+
+.cart-count {
+    @apply font-aktivGrotesk text-xs font-normal mt-2 absolute mb-7;
+    margin-left: 0.1rem;
+    top: -3px;
+}
+
+.search-menu,
+.currency-menu,
+.user-menu {
+    @apply hidden md:flex;
+}
+
+.avatarButton {
+    @apply inline-flex justify-center rounded-full;
+}
+
+.avatarButton:focus {
+    @apply outline-none;
+}

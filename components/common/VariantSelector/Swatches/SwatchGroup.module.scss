@@ -1,0 +1,89 @@
+.swatch-wrapper-disabled {
+    @apply pointer-events-none;
+}
+
+.swatch-selected-label {
+    @apply cursor-pointer flex justify-between items-center;
+    padding: 16px 4px 8px 0;
+
+    :global {
+        svg {
+            @apply -mt-3 origin-center;
+            transform: rotate(180deg);
+        }
+    }
+
+    &.swatch-dropdown-active {
+        :global {
+            svg {
+                @apply rotate-0;
+                transform: rotate(0);
+            }
+        }
+    }
+}
+.swatch-code,
+.swatch-label {
+    @apply block;
+}
+
+.swatch-code {
+    @apply font-tertiary uppercase;
+    font-size: 20px;
+    line-height: 24px;
+
+    @screen md {
+        font-size: 24px;
+    }
+}
+.swatch-label {
+    @apply font-primary;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 4px;
+
+    @screen md {
+        font-size: 16px;
+    }
+}
+.swatch-dropdown {
+    @apply relative;
+    padding-top: 4px;
+}
+
+.swatch-item {
+    @apply w-full top-0 left-0 flex px-5 py-2 justify-between items-center cursor-pointer;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    min-height: 60px;
+    border: 1px solid var(--text-tertiary);
+
+    &:last-child {
+        margin-bottom: 16px;
+    }
+}
+
+.swatch-text-container {
+    @apply flex items-center;
+}
+
+.swatch-active {
+    border: 1px solid var(--border-active);
+}
+
+.swatch-item-disabled {
+    @apply opacity-50 border-0;
+    background: var(--accents-8);
+}
+
+.swatch-image {
+    @apply pr-4 leading-none;
+}
+.swatch-value {
+    @apply font-primary pr-2;
+    font-size: 14px;
+}
+
+.oos-span {
+    font-family: 'Bebas Neue Pro SmE Rg', serif;
+}

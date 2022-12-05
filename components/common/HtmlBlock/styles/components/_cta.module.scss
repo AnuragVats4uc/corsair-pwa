@@ -1,0 +1,64 @@
+/**
+ * HTML Block CTA
+ */
+
+// .cta,
+// .mfp-wrap .cta
+.cta,
+.mfp-wrap .cta {
+    @apply bg-black font-aktivGrotesk font-semibold inline-block text-white;
+    padding: 12px 24px;
+    font-size: 12px;
+    letter-spacing: 3.2px;
+    margin: 12px 0;
+    transition: all 200ms ease;
+    -webkit-transition: all 200ms ease;
+
+    @screen md {
+        font-size: 1rem;
+    }
+
+    @screen lg {
+        font-size: 15.6px;
+    }
+}
+
+// .cta.black
+.cta.black {
+    @apply bg-black text-white font-thin;
+
+    // .cta-black:hover
+    &:hover {
+        background-color: #333;
+        transition: all 200ms ease;
+        -webkit-transition: all 200ms ease;
+
+        // .cta-black:hover .mfp-wrap .cta:hover
+        .mfp-wrap .cta:hover {
+            @apply bg-black text-white font-normal;
+            transition: all 200ms ease;
+            -webkit-transition: all 200ms ease;
+        }
+    }
+}
+
+// .chair-addtocart-cta
+.chair-addtocart-cta {
+    margin: 12px 0;
+}
+
+// .AddToCart-ShareOnSocialNetworkAction
+.AddToCart-ShareOnSocialNetworkAction {
+    @apply hidden;
+}
+
+// .mfp-wrap .cta
+.mfp-wrap .cta {
+    @apply font-light inline-block text-white bg-black;
+    padding: 15.6px 24px;
+    font-size: 12px;
+    letter-spacing: 0.124px;
+    margin: 12px 0;
+    transition: all 200ms ease;
+    -webkit-transition: all 200ms ease;
+}

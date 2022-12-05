@@ -1,0 +1,44 @@
+/**
+ * HTML BlockProduct Details
+ */
+
+// #product-details
+#product-details {
+    // #product-details #price
+    #price {
+        @media screen and (min-width: 825px) {
+            text-align: left !important; // Inherited styles from legacy site
+        }
+
+        // #product-details #price div:nth-child(2)
+        div:nth-child(2) {
+            @media screen and (min-width: 825px) {
+                @apply w-full;
+            }
+        }
+    }
+
+    // #product-details @-moz-document url-prefix
+    @-moz-document url-prefix() {
+        // #product-details @-moz-document url-prefix #price .original-price
+        #price .original-price {
+            @media screen and (min-width: 825px) {
+                width: max-content !important; // Inherited styles from legacy site
+            }
+
+            // #product-details @-moz-document url-prefix #price .original-price .product-price
+            .product-price {
+                @media screen and (min-width: 825px) {
+                    padding-left: 0 !important; // Inherited styles from legacy site
+                }
+            }
+        }
+
+        // #product-details @-moz-document url-prefix #product-price #price small
+        #product-price #price small {
+            @media screen and (min-width: 825px) {
+                padding-left: 0 !important; // Inherited styles from legacy site
+            }
+        }
+    }
+}

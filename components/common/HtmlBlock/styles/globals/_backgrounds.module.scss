@@ -1,0 +1,64 @@
+/**
+ * HTML Block Backgrounds
+ */
+
+// .section
+.section {
+    // .section.pdp-bkg-fff
+    &.pdp-bkg-fff {
+        @apply bg-white;
+    }
+
+    // .section.pdp-bkg-eee
+    &.pdp-bkg-eee {
+        background-color: #eee;
+    }
+
+    // .section.pdp-bkg-000
+    &.pdp-bkg-000 {
+        @apply bg-black;
+    }
+
+    // .section.pdp-bkg-333
+    &.pdp-bkg-333 {
+        background-color: #333;
+    }
+}
+
+// section
+section {
+    // section.triangle-bkg,
+    // section.triangle-right-bkg,
+    // section.triangle-left-000-bkg,
+    // section.triangle-right-000-bkg
+    &.triangle-bkg,
+    &.triangle-right-bkg,
+    &.triangle-left-000-bkg,
+    &.triangle-right-000-bkg {
+        @apply bg-cover;
+    }
+
+    // section.triangle-bkg
+    &.triangle-bkg {
+        background: url('//cwsmgmt.corsair.com/img/reusable/pdp-bkg-triangle.png')
+            center no-repeat;
+    }
+
+    // section.triangle-right-bkg
+    &.triangle-right-bkg {
+        background: url('//cwsmgmt.corsair.com/img/reusable/pdp-bkg-right-triangle.png')
+            center no-repeat;
+    }
+
+    // section.triangle-left-000-bkg
+    &.triangle-left-000-bkg {
+        background: url('//cwsmgmt.corsair.com/img/reusable/pdp-blk-bkg-left-triangle.png')
+            center no-repeat;
+    }
+
+    // section.triangle-right-000-bkg
+    &.triangle-right-000-bkg {
+        background: url('//cwsmgmt.corsair.com/img/reusable/pdp-blk-bkg-right-triangle.png')
+            center no-repeat;
+    }
+}

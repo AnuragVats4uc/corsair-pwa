@@ -1,0 +1,274 @@
+$checkout-review-bg-color: #F7F7F7;
+
+.checkout {
+    @apply md:mt-10;
+    &-title {
+        @apply text-2xl md:text-3xl mb-2;
+    }
+    &-main {
+        @apply max-w-screen-xl mx-auto px-5 xl:px-0;
+    }
+    &-order-success {
+        @apply max-w-screen-xl mx-auto px-5 xl:px-0;
+    }
+    &-inner {
+        @apply md:flex md:justify-between md:items-start;
+    }
+}
+
+.steps {
+    @apply flex -space-y-1 flex-col mt-4 mb-4;
+    &-main {
+        @apply w-full md:w-3/5 md:pl-0 md:pr-8;
+    }
+}
+.shipping-section {
+    @apply pl-6 md:pl-12;
+}
+.shipping-options {
+    @apply mt-5;
+}
+.main-heading {
+    @apply font-primary font-normal text-xl lg:text-2xl;
+}
+.sub-heading {
+    @apply font-secondary text-base mt-2.5;
+}
+.shipping-methods,
+.payment-methods {
+    @apply flex flex-col max-w-lg py-4;
+    &-item {
+        @apply border border-accents-3 px-3 my-1.5 py-2.5;
+    }
+    input[type=radio] {
+        @apply h-6 w-6 text-p-2;
+    }
+}
+.carrier {
+    &-title,
+    &-price {
+        @apply ml-2 text-p-2;
+    }
+}
+
+.order-summary {
+    @apply w-full md:w-2/5 lg:w-2/6 md:order-2 md:sticky top-24 z-10;
+    &-top-info {
+        @apply flex flex-wrap justify-between mb-1 font-secondary; 
+        button {
+            @apply hover:no-underline;
+        }
+    }
+    &-subtitle {
+        @apply bg-accents-1 py-2 px-4 uppercase text-xs font-bold leading-loose tracking-widest; 
+    }
+    &-inner {
+        @apply bg-accents-1 md:bg-transparent p-2;
+    }
+    &-wrapper {
+        @apply bg-primary p-2 md:p-0 border md:border-0 border-accents-3 shadow-sm md:shadow-none;
+    }
+    &-count {
+        @apply text-lg md:text-xl;
+    }
+}
+.new-address-btn {
+    @apply my-8 underline text-base tracking-tighter;
+}
+.review-card {
+    @apply text-primary p-5 my-5 rounded-sm xl:my-2 max-w-lg pr-4;
+    background-color: $checkout-review-bg-color;
+}
+/* Checkout Minicart */
+.minicart-items-wrapper {
+    @apply px-2.5 overflow-y-auto;
+    max-height:calc(100vh - (theme('spacing.96') + theme('spacing.8')));
+    :global {
+        .cart-item-img-wrapper {
+            @apply w-16 h-16 lg:w-20 lg:h-20 #{!important};
+        }
+        .cart-qty,
+        .cart-price {
+            @apply hidden;
+        }
+        .checkout-price {
+            @apply font-bold text-xs text-right;
+            @apply block #{!important};
+        }
+    }
+}
+
+.minicart-item-totals {
+    @apply flex-shrink-0 md:px-2.5 py-2.5;
+    &-container {
+        @apply lg:px-0 pt-2 md:pb-4;
+    }
+    ul {
+        @apply py-2.5 border-t border-accents-3;
+    }
+    li {
+        @apply flex justify-between py-1;
+    }
+}
+.cart-total-wrapper {
+    @apply flex justify-between border-t border-accents-3 py-3 font-bold md:mb-5;
+}
+/* Checkout Minicart */
+
+
+.checkout-reviews {
+    &-inner {
+        @apply grid sm:gap-4 sm:grid-cols-2 xl:grid-cols-1 max-w-3xl xl:max-w-lg mx-auto pl-6 md:pl-12 xl:pl-0 py-1.5;
+    }
+}
+/* Checkout Address */
+.checkout-address {
+    @apply w-full max-w-3xl mx-auto py-1.5;
+
+    &-tiles {
+        @apply mt-3;
+    }
+    input[type=radio] {
+        @apply h-6 w-6 text-p-2 cursor-pointer;
+    }
+    .edit-address {
+        @apply underline mt-1 text-base;
+    }
+    :global {
+        .form-grid-col {
+            @apply w-full pr-0;
+            &:last-child {
+                @apply pl-0;
+            }
+            &-wrap {
+                @apply block;
+            }
+        }
+        .form-inline-group {
+            @apply flex flex-row justify-between gap-2;
+        }
+        .zip,
+        .state {
+            @apply w-1/2 inline-block;
+        }
+    }
+}
+.address-tile {
+    @apply w-full flex items-baseline justify-start border border-accents-3 p-2.5 space-x-3 mb-2.5;
+    &.active {
+        @apply px-3;
+        
+    }
+    :global {
+        .box-info {
+            @apply mb-0;
+        }
+        .address-block {
+            @apply font-secondary md:text-lg text-primary;
+            span {
+                @apply mr-1 inline-block;
+            }
+            .name:after {
+                @apply pl-1 text-lg;
+                content: '-';
+            }
+            .street-row:after,
+            .additionalAddress:after {
+                @apply text-lg;
+                content: ',';
+            }
+        }
+    }
+}
+.btn-group {
+    @apply flex flex-wrap items-end space-y-2;
+    button {
+        @apply text-sm font-normal;
+        &:first-child {
+            @apply mr-2;
+        }
+    }
+}
+/* Checkout Address */
+/* Checkout Payment Methods */
+.payment-section {
+    @apply w-full max-w-3xl mx-auto pl-6 md:pl-12 py-1.5;
+}
+.payment-method {
+    &-wrapper {
+        @apply p-0;
+        :global {
+            .braintree-options-list {
+                @apply block;
+            }
+        }
+    }
+    .main-heading {
+        @apply mb-2 mt-5;;
+    }
+    &-tabs {
+        @apply mt-2.5;
+    }
+}
+/* Checkout Payment Methods */
+/* Checkout Promo & Billing method */
+.promo-code {
+    &-label {
+        @apply block text-lg font-medium mb-2;
+    }
+    &-block {
+        @apply flex flex-col max-w-lg relative;
+    }
+    &-btn {
+        @apply absolute right-4 top-5 uppercase leading-none text-sm tracking-widest;
+        &:hover {
+            @apply no-underline;
+        }
+    }
+} 
+
+.billing-info {
+    @apply flex flex-col;
+    .main-heading {
+        @apply mb-2 mt-5;;
+    }
+}
+
+/* Checkout Promo & Billing method */
+.dot { 
+    @apply relative;
+    svg {
+        @apply ml-2 relative top-0.5;
+    }
+}
+.place-order {
+    @apply sm:max-w-md lg:max-w-lg w-full mt-8 mx-auto pl-6 sm:pl-0 md:ml-12 xl:mx-auto;
+    button {
+        @apply w-full;
+    }
+    &-desc {
+        @apply mt-4;
+        a {
+            @apply underline;
+        }
+    }
+}
+
+.order-success {
+    &-wrapper {
+        @apply text-center mt-20;
+        svg {
+            @apply inline-block;
+        }
+    }
+    &-heading {
+        @apply text-2xl md:text-3xl font-primary py-2;
+    }
+}
+
+.order-number {
+    @apply py-4 text-lg;
+    a {
+        @apply underline;
+    }
+}

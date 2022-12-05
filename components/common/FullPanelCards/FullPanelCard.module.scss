@@ -1,0 +1,488 @@
+.fullPanelCard {
+    @apply relative cursor-pointer overflow-hidden;
+    border-bottom: 1px solid rgba(225, 225, 225, 0.25);
+    transition: height 0.5s ease;
+
+    @media (min-width: 961px) {
+        @apply items-end align-top border-b-0 cursor-pointer flex overflow-hidden p-0 relative;
+        display: table-cell;
+        transition: 1000ms width;
+        width: 16.6vw;
+    }
+
+    &:hover {
+        .icon {
+            border-color: #34d9ff;
+            transform: rotate(360deg);
+
+            &::before,
+            &::after {
+                background-color: #34d9ff;
+            }
+
+            &::before {
+                left: 47%;
+            }
+        }
+
+        &.isCollapsed,
+        &.isPanelClosed {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        &.isPanelClosed {
+            .header {
+                transform: translateX(20px);
+
+                @media (min-width: 961px) {
+                    transform: translateY(-20px);
+                }
+            }
+        }
+    }
+
+    &::after {
+        @media (min-width: 961px) {
+            @apply opacity-25 absolute top-0 left-0 h-full;
+            border-left: 1px solid #fff;
+            content: '';
+        }
+    }
+
+    &:first-child {
+        &::after {
+            @apply border-none;
+        }
+    }
+
+    &:last-child {
+        @apply border-b-0;
+    }
+
+    .flex {
+        @media (min-width: 961px) {
+            @apply flex-col items-center;
+            margin-bottom: 25px;
+        }
+    }
+
+    .icon {
+        animation: 800ms ease 0ms 1 normal none running fadeIntro;
+        transition: 500ms transform;
+    }
+
+    .icon,
+    .close,
+    .closeDesktop {
+        height: 28px;
+        transition: 500ms transform;
+        width: 28px;
+
+        @media (min-width: 961px) {
+            height: 40px;
+            width: 40px;
+        }
+
+        &::after,
+        &::before {
+            @apply absolute;
+            background-color: var(--primary);
+            content: '';
+            height: 14px;
+            width: 2px;
+
+            @media (min-width: 961px) {
+                height: 20px;
+            }
+        }
+
+        &::after {
+            @apply left-1/2 top-1/2;
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        &::before {
+            @apply left-1/2 top-1/2;
+            transform: translateY(-50%);
+        }
+    }
+
+    .close,
+    .closeDesktop {
+        @apply -m-3 absolute;
+        height: 40px;
+        transform: rotate(-135deg);
+        width: 40px;
+
+        @media (min-width: 961px) {
+            @apply hidden;
+        }
+
+        &::after,
+        &::before {
+            @apply h-6;
+        }
+
+        &:hover {
+            border-color: #34d9ff;
+            transform: rotate(135deg);
+
+            &::before,
+            &::after {
+                background-color: #34d9ff;
+            }
+        }
+    }
+
+    .icon {
+        top: -4vw;
+
+        @media (min-width: 961px) {
+            top: auto;
+        }
+    }
+
+    .close {
+        right: 8vw;
+        top: 1vw;
+    }
+
+    .closeDesktop {
+        @media (min-width: 961px) {
+            @apply block;
+            bottom: 45px;
+            left: 10px;
+        }
+    }
+
+    .header {
+        transition: 500ms transform;
+    }
+
+    .content {
+        @media (max-width: 960px) {
+            @apply relative w-full;
+        }
+
+        @media (min-width: 961px) {
+            @apply absolute w-full left-0;
+            bottom: 70px;
+        }
+    }
+
+    .heading,
+    .subTitle {
+        font-size: 14.4px;
+        letter-spacing: 1.152px;
+
+        @media (min-width: 961px) {
+            @apply text-center;
+        }
+    }
+
+    .heading {
+        letter-spacing: 4.8px;
+        line-height: 14.4px;
+        margin-bottom: 19px;
+    }
+
+    .subTitle {
+        line-height: 43.2px;
+        width: calc(90vw - 61px);
+
+        @media (min-width: 961px) {
+            @apply w-auto;
+            line-height: 21.6px;
+            margin: 0 0 28.8px 0;
+        }
+    }
+
+    .panel {
+        transition: 500ms height, opacity 500ms, visibility 500ms;
+        width: 43%;
+
+        @media (max-width: 479px) {
+            width: 85%;
+        }
+
+        @media (min-width: 961px) {
+            transition: none;
+            width: 402px;
+        }
+    }
+
+    .copy {
+        font-size: 14.4px;
+        letter-spacing: 1.152px;
+        line-height: 21.6px;
+
+        @media (max-width: 479px) {
+            width: 85%;
+        }
+
+        @media (min-width: 961px) {
+            margin-bottom: 60px;
+        }
+    }
+
+    .footNote {
+        bottom: auto;
+        color: #b1b1b1;
+        font-size: 10.2px;
+        letter-spacing: 0.816px;
+        line-height: 16.32px;
+        width: 600px;
+
+        @media (max-width: 479px) {
+            @apply left-auto bottom-auto;
+            margin-top: 3vw;
+            width: 90vw;
+        }
+
+        @media (min-width: 480px) {
+            @apply hidden;
+        }
+
+        @media (max-width: 600px) {
+            width: calc(94vw - 50px);
+        }
+
+        @screen md {
+            bottom: 60px;
+        }
+
+        @media (min-width: 961px) {
+            @apply absolute text-left block;
+            bottom: -40px;
+            left: 65px;
+        }
+    }
+
+    .footNoteMobile {
+        @apply hidden;
+
+        @media (min-width: 480px) {
+            @apply block;
+            bottom: 55px;
+        }
+
+        @media (min-width: 961px) {
+            @apply hidden;
+        }
+    }
+
+    .wrapper {
+        @media (min-width: 961px) {
+            @apply relative;
+        }
+
+        @media (max-width: 960px) {
+            @apply h-full relative w-auto;
+            margin: 3.2vw;
+            top: 2vw;
+        }
+    }
+
+    &.isPanelClosed {
+        transition-delay: 0s, 500ms;
+        transition-duration: 500ms, 500ms;
+        transition-property: background, width;
+        transition-timing-function: ease, ease;
+
+        @media (max-width: 960px) {
+            height: 92px;
+            transition: 500ms height;
+        }
+
+        @media (min-width: 961px) {
+            @apply align-bottom;
+        }
+
+        .header {
+            animation: 800ms ease 0ms 1 normal none running fadeIntro;
+        }
+
+        .subTitle {
+            line-height: 21.6px;
+        }
+
+        .flex {
+            @media (min-width: 961px) {
+                @apply absolute;
+                bottom: 70px;
+            }
+        }
+
+        .wrapper {
+            @media (min-width: 961px) {
+                @apply flex items-end;
+            }
+        }
+
+        .content {
+            @media (min-width: 961px) {
+                @apply relative bottom-0;
+                height: 40vw;
+            }
+        }
+    }
+
+    &:not(.isPanelClosed) {
+        .heading {
+            @apply text-left mb-0;
+            font-size: 12.6px;
+
+            @screen md {
+                font-size: 23.04px;
+            }
+        }
+
+        .icon,
+        .subTitle {
+            @apply hidden;
+        }
+    }
+
+    &.isExposed {
+        @apply cursor-pointer;
+
+        @media (min-width: 961px) {
+            @apply overflow-hidden cursor-auto bg-none;
+            padding: 22px 30px 15px 35px;
+            transition: 1000ms width;
+            width: 75vw;
+        }
+
+        @media (max-width: 960px) {
+            height: 80vw;
+        }
+
+        @media (max-width: 479px) {
+            height: 127vw;
+        }
+
+        .subTitle {
+            @apply block;
+            color: var(--primary);
+            font-size: 36px;
+            margin-bottom: 24px;
+
+            @media (max-width: 470px) {
+                font-size: 24px;
+            }
+
+            @media (min-width: 961px) {
+                @apply text-left font-thin;
+                line-height: 43.2px;
+                margin-bottom: 72px;
+                width: 370px;
+            }
+        }
+
+        .heading {
+            @apply text-center;
+            font-size: 12.6px;
+            margin-bottom: 5px;
+
+            @media (max-width: 960px) {
+                width: 80vw;
+            }
+
+            @media (min-width: 961px) {
+                @apply text-left;
+                font-size: 12.6px;
+            }
+        }
+
+        .copy {
+            color: #FFFFFF;
+        }
+
+        .wrapper {
+            @media (min-width: 961px) {
+                @apply h-full;
+            }
+        }
+
+        .flex {
+            @apply items-start;
+
+            @media (min-width: 961px) {
+                @apply mb-0;
+            }
+        }
+    }
+
+    &.isCollapsed {
+        height: 37.5px;
+
+        @screen md {
+            height: 10vw;
+            padding: 24px;
+        }
+
+        @media (min-width: 961px) {
+            @apply cursor-pointer pt-0 pb-0 align-bottom;
+            max-width: 50px;
+            transition: 1000ms width;
+            width: 5vw;
+        }
+
+        .heading {
+            @screen md {
+                @apply leading-none;
+            }
+
+            @media (min-width: 961px) {
+                @apply absolute text-center;
+                bottom: -25px;
+                font-size: 14px;
+                padding-top: 24px;
+                transform-origin: top left;
+                transform: translateX(0) rotate(-90deg);
+                width: 20vw;
+            }
+        }
+
+        .content {
+            @media (min-width: 961px) {
+                @apply relative bottom-0;
+                left: -24px;
+                height: 40vw;
+                width: 59px;
+            }
+        }
+
+        .wrapper {
+            @apply top-auto;
+
+            @screen md {
+                @apply mt-0 ml-0;
+            }
+        }
+
+        .flex {
+            @media (min-width: 961px) {
+                @apply mb-0 block;
+            }
+        }
+    }
+}
+
+@keyframes fadeIntro {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

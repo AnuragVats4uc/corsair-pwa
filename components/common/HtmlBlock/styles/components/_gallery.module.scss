@@ -1,0 +1,12 @@
+/**
+ * HTML Block Gallery
+ */
+
+// #gallery-container
+#gallery-container {
+    box-sizing: unset;
+
+    @media only screen and (max-width: 992px) {
+        max-height: inherit !important; // Inherited styles from legacy site
+    }
+}

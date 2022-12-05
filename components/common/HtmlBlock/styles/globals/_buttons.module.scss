@@ -1,0 +1,62 @@
+/**
+ * HTML Block Button
+ */
+
+// .btn-icon::after
+.btn-icon ::after {
+    border-right: unset;
+}
+
+// .btn
+.btn {
+    // .btn-primary
+    .btn-primary {
+        @apply bg-yellow font-normal text-black;
+        font-size: 14px;
+        letter-spacing: 1.35px;
+        margin-bottom: 1rem !important; // Inherited styles from legacy site
+        transition: all 200ms ease;
+        -webkit-transition: all 200ms ease;
+        -webkit-text-fill-color: black;
+        white-space: normal !important; // Inherited styles from legacy site
+        margin-top: 2rem;
+        border: unset;
+
+        // .btn.btn-primary:hover
+        &:hover {
+            background: #e1da00;
+            transition: all 200ms ease;
+            -webkit-transition: all 200ms ease;
+            box-shadow: 0px 3px 8px 0px #000;
+        }
+
+        // .btn-btn-primary.learn-more-btn:hover
+        &.learn-more-btn:hover {
+            background: #ccc;
+        }
+    }
+}
+
+// button.btn.btn-primary
+button.btn.btn-primary {
+    // button.btn.btn-primary.selected_true
+    &.selected_true {
+        @apply text-black;
+        background: #3e6eff;
+        border-radius: 15px !important; // Inherited styles from legacy site
+        font-size: 0.8em !important; // Inherited styles from legacy site
+        letter-spacing: 0.01px;
+    }
+
+    // button.btn.btn-primary.selected_false
+    &.selected_false {
+        background: #3e6eff;
+        border-radius: 15px !important; // Inherited styles from legacy site
+        border: 1px solid !important; // Inherited styles from legacy site
+        color: #000 !important; // Inherited styles from legacy site
+        -webkit-text-fill-color: unset !important; // Inherited styles from legacy site
+        background: unset !important; // Inherited styles from legacy site
+        font-size: 0.8em !important; // Inherited styles from legacy site
+        letter-spacing: 0.01px;
+    }
+}

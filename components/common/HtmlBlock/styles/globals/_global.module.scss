@@ -1,0 +1,70 @@
+/**
+ * HTML Block Global
+ */
+
+* {
+    box-sizing: border-box !important; // Inherited styles from legacy site
+}
+
+// #smalcode.wingsuit-root *
+#smalcode.wingsuit-root * {
+    box-sizing: border-box !important;
+}
+
+// #pdp
+#pdp {
+    @apply overflow-hidden;
+
+    @media only screen and (max-width: 1200px) {
+        font-size: 11px;
+    }
+
+    @media only screen and (max-width: 992px) {
+        font-size: 10px;
+    }
+}
+
+// section
+section {
+    @apply relative;
+
+    // section ul
+    ul {
+        @apply font-light;
+        font-size: 13.2px;
+        line-height: 1.8;
+    }
+
+    // section .wrapper
+    .wrapper {
+        @apply relative;
+    }
+}
+
+// body.in
+body.in {
+    @apply opacity-100 overflow-auto;
+}
+
+// div#label.half
+div#label.half {
+    @apply opacity-50;
+    color: #666;
+}
+
+// .shop-box .shop-logo > img
+.shop-box .shop-logo > img {
+    max-height: 100px;
+    max-width: 180px;
+}
+
+// .product-fixed-width-wrapper
+.product-fixed-width-wrapper {
+    @apply mx-0 my-auto;
+    max-width: 780px;
+}
+
+// .stock-wrapper
+.stock-wrapper {
+    @apply hidden;
+}

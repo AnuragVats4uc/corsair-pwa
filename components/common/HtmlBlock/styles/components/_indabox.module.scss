@@ -1,0 +1,57 @@
+/**
+ * HTML BlockIndabox
+ */
+
+// #indabox
+#indabox {
+    @apply text-white;
+    background: #222;
+    padding: 72px 0;
+
+    // #indabox h4,
+    // #indabox h1
+    h4,
+    h1 {
+        @apply font-light;
+        letter-spacing: 12px;
+    }
+
+    // #indabox h4
+    h4 {
+        letter-spacing: 2.4px;
+    }
+
+    // #indabox .subHeader
+    .subHeader {
+        @apply font-normal;
+        margin: 24px 0 -12px;
+    }
+
+    // #indabox .half
+    .half {
+        @apply inline-block;
+        width: 46%;
+        padding: 2%;
+
+        @media only screen and (max-width: 768px) {
+            width: 96%;
+        }
+    }
+
+    // #indabox ul
+    ul {
+        padding: 12px 24px 3em;
+
+        // #indabox ul li
+        li {
+            color: #fecc2d;
+
+            // #indabox ul li span
+            span {
+                @apply text-white font-hairline;
+                line-height: 2;
+                letter-spacing: 0.6px;
+            }
+        }
+    }
+}

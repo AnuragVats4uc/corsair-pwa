@@ -1,0 +1,11 @@
+.swatch-group-container {
+    @apply my-10 text-white;
+}
+
+.swatch-group-items {
+    border-top: 0.5px solid var(--text-tertiary);
+
+    &:last-child {
+        border-bottom: 0.5px solid var(--text-tertiary);
+    }
+}

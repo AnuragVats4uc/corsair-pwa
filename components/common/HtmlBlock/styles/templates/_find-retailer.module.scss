@@ -1,0 +1,11 @@
+/**
+ * HTML Block Find Retailer
+ */
+
+// .FindRetailerNonCommerce-PickUpInStoreAction
+.FindRetailerNonCommerce-PickUpInStoreAction {
+    // .FindRetailerNonCommerce-PickUpInStoreAction .modal .modal-header
+    .modal .modal-header {
+        @apply h-auto block;
+    }
+}

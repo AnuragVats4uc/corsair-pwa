@@ -1,0 +1,598 @@
+/**
+ * HTML BlockVirtuoso Index
+ */
+
+// .virtuoso-overview
+.virtuoso-overview {
+    @apply text-center;
+
+    @media (min-width: 1348px) {
+        padding-bottom: 5rem;
+    }
+
+    // .virtuoso-overview h2
+    h2 {
+        @apply font-bebasNeue font-bold;
+        color: #000 !important;
+        font-size: 1.875rem;
+        line-height: 2rem;
+        --tw-text-opacity: 1;
+        color: rgba(255, 255, 255, var(--tw-text-opacity));
+        letter-spacing: 0.0625rem;
+
+        @media (min-width: 1024px) {
+            font-size: 3.75rem;
+            line-height: 3.75rem;
+        }
+    }
+
+    // .virtuoso-overview .feature-pre
+    .feature-pre {
+        @apply relative;
+
+        // .virtuoso-overview .feature-pre img
+        img {
+            @media (max-width: 768px) {
+                transform: translateX(-25%);
+            }
+        }
+    }
+
+    /**
+     * This is intentionally commented out
+     */
+    // .virtuoso-overview .features-overview
+    // .features-overview {
+    //     background-color: #f9f8f8;
+
+    //     &section {
+    //         background-color: #fff;
+    //     }
+    // }
+    // }
+
+    // .virtuoso-overview .feature-list
+    .feature-list {
+        @apply text-left;
+        list-style-type: none;
+
+        // .virtuoso-overview .feature-list li
+        li {
+            max-width: 30em;
+            margin: 0 auto 1em;
+            padding-bottom: 0.5rem;
+
+            @media (min-width: 1348px) {
+                @apply absolute;
+                width: 20em;
+            }
+        }
+
+        // .virtuoso-overview .feature-list.no-hover
+        &.no-hover {
+            // .virtuoso-overview .feature-list.no-hover p
+            p {
+                @apply hidden;
+            }
+
+            // .virtuoso-overview .feature-list.no-hover p
+            .is-active p {
+                @apply block;
+            }
+        }
+
+        // .virtuoso-overview .feature-list h4
+        h4 {
+            @apply uppercase cursor-pointer relative;
+            padding-left: 2.5em;
+            margin-bottom: 1em;
+            color: #19212b;
+
+            // .virtuoso-overview .feature-list h4::before
+            &::before {
+                @apply absolute top-1/2 left-0;
+                content: '';
+                width: 2em;
+                height: 2em;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                background: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzFkMWQxYjt9LmNscy0yLC5jbHMtM3tmaWxsOm5vbmU7fS5jbHMtMntzdHJva2U6IzFkMWQxYjt9LmNscy0ze3N0cm9rZTojZmZmO3N0cm9rZS13aWR0aDoxLjVweDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPnBsdXMtY2lyY2xlPC90aXRsZT48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNSw0OUEyNCwyNCwwLDEsMCwxLDI1LDI0LDI0LDAsMCwwLDI1LDQ5Ii8+PGNpcmNsZSBjbGFzcz0iY2xzLTIiIGN4PSIyNSIgY3k9IjI1IiByPSIyNCIvPjxsaW5lIGNsYXNzPSJjbHMtMyIgeDE9IjI1IiB5MT0iMTIuNDgiIHgyPSIyNSIgeTI9IjM3LjUzIi8+PGxpbmUgY2xhc3M9ImNscy0zIiB4MT0iMzcuNTMiIHkxPSIyNSIgeDI9IjEyLjQ3IiB5Mj0iMjUiLz48L3N2Zz4=')
+                    center no-repeat;
+                background-size: 2em 2em;
+                -webkit-transition: -webkit-transform 0.2s ease-out;
+                transition: -webkit-transform 0.2s ease-out;
+                transition: transform 0.2s ease-out;
+                transition: transform 0.2s ease-out,
+                    -webkit-transform 0.2s ease-out;
+            }
+        }
+
+        // .virtuoso-overview .feature-list p
+        p {
+            @apply hidden mt-0 font-light;
+            margin-bottom: 0.2em;
+            color: #19312b;
+            font-size: 12px;
+            letter-spacing: 0.6px;
+            line-height: 21.6px;
+
+            @media (min-width: 1348px) {
+                @apply opacity-0;
+                display: block !important;
+                -webkit-transform: translateY(3rem);
+                transform: translateY(3rem);
+                -webkit-transition: 0.2s;
+                transition: 0.2s;
+            }
+        }
+
+        // .virtuoso-overview .feature-list .is-active
+        .is-active {
+            // .virtuoso-overview .feature-list .is-active h4::before
+            h4::before {
+                background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZGEwMDt9LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2Utd2lkdGg6MS41cHg7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5taW51cy15ZWxsb3c8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI1LDQ5QTI0LDI0LDAsMSwwLDEsMjUsMjQsMjQsMCwwLDAsMjUsNDkiLz48bGluZSBjbGFzcz0iY2xzLTIiIHgxPSIzNy41MyIgeTE9IjI1IiB4Mj0iMTIuNDciIHkyPSIyNSIvPjwvc3ZnPg==');
+                -webkit-transform: translateY(-50%) rotate(180deg);
+                transform: translateY(-50%) rotate(180deg);
+            }
+
+            // .virtuoso-overview .feature-list .is-active p
+            p {
+                @apply block;
+
+                @media (min-width: 1348px) {
+                    opacity: 1;
+                    -webkit-transform: translateY(0rem);
+                    transform: translateY(0rem);
+                }
+            }
+        }
+
+        // .virtuoso-overview .feature-list .has-callout
+        .has-callout {
+            // .virtuoso-overview .feature-list .has-callout::before,
+            // .virtuoso-overview .feature-list .has-callout::after
+            &::before,
+            &::after {
+                @media (min-width: 1348px) {
+                    @apply absolute opacity-0;
+                    content: '';
+                    -webkit-transition: opacity 2s;
+                    transition: opacity 2s;
+                }
+            }
+
+            // .virtuoso-overview .feature-list .has-callout.is-active
+            &.is-active {
+                // .virtuoso-overview .feature-list .has-callout.is-active::after
+                &::after {
+                    @media (min-width: 1348px) {
+                        @apply opacity-100;
+                        border: 1px solid #fecb00;
+                    }
+                }
+
+                // .virtuoso-overview .feature-list .has-callout.is-active::before
+                &::before {
+                    @media (min-width: 1348px) {
+                        @apply opacity-100;
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 5px;
+                        background: #fecb00;
+                        margin-top: -2px;
+                        margin-left: -3px;
+                    }
+                }
+            }
+        }
+
+        // .virtuoso-overview .feature-list--left,
+        // .virtuoso-overview .feature-list--right
+        &--left,
+        &--right {
+            @media (min-width: 1348px) {
+                @apply absolute left-0 top-0;
+            }
+
+            // .virtuoso-overview .feature-list--left > h4,
+            // .virtuoso-overview .feature-list--right > h4
+            > h4 {
+                @apply text-left;
+                border-bottom: 1px solid;
+                margin-bottom: 1.5rem;
+            }
+
+            // .virtuoso-overview .feature-list--left li,
+            // .virtuoso-overview .feature-list--right li
+            li {
+                @media (min-width: 1348px) {
+                    position: static !important;
+                }
+            }
+
+            // .virtuoso-overview .feature-list--left p
+            // .virtuoso-overview .feature-list--right p
+            p {
+                display: none !important;
+            }
+
+            // .virtuoso-overview .feature-list--left .is-active,
+            // .virtuoso-overview .feature-list--right .is-active
+            .is-active {
+                // .virtuoso-overview .feature-list--left .is-active p,
+                // .virtuoso-overview .feature-list--right .is-active p
+                p {
+                    display: block !important;
+                }
+            }
+        }
+
+        // .virtuoso-overview .feature-list--right
+        &--right {
+            // .virtuoso-overview .feature-list--right .is-active h4::before
+            .is-active h4::before {
+                @media (min-width: 1348px) {
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzM3NzFkNTt9LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2Utd2lkdGg6MS41cHg7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5taW51cy1ibHVlPC90aXRsZT48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNSw0OUEyNCwyNCwwLDEsMCwxLDI1LDI0LDI0LDAsMCwwLDI1LDQ5Ii8+PGxpbmUgY2xhc3M9ImNscy0yIiB4MT0iMzcuNTMiIHkxPSIyNSIgeDI9IjEyLjQ3IiB5Mj0iMjUiLz48L3N2Zz4=');
+                }
+            }
+        }
+
+        // .virtuoso-overview .feature-list--se
+        &--se {
+            @media (min-width: 1348px) {
+                @apply mb-0;
+            }
+
+            // .virtuoso-overview .feature-list--se .is-active
+            .is-active {
+                // .virtuoso-overview .feature-list--se .is-active h4::before
+                h4::before {
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzM3NzFkNTt9LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2Utd2lkdGg6MS41cHg7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5taW51cy1ibHVlPC90aXRsZT48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNSw0OUEyNCwyNCwwLDEsMCwxLDI1LDI0LDI0LDAsMCwwLDI1LDQ5Ii8+PGxpbmUgY2xhc3M9ImNscy0yIiB4MT0iMzcuNTMiIHkxPSIyNSIgeDI9IjEyLjQ3IiB5Mj0iMjUiLz48L3N2Zz4=');
+                }
+            }
+
+            // .virtuoso-overview .feature-list--se .is-active .is-yellow
+            .is-yellow {
+                // .virtuoso-overview .feature-list--se .is-active .is-yellow.is-active
+                &.is-active {
+                    // .virtuoso-overview .feature-list--se .is-active .is-yellow.is-active h4::before
+                    h4::before {
+                        background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZGEwMDt9LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2Utd2lkdGg6MS41cHg7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5taW51cy15ZWxsb3c8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI1LDQ5QTI0LDI0LDAsMSwwLDEsMjUsMjQsMjQsMCwwLDAsMjUsNDkiLz48bGluZSBjbGFzcz0iY2xzLTIiIHgxPSIzNy41MyIgeTE9IjI1IiB4Mj0iMTIuNDciIHkyPSIyNSIvPjwvc3ZnPg==');
+                    }
+                }
+            }
+
+            // .virtuoso-overview .feature-list--se .has-callout.is-active::after
+            .has-callout.is-active::after {
+                border: 1px solid #3771d5;
+                background: #3771d5;
+            }
+
+            // .virtuoso-overview .feature-list--se_construction
+            &_construction {
+                @apply left-0;
+                top: 20%;
+
+                // .virtuoso-overview .feature-list--se_construction.is-active
+                &.is-active {
+                    // .virtuoso-overview .feature-list--se_construction.is-active::after
+                    &::after {
+                        @media (min-width: 1348px) {
+                            top: 1rem;
+                            left: 95%;
+                            width: 70%;
+                            height: 170%;
+                            border-width: 1px 1px 0 0 !important;
+                        }
+                    }
+
+                    // .virtuoso-overview .feature-list--se_construction.is-active::before
+                    &::before {
+                        @media (min-width: 1348px) {
+                            top: 170%;
+                            left: 165%;
+                            margin-right: -3px;
+                            -webkit-transform: translateY(1rem);
+                            transform: translateY(1rem);
+                        }
+                    }
+                }
+            }
+
+            // .virtuoso-overview .feature-list--se_lighting
+            &_lighting {
+                @apply left-0;
+                top: 55%;
+
+                // .virtuoso-overview .feature-list--se_lighting.is-active
+                &.is-active {
+                    // .virtuoso-overview .feature-list--se_lighting.is-active::after
+                    &::after {
+                        @media (min-width: 1348px) {
+                            @apply w-full h-1/2;
+                            top: 1rem;
+                            left: 95%;
+                            border-width: 1px 1px 0 0 !important;
+                        }
+                    }
+
+                    // .virtuoso-overview .feature-list--se_lighting.is-active::before
+                    &::before {
+                        @media (min-width: 1348px) {
+                            @apply top-1/2;
+                            left: 195%;
+                            margin-right: -3px;
+                            -webkit-transform: translateY(1rem);
+                            transform: translateY(1rem);
+                        }
+                    }
+                }
+            }
+
+            // .virtuoso-overview .feature-list--se_lighting_pouch
+            &_pouch {
+                @apply right-0;
+                top: 20%;
+            }
+
+            // .virtuoso-overview .feature-list--se_lighting_microphone
+            &_microphone {
+                @apply top-1/2 right-0;
+
+                // .virtuoso-overview .feature-list--se_lighting_microphone.is-active
+                &.is-active {
+                    // .virtuoso-overview .feature-list--se_lighting_microphone.is-active::after
+                    &::after {
+                        @media (min-width: 1348px) {
+                            top: 1rem;
+                            right: 105%;
+                            width: 10%;
+                            height: 130%;
+                            border-width: 1px 0 0 1px !important;
+                        }
+                    }
+
+                    // .virtuoso-overview .feature-list--se_lighting_microphone.is-active::before
+                    &::before {
+                        @media (min-width: 1348px) {
+                            top: 130%;
+                            right: 115%;
+                            margin-right: -3px;
+                            -webkit-transform: translateY(1rem);
+                            transform: translateY(1rem);
+                        }
+                    }
+                }
+            }
+
+            // .virtuoso-overview .feature-list--se_lighting_storage
+            &_storage {
+                @apply right-0;
+                top: 77%;
+
+                // .virtuoso-overview .feature-list--se_lighting_storage.is-active
+                &.is-active {
+                    // .virtuoso-overview .feature-list--se_lighting_storage.is-active::after
+                    &::after {
+                        @media (min-width: 1348px) {
+                            top: 1rem;
+                            right: 105%;
+                            width: 10%;
+                            height: 130%;
+                            border-width: 1px 0 0 1px !important;
+                        }
+                    }
+
+                    // .virtuoso-overview .feature-list--se_lighting_storage.is-active::before
+                    &::before {
+                        @media (min-width: 1348px) {
+                            top: 130%;
+                            right: 115%;
+                            margin-right: -3px;
+                            -webkit-transform: translateY(1rem);
+                            transform: translateY(1rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // .virtuoso-overview .feature-list_durable
+    .feature-list_durable {
+        @media (min-width: 1348px) {
+            @apply top-0 right-0;
+        }
+
+        // .virtuoso-overview .feature-list_durable.is-active
+        &.is-active {
+            // .virtuoso-overview .feature-list_durable.is-active::after
+            &::after {
+                @media (min-width: 1348px) {
+                    top: 0.4rem;
+                    right: 105%;
+                    width: 45%;
+                    height: 230%;
+                    border-width: 1px 0 0 1px !important;
+                }
+            }
+
+            // .virtuoso-overview .feature-list_durable.is-active::before
+            &::before {
+                @media (min-width: 1348px) {
+                    top: 230%;
+                    right: 150%;
+                    -webkit-transform: translateY(0.4rem);
+                    transform: translateY(0.4rem);
+                    margin-right: -3px;
+                }
+            }
+        }
+    }
+
+    // .virtuoso-overview .feature-list_comfort
+    .feature-list_comfort {
+        @apply left-0;
+        top: 37.5%;
+
+        // .virtuoso-overview .feature-list_comfort.is-active
+        &.is-active {
+            // .virtuoso-overview .feature-list_comfort.is-active::after
+            &::after {
+                @media (min-width: 1348px) {
+                    @apply left-1/2;
+                    top: 0.4rem;
+                    width: 135%;
+                    height: 55%;
+                    border-width: 1px 1px 0 0 !important;
+                }
+            }
+
+            // .virtuoso-overview .feature-list_comfort.is-active::before
+            &::before {
+                @media (min-width: 1348px) {
+                    top: 55%;
+                    left: 185%;
+                    -webkit-transform: translateY(0.4rem);
+                    transform: translateY(0.4rem);
+                }
+            }
+        }
+    }
+
+    // .virtuoso-overview .feature-list_sound
+    .feature-list_sound {
+        @apply right-0;
+        top: 37.5%;
+
+        // .virtuoso-overview .feature-list_sound.is-active
+        &.is-active {
+            // .virtuoso-overview .feature-list_sound.is-active::after
+            &::after {
+                @media (min-width: 1348px) {
+                    top: 0.4rem;
+                    right: 105%;
+                    width: 70%;
+                    height: 90%;
+                    border-width: 1px 0 0 1px !important;
+                }
+            }
+
+            // .virtuoso-overview .feature-list_sound.is-active::before
+            &::before {
+                @media (min-width: 1348px) {
+                    top: 90%;
+                    right: 175%;
+                    -webkit-transform: translateY(0.4rem);
+                    transform: translateY(0.4rem);
+                    margin-right: -3px;
+                }
+            }
+        }
+    }
+    // .virtuoso-overview .feature-list_customize
+    .feature-list_customize {
+        @apply left-0;
+        top: 75%;
+
+        // .virtuoso-overview .feature-list_customize.is-active
+        &.is-active {
+            // .virtuoso-overview .feature-list_customize.is-active::after
+            &::after {
+                @media (min-width: 1348px) {
+                    top: -70%;
+                    left: 50%;
+                    width: 95%;
+                    height: 75%;
+                    border-width: 0 1px 1px 0 !important;
+                }
+            }
+
+            // .virtuoso-overview .feature-list_customize.is-active::before
+            &::before {
+                @media (min-width: 1348px) {
+                    top: -70%;
+                    left: 145%;
+                }
+            }
+        }
+    }
+
+    // .virtuoso-overview .feature-list_microphone
+    .feature-list_microphone {
+        @apply right-0;
+        top: 75%;
+
+        // .virtuoso-overview .feature-list_microphone.is-active
+        &.is-active {
+            // .virtuoso-overview .feature-list_microphone.is-active::after
+            &::after {
+                @media (min-width: 1348px) {
+                    top: 0.4rem;
+                    right: 105%;
+                    width: 15%;
+                    height: 30%;
+                    border-width: 1px 0 0 0 !important;
+                }
+            }
+
+            // .virtuoso-overview .feature-list_microphone.is-active::before
+            &::before {
+                @media (min-width: 1348px) {
+                    top: 0.4rem;
+                    right: 120%;
+                    margin-right: -3px;
+                }
+            }
+        }
+    }
+
+    // .virtuoso-overview .feature-list_storage
+    .feature-list_storage {
+        @apply right-0;
+        top: 75%;
+
+        // .virtuoso-overview .feature-list_storage.is-active
+        &.is-active {
+            // .virtuoso-overview .feature-list_storage.is-active::after
+            &::after {
+                @media (min-width: 1348px) {
+                    top: 0.4rem;
+                    right: 105%;
+                    width: 15%;
+                    height: 30%;
+                    border-width: 1px 0 0 0 !important;
+                }
+            }
+
+            // .virtuoso-overview .feature-list_storage.is-active::before
+            &::before {
+                @media (min-width: 1348px) {
+                    top: 0.4rem;
+                    right: 120%;
+                    margin-right: -3px;
+                }
+            }
+        }
+    }
+
+    // .virtuoso-overview .feature-abs
+    .feature-abs {
+        @media (min-width: 1348px) {
+            @apply relative;
+            height: 822px;
+            margin: 3rem auto 0;
+        }
+
+        // .virtuoso-overview .feature-abs img
+        img {
+            @media (min-width: 1348px) {
+                @apply absolute;
+                width: 39.69%;
+                height: 65.95%;
+                top: 9%;
+                left: 31.72%;
+            }
+        }
+    }
+}

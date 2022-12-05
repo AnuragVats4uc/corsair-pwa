@@ -1,0 +1,122 @@
+.carouselhow-container {
+    @apply h-full flex flex-col;
+    margin: 15px 0;
+
+    :global {
+        .slick-list {
+            padding: 0px !important;
+        }
+        .slick-slide {
+            filter: grayscale(1);
+        }
+        .slick-current {
+            filter: grayscale(0);
+        }
+        .slick-prev,
+        .slick-next {
+            top: 27.5%;
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+
+            button {
+                @apply border-none flex items-center justify-center;
+                width: 40px;
+                height: 40px;
+            }
+            &:before {
+                content: none;
+            }
+        }
+        .slick-prev > button > svg {
+            width: 32px;
+            height: 32px;
+        }
+        .slick-next > button > svg {
+            width: 32px;
+            height: 32px;
+        }
+        .slick-prev {
+            left: 0;
+            margin-left: 15px;
+        }
+        .slick-next {
+            right: 0;
+            margin-right: 15px;
+        }
+        .slick-prev > button {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.slider-wrapper {
+    @apply w-full;
+}
+
+.slider-list {
+    @apply w-full;
+    margin: 15px 0;
+}
+
+@screen md {
+    .carouselhow-container {
+        margin: 0;
+
+        :global {
+            .slick-prev,
+            .slick-next {
+                top: 47.5%;
+            }
+            .slick-prev > button > svg {
+                width: 40px;
+                height: 40px;
+            }
+            .slick-next > button > svg {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .carouselhow-container {
+        @apply flex-row overflow-hidden justify-around;
+        margin-right: 100px;
+
+        :global {
+            .slick-prev,
+            .slick-next {
+                top: -3.5%;
+                margin-top: -15px;
+            }
+            .slick-prev {
+                left: 3rem;
+            }
+            .slick-next {
+                left: 8rem;
+            }
+            .slick-vertical .slick-slide {
+                display: block;
+                height: auto;
+                border: none;
+            }
+        }
+    }
+
+    .slider-wrapper {
+        width: 80%;
+        @apply self-center;
+    }
+
+    .slick-slide {
+        @apply h-full flex flex-row;
+        margin-top: 14.5px;
+    }
+
+    .slider-list {
+        width: 200px;
+        margin: 0 0 0 100px;
+    }
+}

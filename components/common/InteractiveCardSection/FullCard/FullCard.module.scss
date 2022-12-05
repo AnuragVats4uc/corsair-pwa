@@ -1,0 +1,65 @@
+.full-card {
+    width: 900px;
+    height: 560px;
+    &-text-wrapper {
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+    
+        &::-webkit-scrollbar-track {
+            background-color: rgba(#000000, 0.12);
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(#ffffff, $alpha: 0.36);
+        }
+    
+        @screen lg {
+            max-height: 450px;
+        }
+        overflow-y: auto;
+        .full-card-heading {
+            font-size: 32px;
+            max-width: 408px;
+        }
+    
+        .full-card-text {
+            margin-top: 24px;
+            white-space: pre-wrap;
+        }
+    }
+
+    &-content {
+        padding: 32px 40px 8px;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.02) 9%,
+            rgba(0, 0, 0, 0.05) 19%,
+            rgba(0, 0, 0, 0.12) 28%,
+            rgba(0, 0, 0, 0.2) 38%,
+            rgba(0, 0, 0, 0.29) 48%,
+            rgba(0, 0, 0, 0.39) 57%,
+            rgba(0, 0, 0, 0.5) 66%,
+            rgba(0, 0, 0, 0.61) 74%,
+            rgba(0, 0, 0, 0.71) 81%,
+            rgba(0, 0, 0, 0.8) 88%,
+            rgba(0, 0, 0, 0.88) 93%,
+            rgba(0, 0, 0, 0.95) 97%,
+            rgba(0, 0, 0, 0.98) 99%,
+            rgba(0, 0, 0, 1) 100%
+        );
+    }
+    &-empty {
+        @apply pb-9;
+    }
+    &-grid {
+        @apply grid grid-cols-4 gap-5 mt-auto -mb-12;
+    }
+    &-left{
+        @apply left-10;
+    }
+    &-right{
+        @apply right-10;
+    }
+}

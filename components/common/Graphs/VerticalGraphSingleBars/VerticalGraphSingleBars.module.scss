@@ -1,0 +1,145 @@
+.vertical-graph-single-bars-container {
+    background: #000 url(/icons/pattern-scarif-dashboard-area.svg) 100% 100%
+        repeat fixed;
+    background-size: 42px 68px;
+
+    > div {
+        background: linear-gradient(
+            135deg,
+            rgba(24, 46, 40, 0),
+            #000 33%,
+            #000 66%,
+            transparent
+        );
+    }
+
+    .left-column {
+        max-width: 50%;
+        padding-left: 40px;
+
+        > div {
+            max-width: 540px;
+
+            .logo {
+                margin-bottom: 20px;
+
+                > span {
+                    @apply max-w-full;
+                }
+            }
+
+            h2 {
+                font-size: 40px;
+                line-height: 40px;
+                margin-bottom: 32px;
+            }
+
+            .sub-title {
+                font-size: 22px;
+                line-height: 36px;
+            }
+
+            .description {
+                font-size: 22px;
+                line-height: 36px;
+            }
+
+            .graph-title {
+                font-weight: 700;
+                font-size: 22px;
+                padding: 64px 0 0px;
+            }
+
+            .footer-description {
+                color: #9d9d9d;
+                font-size: 14px;
+            }
+
+            .graph-container {
+                max-width: 335px;
+            }
+
+            :global {
+                .graph-container {
+                    margin-bottom: 24px;
+
+                    .recharts-surface {
+                        @apply overflow-visible;
+
+                        .chart-title {
+                            font-size: 18px;
+                        }
+
+                        .chart-label {
+                            font-size: 22px;
+                        }
+
+                        .recharts-label-list {
+                            * {
+                                @apply overflow-visible;
+                            }
+
+                            g {
+                                p {
+                                    @apply text-white;
+                                    min-width: 300px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .vertical-graph-single-bars-container {
+        .left-column {
+            > div {
+                max-width: 540px;
+
+                h2 {
+                    font-size: 30px;
+                    line-height: 32px;
+                    margin-bottom: 32px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .vertical-graph-single-bars-container {
+        .left-column {
+            @apply max-w-full;
+            padding: 200px 20px;
+
+            > div {
+                @apply m-auto;
+                max-width: 640px;
+
+                h2 {
+                    @apply text-center;
+                    margin-bottom: 16px;
+                }
+
+                .sub-title {
+                    @apply text-center;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+
+                .graph-container {
+                    max-width: 75%;
+                }
+
+                .description {
+                    @apply text-center;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

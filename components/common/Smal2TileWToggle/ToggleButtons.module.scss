@@ -1,0 +1,106 @@
+.toggle-move {
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-duration: 0.3s;
+    left: 52% !important;
+}
+
+.transition {
+    transition: 'all .3s';
+}
+
+.toggle {
+    max-width: 512px;
+
+    &-oval {
+        &-label {
+            padding: 0.65rem 1.9rem 0.4rem 1.8rem;
+            font-size: 14px;
+        }
+    }
+
+    &-oval-yellow {
+        letter-spacing: 0.1875rem;
+        font-size: 14px;
+        padding: 32px 0;
+        @screen md {
+            padding-bottom: 0;
+        }
+        &-left {
+            padding-right: 48px;
+        }
+        &-right {
+            padding-left: 48px;
+        }
+        &-switch {
+            border-radius: 1.5rem;
+            height: 28px;
+            width: 56px;
+            transition: all 0.3s;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+        &-dot {
+            top: 7%;
+            left: 10%; //50%
+            height: 24px;
+            width: 24px;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            transition-duration: 0.3s;
+            &-on {
+                left: 50% !important;
+                transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+                transition-duration: 0.3s;
+            }
+        }
+    }
+
+    &-retangular {
+        max-width: 464px;
+        &-label {
+            margin-bottom: 8px;
+            > span {
+                @apply w-1/2 text-center;
+                font-size: 14px;
+                letter-spacing: 0.1875rem;
+            }
+        }
+        &-bg {
+            @apply justify-around;
+            background-color: #1f1f1f;
+            height: 64px;
+            border-radius: 0.375rem;
+        }
+        &-switch {
+            left: 2%;
+            border-radius: 0.375rem;
+            width: 46%;
+            height: 48px;
+            bottom: 56px;
+            @screen md {
+                top: -50%;
+            }
+            transition: all 0.3s;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            &-on {
+                transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+                transition-duration: 0.3s;
+                left: 52% !important;
+            }
+        }
+        &-icon {
+            height: 48px;
+            width: 48px;
+            transition: all 0.3s;
+        }
+    }
+
+    &-heading {
+        font-size: 14px;
+        letter-spacing: 0.1875rem;
+    }
+
+    &-button {
+        &:focus {
+            outline: none;
+        }
+    }
+}

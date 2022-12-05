@@ -1,0 +1,243 @@
+/******* Layout 1 ********/
+
+.banner-container {
+    @apply flex flex-col;
+}
+
+.content-group-1,
+.content-group-2 {
+    @apply flex w-full flex-col;
+}
+
+.image-container,
+.image-container-3rd-tile {
+    @apply relative block;
+    padding: 18px 18px 20% 18px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+
+    &:after {
+        @apply absolute overflow-hidden inset-0 w-full h-full;
+        box-shadow: inset 90px 90px 144px 0px #0000009e;
+        content: '';
+    }
+}
+
+.extra-info-container {
+    @apply w-full relative z-5 text-white;
+    top: 16px;
+
+    .logo-container {
+        @apply mb-2;
+    }
+
+    .heading {
+        @apply font-bebasNeue;
+        font-size: 30px;
+        line-height: 1.1;
+    }
+
+    .sub-heading {
+        @apply font-aktivGrotesk font-light;
+        width: 70%;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        font-size: 15px;
+        line-height: 1.4;
+        text-shadow: rgb(0, 0, 0) 0px 1px 5px;
+        text-size-adjust: 100%;
+    }
+
+    
+    .cta {
+        @apply text-yellow flex items-baseline font-aktivGrotesk font-medium;
+        font-size: 15px;
+        text-shadow: 0px 1px 5px black;
+
+        .right-arrow-wrapper {
+            width: 12px;
+            margin-left: 4px;
+            filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 1));
+            svg{
+                g{
+                    polygon{
+                        fill:var(--dark-bg-btn-primary)
+                    }
+                }
+            }
+        }
+    }
+}
+
+    .banner-container {
+    .image-container,
+    .image-container-3rd-tile {
+        @screen md{
+            @apply px-7;
+        }
+       @screen lg{ 
+        padding: 4.5rem 4.5rem 20% 4.5rem;
+       }
+       @screen xl{
+           @apply px-24;
+       }
+    }
+    }
+
+
+@screen md {
+    .banner-container {
+        @apply flex-row;
+    }
+
+    .content-group-1,
+    .content-group-2 {
+        width: 50%;
+    }
+
+    .content-group-1 {
+        margin-right: 32px;
+    }
+
+    .image-container,
+    .image-container-3rd-tile {
+        padding: 6% 16px 20% 14%;
+    }
+
+    .image-container-3rd-tile {
+        @apply h-full;
+    }
+
+    .extra-info-container {
+        .logo-container {
+            & + .heading{
+                width: 60%;
+            }
+        }
+        .heading {
+            font-size: calc(40.08 * 100vw/1440);
+        }
+
+        .sub-heading {
+            font-size: calc(18.08 * 100vw / 1440);
+        }
+
+        .cta {
+            font-size: calc(16.08 * 100vw/1440);
+            .right-arrow-wrapper {
+                width: calc(12.08 * 100vw/1440);
+                height: calc(12.08 * 100vw / 1440);
+                margin-left:6px;
+
+            }
+        }
+    }
+}
+
+@screen lg {
+    .image-container,
+    .image-container-3rd-tile {
+        padding: 6% 16px 20% 6%;
+    }
+}
+
+@screen 9xl {
+    .extra-info-container {
+        .heading {
+            font-size: 56px;
+        }
+    }
+}
+
+/******* Layout 2 ********/
+
+.footer-banner {
+    @apply flex-row;
+    margin-bottom: 32px;
+    margin-top: 16px;
+
+    .image-container {
+        margin-top: unset;
+        &:after {
+            box-shadow: inset 0px 90px 74px 0px #0000009e;
+        }
+    }
+
+    .extra-info-container {
+        top: unset;
+        .heading {
+            text-align: center;
+        }
+
+        .cta {
+            font-size: 15px;
+            align-items: normal;
+            justify-content: center;
+            line-height: 1.4;
+            text-transform: uppercase;
+
+            .right-arrow-wrapper {
+                @apply block;
+                width: 12px;
+                height: 12px;
+                margin-left: 6px;
+                margin-top: 3px;
+                filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 1));
+
+            }
+        }
+    }
+
+    @screen sm {
+        @apply flex;
+
+        .content-group-1 {
+            @apply flex-row justify-between;
+            width: unset;
+            margin-right: unset;
+            flex: 1;
+        }
+
+        .image-container {
+            width: 33%;
+            padding: 32px 32px 10% 32px;
+            margin-bottom: unset;
+            margin-top: unset;
+            margin-left: unset;
+        }
+
+        .extra-info-container {
+            .cta {
+                @apply items-baseline;
+                font-size: calc(13.08 * 100vw / 1440);
+                margin-top: 16px;
+                margin-bottom: 16px;
+
+                .right-arrow-wrapper {
+                    @apply block;
+                    width: calc(10.08 * 100vw / 1440);
+                    height: unset;
+
+                }
+            }
+        }
+    }
+}
+
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* Landscape */
+@media screen and (max-width: 767px) and (orientation: landscape) { 
+
+    .content-group-1 {
+        @apply flex-row;
+    }
+            .image-container {
+                width: 50%;
+                padding: 16px 16px 15% 16px;
+                &:first-child{
+                    margin-right: 32px;
+                }
+            }
+
+}

@@ -1,0 +1,129 @@
+/**
+ * HTML Block Panel 6
+ */
+
+// .panel6
+.panel6 {
+    // .panel6 .item
+    .item {
+        @apply relative table;
+        height: 25vw;
+        background: url('//cwsmgmt.corsair.com/_ui/responsive/common/img/bg_related_products.png')
+            no-repeat center / cover;
+
+        @media only screen and (max-width: 992px) {
+            height: 33vw;
+        }
+
+        @media only screen and (max-width: 768px) {
+            height: 50vw;
+        }
+
+        @media only screen and (max-width: 479px) {
+            height: 100vw;
+        }
+
+        // .panel6 .item:hover
+        &:hover {
+            // .panel6 .item:hover .learn-more
+            .learn-more {
+                @apply opacity-100;
+                transition: all 500ms ease;
+            }
+
+            // .panel6 .item:hover .product-name
+            .product-name {
+                @apply opacity-100;
+                color: #111;
+                transition: all 500ms ease;
+                -webkit-transition: all 500ms ease;
+            }
+        }
+
+        // .panel6 .product-name
+        .product-name {
+            @apply w-full left-0 right-0 bottom-0 absolute text-center opacity-0 font-medium;
+            -webkit-transition: all 500ms ease;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #333;
+            font-size: 14.4px;
+            letter-spacing: 0.6px;
+            padding: 5%;
+            transition: all 500ms ease;
+        }
+    }
+
+    // .panel6 .slick-prev,
+    // .panel6 .slick-next
+    .slick-prev,
+    .slick-next {
+        top: 45%;
+        margin: 0 10px !important; // Inherited styles from legacy site
+        filter: invert(100%) !important; // Inherited styles from legacy site
+        width: 20px;
+        height: auto !important;
+        z-index: 1;
+    }
+
+    // .panel6 .slick-prev
+    .slick-prev {
+        @apply left-0;
+        transform: rotate(180deg);
+    }
+
+    // .panel6 .slick-next
+    .slick-next {
+        @apply right-0;
+    }
+
+    // .panel6 .realted-product
+    .related-product {
+        @apply table-cell align-middle w-full h-full cursor-pointer;
+
+        // .panel6 .realted-product .product-image
+        .product-image {
+            transition: all 500ms ease;
+            -webkit-transition: all 500ms ease;
+        }
+
+        // .panel6 .realted-product .product-image:hover img
+        &:hover img {
+            -webkit-transform: scale(1.1);
+            -webkit-transition: all 500ms ease;
+            transform: scale(1.1);
+            transition: all 500ms ease;
+        }
+    }
+
+    // .panel6 img
+    img {
+        @apply mx-0 my-auto w-auto;
+        max-height: 15vw;
+        max-width: 15vw;
+
+        @media only screen and (max-width: 768px) {
+            @apply w-auto;
+            max-width: 40vw;
+            max-height: 40vw;
+        }
+
+        @media only screen and (max-width: 479px) {
+            @apply w-auto;
+            max-width: 90vw;
+            max-height: 90vw;
+        }
+    }
+
+    // .panel6 .learn-more
+    .learn-more {
+        @apply w-full text-center absolute opacity-0;
+        top: 45%;
+        transition: all 500ms ease;
+        -webkit-transition: all 500ms ease;
+    }
+
+    // .panel6.btr-together-desktop.btr-together-desktop-hide
+    &.btr-together-desktop.btr-together-desktop-hide {
+        @apply h-0 overflow-hidden;
+    }
+}

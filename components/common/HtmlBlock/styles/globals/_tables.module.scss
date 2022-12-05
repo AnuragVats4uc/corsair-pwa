@@ -1,0 +1,31 @@
+/**
+ * HTML Block Spec Table
+ */
+
+// #specs-table
+#specs-table {
+    @apply text-left align-top border-collapse;
+
+    // #specs-table td
+    td {
+        padding: 5px;
+        border: 1px solid #ccc;
+    }
+
+    // #specs-table .specs-table-title
+    .specs-table-title {
+        @apply text-black font-bold text-left;
+        background-color: #f4f4f4;
+    }
+
+    // #specs-table .specs-table-data
+    .specs-table-data {
+        @apply text-left bg-white;
+    }
+}
+
+// th
+th {
+    padding: 5px;
+    border: 1px solid #ccc;
+}

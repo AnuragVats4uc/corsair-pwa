@@ -1,0 +1,176 @@
+.homepage {
+    h1,
+    h2,
+    h3 {
+        @apply uppercase;
+    }
+
+    :global {
+        .herobanner {
+            .wrapper {
+                @apply h-116;
+            }
+        }
+        .banner-content {
+            @apply bg-opacity-50 bg-black flex flex-col items-center justify-center mx-auto h-full;
+        }
+        .homepage-container {
+            @apply w-full md:max-w-screen-xl mx-auto px-5 xl:px-0;
+        }
+        .hp-banner {
+            @apply max-w-screen-xl m-auto;
+            &-text {
+                @apply max-w-2xl text-left px-8 md:pl-2 md:pr-8;
+    
+                h1 {
+                    @apply relative text-4xl md:text-7xl mx-auto leading-tight font-bold mb-5 text-white;
+                }
+            }
+            &-link {
+                @apply text-white pb-1 border-b-2 hover:border-p-3 text-lg;
+            }
+        }
+
+        .shop-latest {
+            h2 {
+                @apply text-4xl pt-10;
+            }
+            &-section {
+                @apply md:flex flex-col md:flex-row gap-4 lg:gap-6;
+            }
+        }
+        .home-grid-products {
+            @apply mt-20;
+            [class^='columnGroup'] {
+                @apply px-5 md:px-0 flex flex-col md:flex-row md:space-x-5;
+            }
+            .pagebuilder-column {
+                @apply pb-12 md:pb-0 sm:text-center md:text-left;
+                @apply w-full md:w-1/3 #{!important};
+                .wrapper {
+                    @apply w-full bg-cover bg-center rounded h-96 md:h-64 lg:h-96;
+                }
+                [class^='text'] {
+                    @apply sm:text-center md:text-left;
+                }
+            }
+            .heading {
+                @apply mt-1 mb-2.5 text-4xl;
+            }
+            .sub-heading {
+                @apply text-2xl;
+            }
+            figure {
+                @apply mb-2;
+                img {
+                    @apply sm:mx-auto;
+                }
+            }
+            p.title {
+                @apply py-2 pb-4;
+            }
+            a {
+                @apply text-t-4 border-b border-solid border-secondary font-medium leading-tight;
+            }
+        }
+
+        .bestsellers-grid,
+        .new-arrivals {
+            @apply relative p-2.5 md:p-0;
+            h2 {
+                @apply uppercase text-lg md:text-xl;
+            }
+            .link {
+                @apply absolute right-2.5 md:right-0 top-10 md:top-0 no-underline border-b border-secondary text-primary cursor-pointer text-sm md:text-base;
+            }
+        }
+
+        .new-arrivals {
+            .trending-grid {
+                .items {
+                    @apply grid md:grid-rows-2 md:grid-flow-col gap-2 md:gap-4;
+                    .product-item {
+                        &:first-child {
+                            @apply md:row-span-2 md:col-span-3;
+                        }
+                    }
+                }
+            }
+        }
+
+        .bestsellers-grid {
+            .trending-grid {
+                .items {
+                    @apply grid grid-cols-2 md:grid-cols-5 md:grid-flow-col gap-2 md:gap-4;
+                }
+            }
+        }
+
+        .shop-collection {
+            @apply p-5 pb-14 mt-10;
+            background-color: #B4C5BB;
+            [class^='columnGroup'] {
+                @apply flex flex-col md:flex-row md:space-x-5;
+            }
+            .pagebuilder-column {
+                @apply md:w-1/2 sm:text-center md:text-left;
+                @apply w-full md:w-1/2 #{!important};
+                [class^='text'] {
+                    @apply sm:text-center md:text-left;
+                }
+            }
+            > div {
+                @apply max-w-screen-xl mx-auto;
+            }
+            &.right-content {
+                background-color: #EBC6A2;
+                .shop-collection-content {
+                    @apply pl-5 py-5 lg:py-12 md:pl-12 xl:py-20 xl:pl-28;
+                }
+            }
+            &.left-content {
+                .shop-collection-content {
+                    @apply pr-5 py-5 lg:py-12 md:pr-12 xl:py-20 xl:pr-28;
+                }
+            }
+            .heading {
+                @apply text-3xl md:text-5xl mb-5 font-primary font-semibold;
+            }
+            .content {
+                @apply pr-10 mb-5;
+            }
+            button {
+                @apply border-b border-secondary text-lg;
+            }
+
+            &-image { 
+                &-col {
+                    @apply py-9;
+                }
+            }
+        }
+        .testimonials {
+            @apply md:px-0;
+            &-content {
+                @apply text-center text-secondary text-xl md:text-2xl max-w-2xl mx-auto;
+            }
+        }
+        .stars span {
+            @apply text-4xl mx-1;
+        }
+        .quotes {
+            @apply text-2xl md:text-3xl mb-5;
+        }
+        .home-shipping-info {
+            @apply p-10 text-2xl text-center;
+            background-color: #B56047;
+            p {
+                @apply text-secondary;
+            }
+        }
+    }
+
+    .section-primary {
+        @apply bg-black;
+    }
+}

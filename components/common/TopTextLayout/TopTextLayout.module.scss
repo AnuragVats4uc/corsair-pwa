@@ -1,0 +1,52 @@
+.topTextLayout {
+    padding: 56px 2rem 0px 2rem;
+
+    &-subHeading {
+        color: var(--dark-bg-btn-primary);
+        font-size: 0.75rem;
+        letter-spacing: 0.2rem;
+        margin-bottom: 0.25rem;
+
+        @screen md {
+            font-size: 1rem;
+        }
+
+        @screen lg {
+            font-size: 0.875rem;
+        }
+    }
+
+    &-heading {
+        font-size: 3.2rem;
+        letter-spacing: 0.1rem;
+        line-height: 3.2rem;
+        margin-bottom: 2rem;
+
+        @screen md {
+            font-size: 3.5rem;
+            line-height: 3.5rem;
+        }
+
+        @screen lg {
+            font-size: 3.75rem;
+            line-height: 3.75rem;
+        }
+    }
+
+    &-description {
+        margin: auto;
+        font-size: 1rem;
+        letter-spacing: 0.05rem;
+        line-height: 1.15rem;
+
+        @screen md {
+            font-size: 1.3rem;
+            line-height: 2.15rem;
+            width: 84%;
+        }
+
+        @screen lg {
+            letter-spacing: 0.05rem;
+        }
+    }
+}

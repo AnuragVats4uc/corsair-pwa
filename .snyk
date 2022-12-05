@@ -1,0 +1,8 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.0
+ignore:
+    'npm:react:20150318':
+        - '*':
+        reason: 'React npm package alias with preact considered as the lower version of react with vulnerabilities is a false alert'
+        expires: 2025-07-26T00:00:00.000Z
+patch: {}

@@ -1,0 +1,19 @@
+.cross {
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    & > svg {
+        width: 16px;
+        height: 16px;
+    }
+    @screen lg {
+        width: 24px;
+        height: 24px;
+        & > svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

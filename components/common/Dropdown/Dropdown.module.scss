@@ -1,0 +1,99 @@
+.dropdown {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 10;
+    @media (min-width: 768px) {
+        justify-content: flex-start;
+        margin-right: 24px;
+    }
+
+    .wrapper {
+        width: 248px;
+
+        @media (min-width: 768px) {
+            width: auto;
+        }
+    }
+
+    // .dropdown_label
+    .label {
+        color: #909090;
+        font-size: 12px;
+        letter-spacing: 1.25px;
+        line-height: 14.2px;
+        margin-right: 8px;
+        text-transform: uppercase;
+    }
+
+    // .dropdown_button
+    .button {
+        background-color: #000;
+        border: 1px solid #909090;
+        color: #909090;
+        font-size: 12px;
+        letter-spacing: 1.25px;
+        line-height: 14.2px;
+        margin-left: auto;
+        max-width: 248px;
+        padding: 9px 31px 6.82px 12px;
+        position: relative;
+        text-transform: uppercase;
+        width: 100%;
+
+        @media (min-width: 768px) {
+            max-width: 100%;
+            width: auto;
+        }
+
+        // .dropdown_button::after
+        &::after {
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 7px solid #909090;
+            content: '';
+            position: absolute;
+            right: 11px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        // .dropdown_button.isExposed::after
+        &.isExposed::after {
+            top: 40%;
+            transform: rotate(180deg);
+        }
+    }
+
+    // .dropdown_option
+    .option {
+        color: #909090;
+        font-size: 12px;
+        letter-spacing: 1.25px;
+        line-height: 14.2px;
+        padding: 10px 12px 8px 12px;
+        position: relative;
+        text-transform: uppercase;
+        width: 100%;
+
+        // .dropdown_option:hover
+        &:hover {
+            background-color: #909090;
+            color: #fff;
+        }
+    }
+
+    // .dropdown.menu
+    .menu {
+        background-color: #1e1e1e;
+        border: 1px solid #666666;
+        position: absolute;
+        min-width: 95%;
+        right: 0;
+        transform: translateY(2px);
+        white-space: nowrap;
+        width: auto;
+        z-index: 2;
+    }
+}

@@ -1,0 +1,38 @@
+.lists-table-wrapper {
+    padding: 50px 0 80px;
+
+    .lists {
+        max-width: 100%;
+        width: max-content;
+
+        @media screen and (max-width: 768px) {
+            @apply max-w-full;
+        }
+    }
+}
+
+.lists-tables {
+    @apply m-auto;
+    max-width: 1280px;
+
+    @media screen and (max-width: 1025px) {
+        @apply m-auto flex-col;
+        max-width: 90%;
+    }
+}
+
+.header-wrapper {
+    span {
+        font-size: 24px;
+        letter-spacing: 1.6px;
+
+        @media screen and (max-width: 768px) {
+            @apply text-lg tracking-wider;
+        }        
+    }
+
+    @media screen and (max-width: 768px) {
+        @apply w-full m-auto;
+        max-width: 90%;
+    }
+}

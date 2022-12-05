@@ -1,0 +1,82 @@
+/*
+  Custom components for jsx elements
+  -----------------------------------
+  * Compose component classes from several utilities.
+ */
+
+/* EXAMPLE:
+@layer components {
+  .btn-big {
+    @apply p-10 border border-5 border-p-1;
+  }
+}
+*/
+
+@layer components {
+    /* Tabs */
+    .tabs {
+        @apply overflow-hidden;
+    }
+    .tab-content {
+        @apply overflow-hidden transition-all transform duration-500 max-h-0;
+    }
+    .tab-content-inner {
+        @apply px-4 pb-5;
+    }
+    .tab-radio {
+        @apply w-full absolute cursor-pointer opacity-0 h-10;
+        z-index: 1;
+    }
+    .tab-header {
+        @apply flex justify-between items-center py-2 cursor-pointer;
+    }
+    .tab-title {
+        @apply text-base uppercase font-semibold;
+    }
+    .tab-header .arrow {
+        @apply p-1 mr-2 border-secondary border-r-2 border-b-2 transform rotate-45 duration-200;
+    }
+    .tab-radio:checked + .tab-header .arrow {
+        @apply -rotate-135;
+    }
+    .tab-radio:checked ~ .tab-content {
+        @apply max-h-screen;
+    }
+
+    /**
+  * Handle external elements without purge
+  */
+    @screen md-max {
+        body.pdp-page {
+            @apply bg-blackLight;
+            padding-bottom: 105px;
+        }
+
+        body.pdp-page iframe#launcher,
+        body.pdp-page .ot-floating-button {
+            bottom: 105px !important;
+        }
+
+        /**
+        * Z-index issue fix for chat popup external
+        */
+        .zoom--container-open iframe#launcher,
+        .zoom--container-open .ot-floating-button {
+            z-index: 1 !important;
+        }
+
+        /***
+    * Can be removed when mega menu styles are merged
+    * Remove the extra white space
+    */
+        div[class^='MegaMenu_mega-menu-root'] {
+            &::after {
+                max-height: 100%;
+            }
+        }
+    }
+
+    .lock-body-scroll {
+        @apply w-full h-full overflow-hidden;
+    }
+}

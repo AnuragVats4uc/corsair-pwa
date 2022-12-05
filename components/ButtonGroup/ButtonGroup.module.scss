@@ -1,0 +1,15 @@
+.button-group {
+    @apply flex flex-col md:flex-row space-y-2 md:space-y-0;
+    button {
+        @apply rounded-none transform transition duration-75 ease-in;
+    }
+}
+.enable-button {
+    @apply bg-transparent shadow-none border border-secondary text-primary;
+}
+.fade-button {
+    @apply opacity-50 bg-accents-2 border border-accents-5 text-primary;
+}
+.group-options {
+    @apply px-1 py-4;
+}

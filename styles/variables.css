@@ -1,0 +1,192 @@
+:root {
+  /* define custom variables for the entire project */
+  --another: rgb(179, 0, 255);
+
+  --primary: #ffffff;
+  --primary-2: #f1f3f5;
+  --secondary: #000000;
+  --secondary-2: #111;
+
+  --selection: var(--cyan);
+
+  --text-base: #000000;
+  --text-primary: #000000;
+  --text-secondary: white;
+  --text-tertiary: #9D9D9D;
+  --text-error: #FF4D6A;
+  --text-accessories: #E6E6E6;
+  --text-accessories-price: #999999;
+
+  --dark-bg-btn-primary: #ECE81A;
+
+  --hover: rgba(0, 0, 0, 0.075);
+  --hover-1: rgba(0, 0, 0, 0.15);
+  --hover-2: rgba(0, 0, 0, 0.25);
+
+  --cyan: #22b8cf;
+  --green: #37b679;
+  --red: #da3c3c;
+  --pink: #e64980;
+  --purple: #f81ce5;
+  --light-grey: #909090;
+
+  --blue: #0070f3;
+  --light-violet: #1DB2BF;
+
+  --violet-light: #7048e8;
+  --violet: #5f3dc4;
+
+  --black-light: #121212;
+
+  --accents-0: #f8f9fa;
+  --accents-1: #f1f3f5;
+  --accents-2: #e9ecef;
+  --accents-3: #dee2e6;
+  --accents-4: #ced4da;
+  --accents-5: #adb5bd;
+  --accents-6: #868e96;
+  --accents-7: #495057;
+  --accents-8: #343a40;
+  --accents-9: #212529;
+  --font-sans: -apple-system, system-ui, BlinkMacSystemFont, 'Aktiv Grotesk',
+    'aktiv-grotesk', sans-serif;
+
+  --bordercolor: #333;
+  --placeholderc: #858585;
+  --wrappercolor: #1E1E1E;
+  --border-active: #1BA3AF;
+  --border-light: #666666;
+  --hydro-submenu: #151515;
+  --hydro-submenu-modal: #1A1A1A;
+
+  /* true vars */
+  --base-font: 16px;
+
+  --p1: #000000;
+  --p2: #242424;
+  --p3: #9B9B9B;
+  --p4: #D8D8D8;
+
+  --s1: #681445;
+  --s2: #FF7474;
+  --s3: #F0CECE;
+  --s4: #D62727;
+
+  --t1: #FFFFFF;
+  --t2: #BFBFBF;
+  --t3: #979797;
+  --t4: #000000;
+
+  --q1: #FFFFFF;
+  --q2: #F7F7F7;
+  --q3: #F3F3F3;
+  --q4: #D8D8D8;
+
+  --cms1: #FF6161;
+  --cms2: #1CB2D2;
+  --cms3: #128efe;
+
+  --alert-success: #2C813F;
+  --alert-danger: #AB4D47;
+  --alert-warning: #C68B34;
+
+  --learn-more : #ece81a;
+
+
+  /*custom width */
+  --w-98 : 24.563rem
+
+  /* custom height */
+  --h-100: 28rem;
+  --h-104: 32rem;
+  --h-108: 36rem;
+  --h-112: 40rem;
+  --h-116: 44rem;
+  --h-120: 48rem;
+  --h-screen-2: calc(100vh / 2);
+  --h-screen-3: calc(100vh / 3);
+  --h-screen-4: calc(150vh);
+  --h-screen-5: calc(200vh);
+
+  /* For compatibility table */
+  --theme-light: #fcfcfc;
+  --light-theme-font: #444444;
+  
+  --table-border-dark: #999999;
+  --table-border-light: #a5a5a5;
+
+  --right-tick-dark-bg: #3b8649; 
+  --right-tick-light: #3b8649;
+  --right-tick-light-bg: #cae4cf;
+
+  --close-icon-dark-bg: #983131;
+  --close-icon-light: #983131;
+  --close-icon-light-bg: #f8e2e2;
+
+  --not-applicable-dark: #CCCCCC;
+  --not-applicable-dark-bg: #404040;
+  --not-applicable-light: #404040;
+  --not-applicable-light-bg: #CCCCCC;
+
+  --text-box-dark: #33260D;
+  --text-box-dark-bg: #E6C050;
+  --text-box-light: #81640e;
+  --text-box-light-bg: #fce799;
+
+  --edge-row-dark-bg: #747474;
+  --edge-row-light-bg: #666;
+
+  --colspan-dark-bg: #3e3e3e;
+  --colspan-light: #444;
+  --colspan-light-bg: #e0e0e0;
+}
+
+.bg-dark,
+[data-theme='dark'] {
+  --primary: #000000;
+  --primary-2: #111;
+  --secondary: #ffffff;
+  --secondary-2: #f1f3f5;
+  --hover: rgba(255, 255, 255, 0.075);
+  --hover-1: rgba(255, 255, 255, 0.15);
+  --hover-2: rgba(255, 255, 255, 0.25);
+  --selection: var(--purple);
+
+  --text-base: white;
+  --text-primary: white;
+  --text-secondary: black;
+  --text-tertiary: #9D9D9D;
+
+  --dark-bg-btn-primary: #ECE81A;
+
+  --accents-0: #212529;
+  --accents-1: #343a40;
+  --accents-2: #495057;
+  --accents-3: #868e96;
+  --accents-4: #adb5bd;
+  --accents-5: #ced4da;
+  --accents-6: #dee2e6;
+  --accents-7: #e9ecef;
+  --accents-8: #f1f3f5;
+  --accents-9: #f8f9fa;
+
+  --p1: #F2D139;
+  --p2: #EAB512;
+  --p3: #FFA800;
+  --p4: #D57004;
+
+  --s1: #f3a125;
+  --s2: #f27a10;
+  --s3: #ff5300;
+  --s4: #c94010;
+
+  --t1: #000000;
+  --t2: #f2f2f0;
+  --t3: #e4e4e1;
+  --t4: #ffffff;
+
+  --q1: #000000;
+  --q2: #111111;
+  --q3: #222222;
+  --q4: #D8D8D8;
+}

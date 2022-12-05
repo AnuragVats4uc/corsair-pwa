@@ -1,0 +1,63 @@
+.standard-card {
+    width: 247px;
+    height: 224px;
+    padding: 20px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 5px;
+
+    &-dark {
+        &:hover {
+            background-color: #414141 !important;
+        }
+    }
+    &-light {
+        &:hover {
+            background-color: #e6e6e6 !important;
+        }
+    }
+
+    &-image {
+        width: 64px;
+        height: 64px;
+        &:hover {
+            opacity: 0.5 !important;
+        }
+    }
+
+    &-text {
+        margin-top: 16px;
+        font-size: 14px;
+        letter-spacing: 0.8;
+        line-height: 1.286;
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+    &-heading {
+        font-size: 32px;
+        border-bottom: 2px solid #ece81a;
+
+        &-dark {
+            &:hover {
+                color: #bfbfbf !important;
+            }
+        }
+
+        &-light {
+            &:hover {
+                color: #595959 !important;
+            }
+        }
+    }
+
+    @screen lg {
+        width: 397px;
+        height: 224px;
+        padding: 24px;
+        &-image {
+            width: 72px;
+            height: 72px;
+        }
+    }
+}

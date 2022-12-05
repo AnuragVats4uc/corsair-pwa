@@ -1,0 +1,59 @@
+.banner-with-two-images {
+    padding: 5rem 1rem 0 1rem;
+
+    &-container {
+        @screen lg {
+            max-width: 104.615rem;
+        }
+
+        :global {
+            .left-right-text-container {
+                @apply pb-0 #{!important};
+            }
+        }
+    }
+
+    .banner-image {
+        &-container {
+            & > span {
+                min-height: 20rem;
+                max-height: 50rem;
+            }
+        }
+
+        &-label {
+            @apply font-tertiary;
+            
+            font-size: 2rem;
+            letter-spacing: 0.1rem;
+            
+            @screen sm {
+                font-size: 3rem;
+                line-height: 4rem;
+            }
+        }
+
+        &-description {
+            @apply font-tertiary;
+
+            font-size: 1.2rem;
+            letter-spacing: 0.1rem;
+            margin: 1rem 0 1.75rem 0;
+
+            @screen sm {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    :global {
+        .discalimer-copy {
+            @apply opacity-50 mt-0;
+            @apply text-left #{!important};
+
+            span {
+                @apply opacity-100 block mt-4;
+            }
+        }
+    }
+}

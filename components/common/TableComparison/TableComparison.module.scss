@@ -1,0 +1,806 @@
+// first type
+.comparison-table-alternating-colors {
+    @apply overflow-hidden;
+    @screen xl-1440 {
+        max-width: 1440px;
+    }
+
+    h2 {
+        font-size: 32px;
+
+        @screen md {
+            font-size: 48px;
+        }
+    }
+
+    .comparison-table-mobile {
+        @apply hidden;
+    }
+
+    .comparison-table-wrapper {
+        @screen md-max {
+            @apply overflow-x-scroll;
+        }
+
+        // this table comes as contentful props I can't put this @appy inside the html
+        table {
+            @apply w-full;
+
+            tbody {
+                tr {
+                    @apply relative;
+                    height: 70px;
+                    &:nth-child(even) {
+                        background-color: #2e2e2e;
+                    }
+
+                    td {
+                        @apply p-8 align-middle text-center font-aktivGrotesk;
+                        letter-spacing: 0.9px;
+                        font-size: 16px;
+                        line-height: 22px;
+                        min-width: 150px;
+
+                        @screen md-max {
+                            &:empty {
+                                @apply hidden;
+                            }
+                        }
+
+                        @screen md {
+                            font-size: 20.8px;
+                            min-width: unset;
+                            padding: 1.5rem 2rem;
+                        }
+
+                        svg {
+                            margin: 0 auto;
+                        }
+
+                        &:nth-child(1) {
+                            @screen md-max {
+                                @apply absolute top-2 left-3 text-left font-bebasNeueBold uppercase p-0;
+                                color: #888;
+                                font-size: 10px;
+                            }
+
+                            @screen md {
+                                @apply text-left relative;
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            @screen md-max {
+                                @apply pt-10 pr-8 pb-4 pl-8;
+                            }
+                        }
+                    }
+
+                    &:first-of-type {
+                        td {
+                            @apply pt-0 pb-4;
+                            position: relative !important; // applying !important here so that the position is relative only to the first element of the tabl
+                        }
+                    }
+
+                    &:nth-child(1) {
+                        td {
+                            font-size: 20px;
+                            line-height: 20px;
+                            @apply font-bebasNeue;
+
+                            @screen md {
+                                font-size: 24px;
+                            }
+                        }
+                    }
+
+                    @screen md-max {
+                        @apply flex items-center justify-around;
+
+                        &:nth-child(1) {
+                            td:nth-child(1) {
+                                @apply absolute top-2 left-3 text-left font-bebasNeueBold uppercase p-0;
+                                color: #888;
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// transparent type
+.comparison-table-transparent-with-borders {
+    @apply bg-transparent px-4 py-15;
+
+    @screen lg {
+        max-width: 1024px;
+        @apply px-16;
+    }
+
+    @screen xl {
+        max-width: 1280px;
+    }
+
+    @screen xl-1440 {
+        @apply px-20;
+        max-width: 1440px;
+    }
+
+    h2 {
+        @apply hidden;
+    }
+
+    table {
+        @apply w-full;
+        tbody {
+            tr {
+                td {
+                    @apply py-9 font-aktivGrotesk text-center font-bold text-base px-2;
+                    line-height: 1.375rem;
+                    letter-spacing: 0.125rem;
+
+                    @screen lg {
+                        font-size: 22px;
+                        line-height: 2.5rem;
+                    }
+
+                    &:first-of-type {
+                        @apply font-bebasNeue text-left text-2xl;
+                        line-height: 1.65rem;
+
+                        @screen lg {
+                            font-size: 32px;
+                            line-height: 32px;
+                            max-width: 300px;
+                            letter-spacing: 0.0625rem;
+                        }
+                    }
+                }
+
+                &:nth-child(1) {
+                    @apply border-none;
+
+                    td {
+                        @apply font-bebasNeue uppercase font-bold m-auto px-2;
+                        letter-spacing: 0.125rem;
+                        line-height: 22px;
+                        max-width: 90px;
+                        font-size: 22px;
+
+                        @screen lg {
+                            font-size: 40px;
+                            line-height: 40px;
+                        }
+
+                        &:first-of-type {
+                            @apply text-2xl text-left w-2/4;
+                            line-height: 1.5rem;
+
+                            @screen lg {
+                                @apply w-auto;
+                                font-size: 32px;
+                                line-height: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .comparison-table-wrapper {
+        @apply hidden;
+        @screen md {
+            @apply flex;
+        }
+    }
+
+    .comparison-table-mobile {
+        select {
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 20px 16px;
+            border: 2px solid #fff;
+            width: 271px;
+            margin: 32px auto;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B6B6B' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            -webkit-print-color-adjust: exact;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+
+            &::-ms-expand {
+                display: none;
+            }
+        }
+    }
+}
+
+// global icons
+.comparision-close-icon-rounded,
+.comparision-check-rounded {
+    width: 48px;
+    height: 48px;
+    background-color: #ece81a;
+    border-radius: 50%;
+}
+
+.comparision-check-rounded {
+    svg {
+        width: 16px;
+        height: 11px;
+    }
+}
+
+.comparision-check-icon {
+    margin: 0 auto;
+}
+
+.comparision-check-rounded {
+    svg {
+        color: #000;
+    }
+}
+
+.comparision-close-icon-rounded {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.comparison-table-theme-dark {
+    h2 {
+        color: #fff;
+    }
+    .comparison-table-transparent-with-borders {
+        table {
+            tr {
+                border-top: 1px solid #fff;
+            }
+        }
+    }
+
+    table {
+        tr {
+            color: #fff;
+        }
+    }
+}
+
+.comparison-table-theme-light {
+    h2 {
+        color: #000;
+    }
+
+    .comparison-table-transparent-with-borders {
+        table {
+            tr {
+                border-top: 1px solid #000;
+            }
+        }
+    }
+
+    table {
+        tr {
+            color: #000;
+        }
+    }
+}
+
+.gradial-background {
+    background: linear-gradient(
+        135deg,
+        rgba(24, 46, 40, 0),
+        #000 33%,
+        #000 66%,
+        transparent
+    );
+    background-attachment: 'fixed';
+}
+
+.transparentBackGround{
+    background-color: rgba(255,255,255,0.1) !important;
+    backdrop-filter: blur(10px);
+
+    .comparison-table-wrapper {
+        table {
+
+            tbody {
+                tr {
+                    &:nth-child(even) {
+                        background-color: rgba(255,255,255,0.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.compatibility-table {
+    @apply block;
+
+    &-wrapper {
+        @apply hidden;
+
+        @screen md {
+            @apply block overflow-x-auto;
+        }
+
+        @screen lg {
+            @apply flex overflow-visible;
+        }
+
+        &-mobile {
+            @apply block;
+
+            @screen sm {
+                @apply hidden;
+            }
+        }
+    }
+
+    &-container {
+        @apply block;
+    }
+
+    &-mobile-theme {
+        &-dark, &-light {
+            .gradial-background {
+                background: linear-gradient(
+                    135deg,
+                    rgba(24, 46, 40, 0),
+                    #000 33%,
+                    #000 66%,
+                    transparent
+                );
+                background-attachment: 'fixed';
+            }
+
+            h2 {
+                letter-spacing: 0.047rem;
+                margin-top: 10rem;
+
+                &.mobile-dark {
+                    color: #999999;
+                }
+
+                &.mobile-light {
+                    color: black;
+                }
+            }
+
+            table, td, th {
+                @apply font-bold;
+
+                font-size: 0.875rem;
+                border-collapse: collapse;
+                border: 1px solid;
+
+                span {
+                    @apply font-bold;
+                }
+
+                td, th {
+                    width: 6.5%;
+                    min-width: 5rem;
+                    padding: 0.5rem;
+                }
+            } 
+
+            td, th {
+                @apply border-t-0 border-r-0 border-l-0;
+            }
+
+            td:empty {
+                display: none;
+            }
+
+            .right-tick, .close-icon, .table-heading, .text-box, .not-applicable, .edge-row-cell, .colspan, .rowspan {
+                @apply relative;
+
+                height: 3rem;
+
+                span {
+                    @apply block m-auto text-center;
+
+                    svg {
+                        @apply m-auto;
+                    }
+                }
+            }
+
+            .right-tick, .close-icon, .not-applicable, .text-box {
+                @apply w-full flex;
+
+                span {
+                    flex: 1;
+
+                    &:first-child {
+                        @apply text-left sm:text-center;
+                    }
+                }
+            }
+
+            .text-box {
+                @apply py-0;
+
+                span {
+                    &:last-child {
+                        font-size: 0.563rem;
+
+                        label {
+                            @apply block m-auto;
+
+                            max-width: 80%;
+                        }
+                    }
+                }
+            }
+
+            .rowspan {
+                min-width: 11.25rem;
+            }
+        }
+
+        &-dark {
+            @apply bg-black;
+
+            table, td, th {
+                border-color: var(--table-border-dark);
+
+                span {
+                    @apply text-white;
+                }
+            }
+
+            .right-tick {
+                background-color: var(--right-tick-dark-bg);
+
+                span {
+                    @apply text-white;
+                }
+            }
+        
+            .close-icon {
+                background-color: var(--close-icon-dark-bg);
+
+                span {
+                    @apply text-white;
+                }
+            }
+
+            .not-applicable {
+                background-color: var(--not-applicable-dark-bg);
+
+                span {
+                    color: var(--not-applicable-dark);
+                }
+            }
+
+            .text-box {
+                background-color: var(--text-box-dark-bg);
+
+                span {
+                    color: var(--text-box-dark);
+                }
+            }
+
+            .edge-row-cell, .blank {
+                background-color: var(--edge-row-dark-bg);
+
+                span {
+                    @apply text-white;
+                }
+            }
+
+            .colspan {
+                background-color: var(--colspan-dark-bg);
+
+                span {
+                    @apply text-white;
+                }
+            }
+        }
+
+        &-light {
+            background-color: var(--theme-light);
+
+            table, td, th {
+                border-color: var(--table-border-light);
+            
+                span {
+                    color: var(--light-theme-font);
+                }
+            }
+
+            .right-tick {
+                background-color: var(--right-tick-light-bg);
+
+                svg {
+                    polygon {
+                        fill: var(--right-tick-light);
+                    }
+                }
+            }
+        
+            .close-icon {
+                background-color: var(--close-icon-light-bg);
+
+                span {
+                    polygon {
+                        fill: var(--close-icon-light);
+                    }
+                }
+            }
+
+            .not-applicable {
+                background-color: var(--not-applicable-light-bg);
+
+                span {
+                    color: var(--not-applicable-light);
+                }
+            }
+
+            .text-box {
+                background-color: var(--text-box-light-bg);
+
+                span {
+                    color: var(--text-box-light);
+                }
+            }
+
+            .edge-row-cell, .blank {
+                background-color: var(--edge-row-light-bg);
+
+                span {
+                    @apply text-white;
+                }
+            }
+
+            .colspan {
+                background-color: var(--colspan-light-bg);
+
+                span {
+                   color: var(--colspan-light);
+                }
+            }
+        }
+    }
+
+    @screen sm {
+        &-desktop-theme {
+            &-dark, &-light {    
+                .gradial-background {
+                    background: linear-gradient(
+                        135deg,
+                        rgba(24, 46, 40, 0),
+                        #000 33%,
+                        #000 66%,
+                        transparent
+                    );
+                    background-attachment: 'fixed';
+                }
+    
+                h2 {
+                    letter-spacing: 0.047rem;
+                    margin-top: 10rem;
+    
+                    &.desktop-dark {
+                        color: #999999;
+                    }
+    
+                    &.desktop-light {
+                        color: black;
+                    }
+                }
+    
+                table, td, th {
+                    @apply font-bold;
+    
+                    font-size: 0.875rem;
+                    border-collapse: collapse;
+                    border: 1px solid;
+    
+                    span {
+                        @apply font-bold;
+                    }
+    
+                    td, th {
+                        width: 6.5%;
+                        min-width: 5rem;
+                        padding: 0.5rem;
+                    }
+                } 
+    
+                td, th {
+                    @apply border-t border-r border-l;
+                }
+    
+                td:empty {
+                    display: none;
+                }
+    
+                .right-tick, .close-icon, .table-heading, .text-box, .not-applicable, .edge-row-cell, .colspan, .rowspan {
+                    @apply relative;
+    
+                    height: 3rem;
+    
+                    span {
+                        @apply block m-auto text-center;
+
+                        svg {
+                            @apply m-auto;
+                        }
+                    }
+                }
+    
+                .right-tick, .close-icon, .not-applicable, .text-box {
+                    @apply table-cell;
+    
+                    @screen sm {
+                        width: 6.5%;
+                    }
+    
+                    span {
+                        flex: 1;
+    
+                        &:first-child {
+                            @apply text-center;
+                        }
+                    }
+                }
+    
+                .text-box {
+                    @apply py-0;
+
+                    span {
+                        &:last-child {
+                            max-width: 100%;
+                            font-size: 0.563rem;
+
+                                   
+                            label {                                
+                                max-width: 100%;
+                            }
+                        }
+                    }
+                }
+    
+                .rowspan {
+                    min-width: 11.25rem;
+                }
+            }
+    
+            &-dark {
+                @apply bg-black;
+    
+                table, td, th {
+                    border-color: var(--table-border-dark);
+    
+                    span {
+                        @apply text-white;
+                    }
+                }
+    
+                .right-tick {
+                    background-color: var(--right-tick-dark-bg);
+    
+                    span {
+                        @apply text-white;
+                    }
+                }
+            
+                .close-icon {
+                    background-color: var(--close-icon-dark-bg);
+    
+                    span {
+                        @apply text-white;
+                    }
+                }
+    
+                .not-applicable {
+                    background-color: var(--not-applicable-dark-bg);
+    
+                    span {
+                        color: var(--not-applicable-dark);
+                    }
+                }
+    
+                .text-box {
+                    background-color: var(--text-box-dark-bg);
+    
+                    span {
+                        color: var(--text-box-dark);
+                    }
+                }
+    
+                .edge-row-cell, .blank {
+                    background-color: var(--edge-row-dark-bg);
+    
+                    span {
+                        @apply text-white;
+                    }
+                }
+    
+                .colspan {
+                    background-color: var(--colspan-dark-bg);
+    
+                    span {
+                        @apply text-white;
+                    }
+                }
+            }
+    
+            &-light {
+                background-color: var(--theme-light);
+    
+                table, td, th {
+                    border-color: var(--table-border-light);
+                
+                    span {
+                        color: var(--light-theme-font);
+                    }
+                }
+    
+                .right-tick {
+                    background-color: var(--right-tick-light-bg);
+    
+                    svg {
+                        polygon {
+                            fill: var(--right-tick-light);
+                        }
+                    }
+                }
+            
+                .close-icon {
+                    background-color: var(--close-icon-light-bg);
+    
+                    span {
+                        polygon {
+                            fill: var(--close-icon-light);
+                        }
+                    }
+                }
+    
+                .not-applicable {
+                    background-color: var(--not-applicable-light-bg);
+    
+                    span {
+                        color: var(--not-applicable-light);
+                    }
+                }
+    
+                .text-box {
+                    background-color: var(--text-box-light-bg);
+    
+                    span {
+                        color: var(--text-box-light);
+                    }
+                }
+    
+                .edge-row-cell, .blank {
+                    background-color: var(--edge-row-light-bg);
+    
+                    span {
+                        @apply text-white;
+                    }
+                }
+    
+                .colspan {
+                    background-color: var(--colspan-light-bg);
+    
+                    span {
+                       color: var(--colspan-light);
+                    }
+                }
+            }
+        }
+    }
+}

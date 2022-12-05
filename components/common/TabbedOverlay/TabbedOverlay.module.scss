@@ -1,0 +1,251 @@
+.tabbed-overlay {
+    &-wrapper {
+        display: block;
+    }
+
+    position: relative;
+
+    @screen sm {
+        padding: 3.5rem 1rem;
+        max-width: 104.615rem;
+        margin: auto;
+    }
+
+    :global {
+        .width-4 {
+            @screen sm {
+                max-width: 85%;
+            }
+        }
+
+        .width-3 {
+            @screen sm {
+                max-width: 65%;
+            } 
+        }
+
+        .width-2 {
+            @screen sm {
+                max-width: 45%;
+            } 
+        }
+    }
+
+    &-slider {
+        &-one {
+            width: 100%;
+            
+            @screen sm {
+                max-width: 85%;
+            }
+        }
+
+        &-two {
+            transform: translateY(-20%);
+            padding-top: 3.077rem;
+            width: calc(100% - 3.077rem);
+            margin: auto;
+            
+            @screen sm {
+                margin: unset;
+                margin-left: auto;
+                transform: translateY(-35%);
+            }
+
+            &-tab {
+                &-heading {
+                    font-size: 1.077rem;
+                    font-weight: normal;
+                    letter-spacing: 0.1rem;
+                    text-transform: uppercase;
+
+                    @screen sm {
+                        font-size: 1.538rem;
+                    }
+
+                    @screen lg {
+                        font-size: 2.308rem;
+                    }
+                }
+            }
+
+            :global {
+                .slick {
+                    &-slider {
+                        display: flex;
+                        flex-direction: column-reverse;
+                    }
+
+                    &-dots {
+                        display: flex !important;
+                        position: relative;
+                        bottom: unset;
+                        margin-bottom: 3.077rem;
+                        padding: 0 2.077rem;
+
+                        @screen lg {
+                            padding: 0 3.077rem;
+                        }
+
+                        li {
+                            width: fit-content;
+                            color: white;
+                            display: inline-table;
+                            max-width: 10rem;
+                            opacity: 0.5;
+
+                            @screen sm {
+                                max-width: 20rem;
+                            }
+
+                            &.slick-active {
+                                opacity: 1;
+                                border-bottom: 5px solid white;
+                            }
+
+                            &:not(:last-child) {
+                                margin-right: 1.846rem;
+
+                                @screen lg {
+                                    margin-right: 3.846rem;
+                                }
+                            }
+                        }
+                    }
+
+                    &-current {
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .overlay-tab {
+        &-content {
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 0 2.077rem 0 2.077rem;
+
+            @screen lg {            
+                padding: 0 3.077rem 0 3.077rem;
+            }
+        }
+
+        &-columns {
+            justify-content: center;
+        }
+
+        &-column {
+            padding: 0 1.154rem;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            &-heading {
+                font-size: 3.185rem;
+                font-weight: 600;
+                letter-spacing: 0.1rem;
+                line-height: 3.2rem;
+                margin-right: 0.25rem;
+
+                @screen sm {
+                    font-size: 3.5rem;
+                    line-height: 3.5rem;
+                }
+
+                @screen lg {
+                    font-size: 5.538rem;
+                    line-height: 3.75rem;   
+                }
+
+                &-group {
+                    display: flex;
+                    align-items: baseline;
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            &-subheading {
+                &-one {
+                    white-space: nowrap;
+                    font-size: 2.415rem;
+                    line-height: 1rem;
+
+                    @screen lg {
+                        font-size: 4.154rem;
+                    }
+                }
+
+                &-two {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    letter-spacing: 0.05rem;
+                    line-height: 1.5rem;
+                    opacity: 0.5;
+
+                    @screen sm {
+                        font-size: 1.3rem;
+                        line-height: 2.25rem;
+                    }
+                }
+            }
+
+            &-content {
+                font-size: 1rem;
+                font-weight: 400;
+                letter-spacing: 0.05rem;
+                line-height: 1.5rem;
+                color: white;
+
+                @screen sm {
+                    font-size: 1.3rem;
+                    line-height: 2.25rem;
+                }
+            }
+        }
+
+        &-wrapper {
+            background-size: 100% 100%;
+
+            :global {
+                .discalimer-copy {
+                    padding-top: 1.154rem;
+                    margin-top: auto;
+                    margin-bottom: 0;
+                }
+
+                .multicolumn {
+                    .overlayTabColumnHeading {
+                        font-size: 1.923rem;
+
+                        @screen sm {
+                            font-size: 3.185rem;
+                        }
+
+                        @screen lg {
+                            font-size: 5.538rem;
+                        }
+                    }
+
+                    .overlayTabColumnSubheadingOne {
+                        font-size: 0.769rem;
+                    
+                        @screen sm {
+                            font-size: 2.388rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

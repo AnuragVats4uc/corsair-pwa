@@ -1,0 +1,187 @@
+/**
+ * HTML Block Smalcode Panel Comfort
+ */
+
+// .panel-comfort
+.panel-comfort {
+    @apply relative;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: #f9f9f9;
+
+    @media only screen and (max-width: 1023px) {
+        padding-top: 50px;
+        padding-bottom: 40px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        @apply text-right overflow-hidden;
+    }
+
+    // .panel-comfort .outer-usp-wrap
+    .outer-usp-wrap {
+        @apply flex justify-end;
+        margin-top: 60px;
+        margin-bottom: 25px;
+        display: -webkit-box;
+        -webkit-box-pack: end;
+
+        @media only screen and (max-width: 767px) {
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+    }
+
+    // .panel-comfort .relative-wrap
+    .relative-wrap {
+        @apply relative;
+        padding-bottom: 20vw;
+
+        @media only screen and (max-width: 767px) {
+            padding-bottom: 30px;
+        }
+    }
+
+    // .panel-comfort .element-image-mask .mask
+    .element-image-mask .mask {
+        background-color: #f9f9f9;
+    }
+
+    // .panel-comfort .image-mask-1
+    .image-mask-1 {
+        margin-top: 60px;
+
+        @media only screen and (max-width: 767px) {
+            @apply mt-0 mb-0 w-1/2;
+        }
+    }
+
+    // .panel-comfort .image-mask-2
+    .image-mask-2 {
+        @media only screen and (max-width: 767px) {
+            @apply inline-block;
+            width: 80%;
+        }
+    }
+
+    // .panel-comfort .image-swap
+    .image-swap {
+        @apply absolute bottom-0;
+        right: 15%;
+        width: 58%;
+        z-index: 5;
+
+        @media only screen and (max-width: 767px) {
+            @apply left-auto;
+            right: -5%;
+            width: 75%;
+            bottom: -5%;
+        }
+
+        // .panel-comfort .image-swap .device-left
+        .device-left {
+            @apply absolute;
+            bottom: 21%;
+            left: 13%;
+            width: 28.1%;
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+            will-change: transform;
+
+            // .panel-comfort .image-swap .device-left.active
+            &.active {
+                -webkit-transform: rotate(20deg) translate(-18%, 11%);
+                transform: rotate(20deg) translate(-18%, 11%);
+            }
+        }
+
+        // .panel-comfort .image-swap .device-right
+        .device-right {
+            @apply absolute;
+            bottom: 9.5%;
+            right: 11.5%;
+            width: 44%;
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+            will-change: transform;
+
+            // .panel-comfort .image-swap .device-right.wireless
+            &.wireless {
+                bottom: 13.5%;
+            }
+
+            // .panel-comfort .image-swap .device-right.active
+            &.active {
+                -webkit-transform: rotate(-20deg) translate(12%, 13%);
+                transform: rotate(-20deg) translate(12%, 13%);
+            }
+        }
+    }
+}
+
+// .panel-comfort-2
+.panel-comfort-2 {
+    @apply relative;
+    padding-top: 110px;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#414141),
+        color-stop(68%, #4a4a4c)
+    );
+    background: -webkit-linear-gradient(top, #414141 0%, #4a4a4c 68%);
+    background: linear-gradient(180deg, #414141 0%, #4a4a4c 68%);
+
+    @media only screen and (max-width: 767px) {
+        @apply text-right;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    // .panel-comfort-2 .bg-layer
+    .bg-layer {
+        @apply absolute top-1/2 left-0;
+        width: 70%;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+    }
+
+    // .panel-comfort-2 .text-layer
+    .text-layer {
+        @apply relative;
+    }
+
+    // .panel-comfort-2 .row-image
+    .row-image {
+        @media only screen and (max-width: 767px) {
+            margin-top: -50px;
+        }
+
+        // .panel-comfort-2 .row-image video
+        video {
+            @media only screen and (max-width: 767px) {
+                @apply h-auto inline-block;
+                width: 120px;
+            }
+        }
+    }
+
+    // .panel-comfort-2 .outer-usp-wrap
+    .outer-usp-wrap {
+        @apply flex justify-end;
+        margin-top: 60px;
+        margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-box-pack: end;
+    }
+
+    // .panel-comfort-2 video
+    video {
+        @apply w-full h-auto;
+    }
+}

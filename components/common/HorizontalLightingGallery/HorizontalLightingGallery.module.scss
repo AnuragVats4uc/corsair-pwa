@@ -1,0 +1,125 @@
+.horizontal-lighting-gallery {
+    padding: 20px 0 30px;
+    .controls-container {
+        width: 90%;
+        max-width: 812px;
+
+        .controls {
+            .control-btn-icon-label {
+                > span {
+                    letter-spacing: 4px;
+                    font-size: 12px;
+                    --transform-translate-x: -50%;
+
+                    @screen md {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .control-btn {
+                flex: 0 0 48px;
+
+                &:focus,
+                &:active {
+                    outline: 1px solid #222;
+                }
+
+                .control-icon {
+                    width: 32px;
+                    height: 32px;
+                    padding: 2px;
+
+                    @screen md {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+
+                &.active {
+                    .control-icon {
+                        @apply border-white;
+                    }
+                    .control-btn-icon-label {
+                        @apply block;
+                    }
+                }
+
+                &.disabled {
+                    @apply cursor-default;
+                }
+            }
+        }
+    }
+
+    .video-container {
+        max-width: calc(200vh - 210px);
+
+        &:before {
+            @apply block absolute left-0 top-0 z-1 w-full h-full;
+            content: '';
+            background-image: linear-gradient(
+                    90deg,
+                    #000,
+                    transparent 10%,
+                    transparent 90%,
+                    #000
+                ),
+                linear-gradient(180deg, #000, transparent 12%, transparent);
+        }
+
+        .light-profile-video {
+            &.active {
+                @apply block;
+            }
+        }
+    }
+}
+
+.horizontal-gallery-header {
+    @apply m-auto text-white text-center md:px-6;
+    max-width: 812px;
+
+    @screen md-max {
+        max-width: 90%;
+    }
+
+    .subheading {
+        @apply text-xs md:text-base lg:text-sm font-semibold uppercase leading-4;
+        color: var(--dark-bg-btn-primary);
+        letter-spacing: 0.2rem;
+    }
+
+    .heading {
+        @apply font-semibold;
+        letter-spacing: 0.1rem;
+        font-size: 3.2rem;
+        line-height: 3.2rem;
+
+        @screen md{
+            font-size:3.5rem;
+            line-height:3.5rem
+        }
+        @screen lg{
+            line-height: 3.75rem;
+            font-size: 3.75rem;
+        }
+    }
+
+    .bodycopy {
+        font-size: 1.3rem;
+        letter-spacing: 0.05rem;
+        line-height: 2.25rem;
+        padding: 20px 0 30px;
+    }
+
+    @screen md-max{
+        .heading {
+            font-size:3.2rem;
+            line-height:3.2rem;
+        }
+        .bodycopy {
+            @apply text-base leading-6;
+        }
+    }
+}

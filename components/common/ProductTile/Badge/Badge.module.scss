@@ -1,0 +1,24 @@
+.badge-container {
+    top: 12px;
+    font-size: 12.75px;
+    letter-spacing: 0.4px;
+    padding: 3px 14px 3px 12px;
+    clip-path: polygon(0 0, 100% 0%, 92% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0%, 92% 100%, 0% 100%);
+    line-height: 16px;
+    min-width: 87px;
+    height: 23px;
+}
+
+.best-seller {
+    @apply bg-yellow;
+    color: black;
+}
+
+.new {
+    background: #8c8c8c;
+}
+
+.exclusive {
+    background: #1db2bf;
+}

@@ -1,0 +1,156 @@
+.one-block-container {
+    @apply max-w-screen-xl m-auto;
+    padding: 50px 16px;
+
+    .top-heading {
+        font-size: 42px;
+        line-height: 42px;
+    }
+}
+
+.item-container {
+    margin-top: 50px;
+}
+
+.items-block {
+    padding-left: 0;
+    padding-right: 10px;
+
+    &:first-child {
+        padding-left: 0;
+    }
+}
+
+.text-container {
+    @apply text-left;
+    margin-top: 10px;
+
+    h3 {
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 2.5px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 5px;
+        margin-bottom: 6px;
+    }
+}
+
+.items-block {
+    &:first-child {
+        .image-container {
+            width: 18px;
+        }
+    }
+
+    &:nth-of-type(2) {
+        .image-container {
+            width: 44px;
+        }
+    }
+
+    &:nth-of-type(3) {
+        .image-container {
+            width: 58px;
+        }
+    }
+}
+
+@screen md {
+    .one-block-container {
+        padding: 100px 20px;
+    }
+
+    .text-container {
+        @apply text-right;
+        padding-right: 25px;
+        margin-top: 0;
+
+        h3 {
+            font-size: 40px;
+            line-height: 40px;
+            letter-spacing: 2.5px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 1.2px;
+            margin-top: 5px;
+            margin-bottom: 6px;
+        }
+    }
+
+    .items-block {
+        padding-left: 10px;
+        padding-right: 0;
+
+        &:first-child {
+            .image-container {
+                width: 27px;
+            }
+        }
+
+        &:nth-of-type(2) {
+            .image-container {
+                width: 66px;
+            }
+        }
+
+        &:nth-of-type(3) {
+            .image-container {
+                width: 93px;
+            }
+        }
+    }
+}
+
+@screen xl {
+    .one-block-container {
+        .top-heading {
+            @apply w-2/3;
+            font-size: 118px;
+            line-height: 118px;
+        }
+    }
+
+    .items-block {
+        &:first-child {
+            .image-container {
+                width: 36px;
+            }
+        }
+
+        &:nth-of-type(2) {
+            .image-container {
+                width: 87px;
+            }
+        }
+
+        &:nth-of-type(3) {
+            .image-container {
+                width: 123px;
+            }
+        }
+    }
+
+    .text-container {
+
+        h3 {
+            font-size: 60px;
+            line-height: 50px;
+            letter-spacing: 2.5px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 1.2px;
+            margin-top: 12px;
+            margin-bottom: 6px;
+        }
+    }
+}

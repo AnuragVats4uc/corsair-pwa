@@ -1,0 +1,496 @@
+.pdp-dark-bg {
+    @apply bg-blackLight text-white;
+
+    :global {
+        .sticky-top::after {
+            @apply lg:block;
+        }
+    }
+}
+
+.container-classes {
+    @apply mx-auto px-0 md:px-0 mb-5 md:mb-0 md:max-w-full relative;
+    z-index: 11;
+}
+
+.pdp-left-container {
+    @apply w-full md:top-0 z-2 mx-auto h-full max-w-full flex flex-col;
+    height: calc(100vh - 100px);
+    @screen sm {
+        @apply p-0 max-w-full;
+    }
+    @screen md {
+        @apply p-0;
+        max-width: 65%;
+    }
+    @screen lg {
+        @apply pr-0 md:pb-0;
+        max-width: 65%;
+    }
+    @screen 2xl {
+        @apply ml-0;
+        max-width: 65%;
+    }
+    @media (max-width: 1024px) {
+        @apply ml-0 max-w-full;
+    }
+}
+
+.pdp-container {
+    @apply flex-col lg:flex-row md:flex md:justify-between md:items-start relative h-full;
+    z-index: 9;
+}
+
+.product-topbar {
+    margin-bottom: 22px;
+}
+
+//override existing styles from reusable component
+.badge-container {
+    @apply top-auto right-0 left-auto tracking-normal;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%);
+    font-size: 12px;
+    min-width: 79px;
+    padding: 3px 10px 3px 12px;
+}
+
+.pdp-info-wrap {
+    @apply max-w-screen-xl mx-auto;
+}
+
+.pdp-breadcrumbs {
+    @apply py-4 pt-2;
+}
+
+.pdp-price {
+    @apply mb-5 font-secondary;
+
+    span {
+        @apply inline-block;
+    }
+
+    :global {
+        .price-decimal,
+        .price-symbol,
+        .price-amount {
+            font-size: 32px;
+
+            @screen md {
+                font-size: 40px;
+            }
+        }
+
+        .price-currency {
+            font-size: 24px;
+
+            @screen md {
+                font-size: 32px;
+            }
+        }
+
+        .price-currency {
+            @apply font-quaternary;
+            color: var(--text-tertiary);
+            padding-left: 7px;
+            letter-spacing: 0.2rem;
+        }
+
+        .product-price {
+            margin-top: 25px;
+
+            @screen md {
+                margin-top: 47px;
+            }
+        }
+
+        .compare-price {
+            @apply relative inline-block;
+            color: var(--text-tertiary);
+            margin-left: 25px;
+
+            &::after {
+                @apply absolute top-1/2;
+                content: '';
+                width: calc(100% + 20px);
+                height: 1px;
+                background-color: var(--text-tertiary);
+                left: -10px;
+            }
+
+            .price-amount {
+                font-size: 24px;
+            }
+            .price-decimal,
+            .price-currency,
+            .price-symbol {
+                font-size: 16px;
+            }
+
+            .price-currency {
+                @apply font-quaternary;
+                padding-left: 3px;
+                letter-spacing: 0;
+            }
+        }
+    }
+}
+
+.product-info {
+    margin-top: 15px;
+    font-size: 16px;
+
+    ul {
+        li {
+            @apply relative;
+            margin-bottom: 12px;
+            padding-left: 20px;
+
+            @screen md {
+                margin-bottom: 8px;
+                font-size: 16px;
+                padding-left: 25px;
+            }
+
+            &::before {
+                @apply rounded-full absolute bg-white;
+                top: 4px;
+                left: 8px;
+                content: '';
+                width: 5px;
+                height: 5px;
+
+                @screen md {
+                    top: 7px;
+                    left: 10px;
+                    width: 6px;
+                    height: 6px;
+                }
+            }
+        }
+    }
+}
+
+.product-main {
+    @apply w-full px-5 mt-6 md:mt-0 relative z-2 m-auto;
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+        @apply hidden;
+    }
+    //defined separation based on the screen
+    @screen md {
+        padding: 40px 25px 0;
+    }
+    @screen lg {
+        @apply overflow-y-auto;
+        width: 34%;
+        padding: 40px 48px 0;
+        max-height: 120vh;
+    }
+    @screen 2xl {
+        @apply ml-8 mr-0;
+        max-height: 90vh;
+    }
+
+    :global {
+        .short-description {
+            @apply max-w-sm mb-5;
+        }
+        .pdp-more-description {
+            @apply overflow-hidden mt-3;
+        }
+    }
+}
+
+.product-name {
+    @apply uppercase;
+    font-size: 32px;
+    line-height: 35px;
+    margin-bottom: 7px;
+    letter-spacing: 0.06rem;
+}
+.product-topinfo {
+    @apply block mb-3;
+    .sku {
+        @apply font-aktivGroteskBold;
+        font-size: 16px;
+        margin-bottom: 15px;
+
+        @screen md {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+    }
+    .rating {
+        :global {
+            .yotpo-stars {
+                .yotpo-icon {
+                    @apply text-white;
+                }
+                & + a {
+                    @apply ml-2 uppercase font-normal text-sm;
+                    @apply text-white #{!important};
+                }
+            }
+        }
+    }
+}
+.qty-selector {
+    @apply flex flex-col items-start uppercase font-medium pb-4;
+}
+.img {
+    @apply w-full h-auto max-h-full object-cover;
+}
+
+.add-to-cart-button {
+    @apply text-center w-full max-w-sm mb-7 text-black;
+    //this can be removed when global button styles added
+    background-color: var(--dark-bg-btn-primary) #{!important};
+}
+.wishlist-btn-container {
+    @apply relative inline-block py-2 pb-3 z-20;
+}
+.yotpo-review {
+    :global {
+        .yotpo-stars,
+        .stars-wrapper,
+        .yotpo-review-stars {
+            .yotpo-icon {
+                @apply text-s-2 text-2xl #{!important};
+            }
+        }
+        .yotpo-default-button {
+            @apply bg-s-1 #{!important};
+        }
+        .yotpo-review {
+            @apply my-2.5 mx-0 border-s-1 #{!important};
+        }
+        .yotpo-small-box,
+        .yotpo-thank-you {
+            @apply border-s-1 #{!important};
+        }
+        .yotpo.yotpo-main-widget {
+            .yotpo-thankyou-header {
+                span {
+                    @apply text-s-1 #{!important};
+                }
+            }
+        }
+        .yotpo-thankyou-content {
+            span {
+                @apply text-s-1 text-base;
+            }
+        }
+        .yotpo-nav,
+        .yotpo-bottomline-empty-state {
+            @apply border-transparent #{!important};
+        }
+    }
+}
+
+.add-to-cart-container {
+    @apply fixed w-full bg-blackLight -bottom-0.5 md:sticky md:flex md:justify-end md:top-0 ml-auto;
+    padding: 28px 16px;
+    z-index: 11 !important; // overriding default z-index
+
+    &:after {
+        @apply hidden absolute h-full top-0 right-0 bg-blackLight -z-1;
+        content: '';
+        width: 1000%;
+    }
+
+    @screen md {
+        padding: 28px 20px;
+    }
+    @screen lg {
+        width: 34%;
+        padding: 28px 48px;
+        z-index: 10;
+    }
+    @screen 2xl {
+        width: 26%;
+    }
+}
+
+.price-add-to-cart {
+    @apply flex bg-blackLight items-center justify-end w-full;
+
+    &.pdp-price {
+        @apply m-0;
+
+        :global {
+            .product-price {
+                @apply m-0;
+            }
+
+            .regular-price {
+                @apply block;
+                line-height: 30px;
+
+                .price-amount {
+                    font-size: 32px;
+                }
+
+                .price-symbol,
+                .price-decimal {
+                    font-size: 32px;
+                }
+
+                @screen md {
+                    .price-currency {
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            .compare-price {
+                margin-left: 10px;
+                line-height: 18px;
+
+                .price-amount {
+                    @apply tracking-normal;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .add-to-cart-button {
+        @apply text-black m-0 font-aktivGroteskBold whitespace-no-wrap w-auto;
+        padding: 12px 17px 9px;
+        max-width: 140px;
+        font-size: 12px;
+        margin-left: 30px;
+
+        @screen xl {
+            width: 190px;
+            padding: 16px 20px 13px;
+        }
+    }
+}
+.tabs-container {
+    margin-bottom: 0px;
+
+    @media screen and (max-width: 768px) {
+        padding: 0px;
+    }
+}
+
+.pdp-link {
+    padding: 8px;
+    background-color: #262626;
+}
+
+.pdp-link:hover {
+    background-color: #333333;
+}
+
+.works-well-add-to-cart {
+    &.pdp-price {
+        @apply m-0;
+
+        :global {
+            .product-price {
+                @apply m-0;
+            }
+
+            .regular-price {
+                @apply block;
+                line-height: 25.6px;
+
+                .price-amount {
+                    font-size: 24px;
+                }
+
+                .price-symbol,
+                .price-decimal,
+                .price-currency {
+                    font-size: 16px;
+                    letter-spacing: 2px;
+                }
+            }
+
+            .compare-price {
+                margin-left: 10px;
+                line-height: 18px;
+
+                .price-amount {
+                    @apply tracking-normal;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.works-well-button {
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+
+    grid-template-rows: 150px;
+
+    > span {
+        grid-row-start: 1;
+        grid-column-start: 1;
+    }
+
+    img {
+        // Important added to replace full width from nextjs image tag
+        min-width: 130px !important;
+        min-height: 130px !important;
+    }
+}
+
+.title {
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 2%;
+}
+
+.btnText {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.pdp-name {
+    font-size: 18px;
+    line-height: 28px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.btn-container {
+    right: 0;
+    top: 0;
+}
+
+.text-container {
+    height: auto;
+    span {
+        align-self: end;
+    }
+}
+
+@screen md {
+    .works-well-button {
+        grid-template-rows: 200px;
+        img {
+            // Important added to replace full width from nextjs image tag
+            width: 168px !important;
+            height: auto !important;
+            max-width: 100% !important;
+            min-width: unset !important;
+        }
+    }
+}
+
+.product-promo-text {
+    font-size: 14px;
+}

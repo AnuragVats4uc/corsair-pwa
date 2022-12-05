@@ -1,0 +1,1 @@
+export { LeftRightTextColumn } from './LeftRightTextColumn'

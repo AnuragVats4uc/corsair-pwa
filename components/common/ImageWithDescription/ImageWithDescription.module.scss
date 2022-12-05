@@ -1,0 +1,258 @@
+.image-with-description-container {
+    padding-top: 150px;
+    padding-bottom: 150px;
+
+    .open-video-button {
+        @apply font-bold;
+        padding-left: 1.875rem;
+        padding-right: 1.875rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        font-size: 0.875rem;
+        letter-spacing: 0.188rem;
+    }
+
+    .heading {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .sub-heading {
+        font-size: 3.2rem;
+        letter-spacing: 0.1rem;
+        line-height: 3.2rem;
+        margin-bottom: 25px;
+        margin-top: 10px;
+
+        @screen md {
+            font-size: 3.5rem;
+            line-height: 3.5rem;
+        }
+
+        @screen lg {
+            font-size: 3.75rem;
+            line-height: 3.75rem;
+        }
+    }
+
+    // Multiple components are connected to this, so the @apply tag is used instead of inline tailwind
+    .image-outer-container {
+        @apply w-11/12 m-auto;
+
+        @screen lg {
+            width: 90%;
+        }
+    }
+
+    .image-container {
+        @apply w-full flex justify-center relative pt-3;
+
+        > div {
+            position: unset !important;
+        }
+
+        .image {
+            @apply w-full relative object-contain;
+            height: unset !important;
+        }
+    }
+
+    .text-container {
+        @apply flex items-start mr-auto w-full;
+        padding-left: 35px;
+        padding-right: 35px;
+        margin-top: 2rem;
+
+        @screen md {
+            @apply px-0 ml-5;
+            width: 90%;
+        }
+
+        @screen lg {
+            @apply mx-auto;
+            margin-top: 50px;
+            margin-right: 7vw;
+            width: 63%;
+        }
+
+        @screen xl-1440 {
+            width: 51%;
+            margin-right: 14vw;
+        }
+
+        @screen 4k {
+            width: 29%;
+            margin-right: 27vw;
+        }
+
+        .left-inner {
+            @apply w-full pr-0;
+
+            @screen md {
+                @apply w-1/2;
+                padding-right: 20px;
+            }
+
+            .inner-title {
+                @apply uppercase;
+                border-bottom: 6px solid;
+                padding-bottom: 15px;
+                margin-bottom: 20px;
+
+                @screen md {
+                    padding-bottom: 25px;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+
+        .right-inner {
+            @apply w-full pr-0;
+
+            @screen md {
+                @apply w-1/2;
+                padding-right: 20px;
+            }
+
+            .inner-title {
+                @apply uppercase font-normal;
+                border-bottom: 6px solid;
+                padding-bottom: 15px;
+                margin-bottom: 20px;
+
+                @screen md {
+                    @apply tracking-normal;
+                    padding-bottom: 25px;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+
+        p {
+            hr {
+                @apply border-none;
+            }
+        }
+
+        div.space-between-copy-disclaimer {
+            @apply pt-20;
+        }
+
+        span.right-below-text {
+            @apply opacity-50 block;
+        }
+
+        .label {
+            @apply font-bebasNeueExtraBold font-semibold;
+            font-size: 19.2px !important;
+            letter-spacing: 1.6px;
+            line-height: 24px;
+
+            @screen md {
+                @apply leading-none;
+                font-size: 20.8px !important;
+            }
+        }
+
+        .body-copy {
+            @apply font-aktivGrotesk font-normal text-white;
+
+            font-size: 16px;
+            letter-spacing: 0.8px;
+            line-height: 24px;
+
+            @screen md {
+                @apply font-medium;
+                font-size: 20.8px;
+                letter-spacing: 0.8px;
+                line-height: 36px;
+            }
+
+            @screen lg {
+                @apply font-normal;
+                font-size: 20.8px;
+            }
+        }
+
+        .disclaimer-copy {
+            @apply font-aktivGrotesk font-light text-gray-400;
+
+            font-size: 11.2px;
+            letter-spacing: 0.8px;
+            line-height: 16px;
+
+            @screen md {
+                @apply leading-none;
+                font-size: 14px;
+                letter-spacing: 0.8px;
+            }
+        }
+    }
+}
+
+.vidgallery-item-modal {
+    @apply w-full h-full overflow-hidden fixed inset-0 scrolling-touch flex items-center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    top: 0;
+    left: 0;
+
+    :global {
+        .modal-wrapper {
+            @apply w-full block items-center content-center overflow-hidden outline-none relative;
+            background-color: rgba(0, 0, 0, 0);
+            max-height: 600px;
+            height: calc((100vw - 2px) * 0.7);
+            padding-top: 25px;
+            padding-bottom: 25px;
+            padding-left: 27px;
+            padding-right: 27px;
+
+            @screen md {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+        }
+        .modal-content {
+            @apply w-full mx-auto border-none;
+            background-color: rgba(0, 0, 0, 0);
+            height: 100%;
+            max-width: 900px;
+            padding: 0rem;
+        }
+        .modal-body {
+            @apply h-full w-full;
+        }
+        .modal:focus {
+            @apply outline-none;
+        }
+        .close-panel {
+            @apply absolute m-0;
+            height: 44px;
+            background-color: rgba(0, 0, 0, 0);
+            width: 100%;
+            top: -45px;
+            cursor: pointer !important;
+            &:hover > svg {
+                color: white;
+            }
+            &:focus {
+                @apply outline-none;
+            }
+        }
+        .close-panel > svg {
+            @apply transition ease-in-out duration-150 absolute text-gray-500;
+            right: -3px;
+            top: 10px;
+            &:hover {
+                color: white;
+            }
+            &:focus {
+                @apply outline-none;
+            }
+        }
+        .focus-trap {
+            width: 100%;
+        }
+    }
+}

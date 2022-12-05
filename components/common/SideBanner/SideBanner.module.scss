@@ -1,0 +1,9 @@
+.side-banner {
+
+    min-width: 300px;
+
+    & > span {
+        // !important: it was added here because it is not possible to access the css of the span tag that comes inside the Image component of @next/image
+        width: 100% !important;
+    }
+}

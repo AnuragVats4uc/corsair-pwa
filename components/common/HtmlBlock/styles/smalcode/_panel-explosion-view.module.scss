@@ -1,0 +1,47 @@
+/**
+ * HTML Block Smalcode Panel Explosion View
+ */
+
+// .panel-explosion-view
+.panel-explosion-view {
+    @apply relative;
+    padding-bottom: 33vw;
+    padding-top: 120px;
+
+    @media only screen and (max-width: 767px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    // .panel-explosion-view .bg-layer
+    .bg-layer {
+        @apply absolute bottom-0;
+        width: 70%;
+        right: 2%;
+        z-index: 5;
+
+        @media only screen and (max-width: 1023px) {
+            @apply relative w-full right-0;
+            margin-top: 20px;
+        }
+    }
+
+    // .panel-explosion-view .text-layer
+    .text-layer {
+        @apply relative;
+        z-index: 10;
+
+        @media only screen and (max-width: 767px) {
+            @apply relative top-auto;
+        }
+    }
+
+    // .panel-explosion-view .element-usp-wrap
+    .element-usp-wrap {
+        margin-top: 60px;
+
+        @media only screen and (max-width: 767px) {
+            margin-top: 40px;
+        }
+    }
+}

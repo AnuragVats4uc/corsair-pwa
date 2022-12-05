@@ -1,0 +1,52 @@
+// masonry grid https://www.smashingmagazine.com/native-css-masonry-layout-css-grid/
+.callout-items-list {
+  @apply container;
+  column-count: 2;
+  column-gap: 2rem;
+  &-item {
+    @apply grid mb-7;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 150px;
+    break-inside: avoid;
+  }
+  &-image {
+    & span {
+      transform: scale(1.5) translateX(15%) translateY(20%);
+    }
+  }
+  @screen md {
+    &-item {
+      grid-template-columns: 250px;
+    }
+  }
+  @screen lg {
+    &-item {
+      grid-template-columns: auto;
+    }
+  }
+}
+
+.callout-heading {
+  @apply absolute mx-auto flex w-full justify-center;
+  top: 20%;
+  font-size: 42px;
+  line-height: 42px;
+  letter-spacing: -1px;
+  font-family: 'BebasNeuePro-SmEBd', sans-serif;
+  font-weight: normal;
+}
+
+.callout-block-wrapper {
+  @apply w-full m-auto;
+  max-width: 80vw;
+
+  @screen md {
+    .callout-block-image {
+      margin: auto 127px auto 0;
+    }
+  }
+
+  @screen md-max {
+    @apply px-4;
+  }
+}

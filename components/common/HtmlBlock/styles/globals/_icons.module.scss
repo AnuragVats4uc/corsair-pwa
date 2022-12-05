@@ -1,0 +1,12 @@
+/**
+ * HTML Block Icons
+ */
+
+// .glyphicon-eye-close::before,
+// .glyphicon-shopping-cart::before,
+// .glyphicon-envelope::before
+.glyphicon-eye-close::before,
+.glyphicon-shopping-cart::before,
+.glyphicon-envelope:before {
+    content: unset;
+}

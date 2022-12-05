@@ -1,0 +1,12 @@
+/**
+ * HTML Block Blades
+ */
+
+// .blades-container
+.blades-container {
+    // .blades-container img.blades
+    img.blades {
+        @apply inline;
+        width: 1200px;
+    }
+}

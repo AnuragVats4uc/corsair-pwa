@@ -1,0 +1,38 @@
+.product-item {
+    width: 144px;
+    height: 156px;
+    padding: 0px;
+
+    &-image {
+        width: 116px;
+        height: 116px;
+        margin-bottom: 8px;
+        z-index: 0;
+        background-size: 116px 116px;
+        background-repeat: no-repeat;
+    }
+
+    &-heading {
+        font-weight: bold;
+        font-size: 12px;
+        letter-spacing: 0.8;
+        line-height: 1.462;
+    }
+
+    @screen md {
+        width: 192px;
+        height: 224px;
+        padding: 16px;
+
+        &-image {
+            width: 140px;
+            height: 140px;
+            margin-bottom: 12px;
+            background-size: 140px 140px;
+        }
+
+        &-heading {
+            font-size: 13px;
+        }
+    }
+}

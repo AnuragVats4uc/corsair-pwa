@@ -1,0 +1,174 @@
+.filtersContainer {
+    max-height: 400px;
+    gap: 20px;
+    @screen md-max {
+        max-width: 100%;
+        flex-direction: column;
+    }
+}
+
+.titleSelection {
+    font-size: 20px;
+    line-height: 24px;
+    @media (min-width: 1350px) {
+        left: -10%;
+    }
+}
+
+.underline {
+    width: 60px;
+    top: 12px;
+    border-bottom: 1px solid #ece81a;
+    @media (min-width: 1350px) {
+        left: -10%;
+    }
+}
+
+.descriptionSelection {
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    line-height: 14px;
+    max-width: 70%;
+    @media (min-width: 1350px) {
+        left: -10%;
+    }
+}
+
+.imageContainer {
+    height: 130px;
+    left: 20px;
+    width: 135px;
+
+    @media (max-width: 767px) {
+        margin: 10px auto 0;
+        height: 98px;
+        left: 10px;
+        width: 95%;
+        max-width: 110px;
+    }
+}
+
+.borderSelected {
+    border: 2px solid RGBA(255, 255, 255, 0.35);
+    @screen md-max {
+        margin: 0 27px 20px;
+    }
+
+    background: radial-gradient(
+        rgba(4, 47, 56, 1) 0%,
+        rgba(6, 14, 26, 1) 69%,
+        rgba(5, 16, 34, 1) 100%
+    );
+    &:before {
+        content: '';
+        background-image: url(/images/selected-grid.png);
+        opacity: 0.1;
+    }
+}
+
+.borderSelection {
+    background: #333333;
+    border: 2px solid transparent;
+
+    p {
+        opacity: 70%;
+    }
+
+    @screen md-max {
+        margin: 0 27px 20px;
+    }
+}
+
+//class passes as prop for reusable component, thus using apply here
+.sort-container {
+    @apply md-max:w-full;
+
+    @media (min-width: 767px) {
+        width: 35%;
+    }
+
+    &.focused {
+        background-color: rgba(255, 255, 255, 0.2);
+
+        button {
+            span {
+                border-color: #fff;
+                color: #fff;
+
+                &::after {
+                    border-top-color: #fff;
+                }
+            }
+        }
+    }
+
+    @screen md-max {
+        margin: 5px auto 0;
+    }
+
+    & button {
+        @apply md-max:w-full;
+    }
+}
+.sort-label {
+    &-selected {
+        padding: 13px 31px 6.82px 12px;
+        border: 1px solid var(--light-grey);
+        min-width: 114px;
+        font-size: 12px;
+        letter-spacing: 1.6px;
+        text-align: left;
+        line-height: 14px;
+
+        &::after {
+            @apply top-1/2 -translate-y-1/2 absolute;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 7px solid var(--light-grey);
+            content: '';
+            right: 10px;
+            transform: translateY(-50%);
+        }
+    }
+
+    &-active &-selected::after {
+        @apply top-2/5;
+        transform: rotate(180deg);
+    }
+}
+
+.plp-btn-txt,
+.sort-label-selected,
+.sort-item-anchor {
+    font-size: 12px;
+    min-height: 40px;
+    color: var(--light-grey);
+    letter-spacing: 1.25px;
+    white-space: nowrap;
+}
+
+//class passes as prop for reusable component, thus using apply here
+.sort {
+    @apply w-full right-0 m-0 p-3 z-50;
+    background-color: var(--wrappercolor);
+    border-color: var(--border-light);
+    border-radius: 1px;
+
+    .sort-item {
+        color: var(--light-grey);
+
+        //added apply here to override the default buttons style using parent class
+        .sort-item-anchor {
+            @apply uppercase transition-none block w-full text-left p-2;
+            line-height: 24px;
+        }
+
+        &:hover {
+            background-color: var(--light-grey);
+
+            .sort-item-anchor {
+                @apply text-white no-underline block;
+            }
+        }
+    }
+}

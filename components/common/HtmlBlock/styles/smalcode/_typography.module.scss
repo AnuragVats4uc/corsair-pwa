@@ -1,0 +1,171 @@
+/**
+ * HTML Block Smalcode Typography
+ */
+
+// .style-h1
+.style-h1 {
+    @apply font-bebasNeue font-bold uppercase;
+    line-height: 138px;
+    letter-spacing: -3px;
+
+    @media only screen and (max-width: 1199px) {
+        font-size: 118px;
+        line-height: 118px;
+        letter-spacing: -2px;
+    }
+
+    @media only screen and (max-width: 1023px) {
+        font-size: 42px;
+        line-height: 42px;
+        letter-spacing: -1px;
+    }
+
+    @media only screen and (max-height: 899px) {
+        font-size: 118px;
+        line-height: 188px;
+        letter-spacing: -2px;
+    }
+
+    @media only screen and (max-height: 699px) {
+        font-size: 42px;
+        line-height: 42px;
+        letter-spacing: -1px;
+    }
+}
+
+// .style-h2
+.style-h2 {
+    @apply font-bebasNeue font-bold normal-case;
+    font-size: 95px;
+    letter-spacing: 4px;
+    line-height: 95px;
+
+    @media only screen and (max-width: 1023px) {
+        font-size: 48px;
+        line-height: 50px;
+        letter-spacing: 2px;
+    }
+
+    @media only screen and (max-width: 1199px) {
+        font-size: 80px;
+        letter-spacing: 2px;
+        line-height: 85px;
+    }
+
+    // .style-h2.headline
+    &.headline {
+        margin-bottom: 25px;
+        margin-top: 10px;
+    }
+}
+
+// .style-h3
+.style-h3 {
+    @apply font-verveineRegular uppercase;
+    font-size: 60px;
+    letter-spacing: 12px;
+    line-height: 60px;
+
+    @media only screen and (max-height: 699px) {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    @media only screen and (max-width: 1023px) {
+        font-size: 40px;
+        line-height: 48px;
+    }
+}
+
+// .style-h4
+.style-h4 {
+    @apply uppercase font-aktivGrotesk font-medium;
+    font-size: 14px;
+    letter-spacing: 3px;
+    letter-spacing: 0.05rem;
+
+    @media only screen and (max-width: 1023px) {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+}
+
+// .style-h5
+.style-h5 {
+    @apply font-bold font-bebasNeue;
+    font-size: 18px;
+    letter-spacing: 1px;
+
+    @media only screen and (max-width: 1023px) {
+        font-size: 13px;
+        letter-spacing: 0px;
+    }
+}
+
+// .style-h6
+.style-h6 {
+    @apply font-aktivGrotesk font-bold uppercase;
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: 0.05rem;
+
+    @media only screen and (max-width: 1023px) {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+// .style-h1-1
+.style-h1-1 {
+    @apply font-bebasNeue font-bold uppercase;
+    font-size: 100px;
+    line-height: 100px;
+    letter-spacing: 5px;
+
+    @media only screen and (max-width: 1023px) {
+        font-size: 48px;
+        line-height: 48px;
+        letter-spacing: 2px;
+    }
+}
+
+// h1 h2 h3 h4 h5 h6 p
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    @apply m-0;
+}
+
+// .body-pw,
+// .body-p1 p
+.body-p1,
+.body-p1 p {
+    @apply font-aktivGrotesk font-normal;
+    font-size: 22px;
+    line-height: 36px;
+    letter-spacing: 0.05rem;
+
+    @media only screen and (max-width: 1023px) {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+// .body-p2,
+// .body-p2 p
+.body-p2,
+.body-p2 p {
+    @apply font-aktivGrotesk font-normal;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.05rem;
+
+    @media only screen and (max-width: 1023px) {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

@@ -1,0 +1,104 @@
+.block-container {
+    margin-top: 80px;
+
+    &::before {
+        content: "";
+        @apply absolute top-0 left-0 z-50 w-full;
+        background: linear-gradient(180deg, var(--black-light), transparent);
+        height: 10%;
+    }
+
+    .extra-info-container {
+        padding-top: 56px;
+        font-size: 0.875rem;
+
+        .heading {
+            @apply font-aktivGrotesk;
+            font-size: 14px;
+            color: #ece81a;
+            margin-bottom: 8px;
+            letter-spacing: 3px;
+        }
+
+        .sub-heading {
+            @apply font-bebasNeue text-white;
+            margin-bottom: 16px;
+            font-size: 30px;
+            letter-spacing: 1px;
+            line-height: 32px;
+        }
+    }
+
+    .overlay-block-img-container {
+        height: 100vw;
+    }
+}
+
+.has-animate {
+    @apply opacity-0;
+    transform: translateY(50px);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.3s;
+
+    &.onScreen {
+        @apply opacity-100;
+        transform: translateY(0);
+    }
+}
+
+@screen md {
+    .block-container {
+        margin-top: unset;
+
+        .overlay-block-img-container {
+            padding-bottom: 56.25%;
+            height: unset;
+        }
+    }
+
+    .text-container {
+        max-width: 384px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+@screen lg {
+    .block-container {
+        .extra-info-container {
+            padding-top: 128px;
+            .sub-heading {
+                font-size: 60px;
+                margin-bottom: 32px;
+                line-height: 60px;
+            }
+        }
+    }
+
+    .text-container {
+        max-width: 512px;
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .text-container {
+        max-width: 640px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .text-container {
+        max-width: 720px;
+    }
+}
+
+@screen md-max {
+    .overlay-block-img-container {
+        max-width: 335px;
+    }
+}

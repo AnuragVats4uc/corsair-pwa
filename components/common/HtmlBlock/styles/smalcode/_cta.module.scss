@@ -1,0 +1,34 @@
+/**
+ * HTML Block Smalcode CTA
+ */
+
+// .cta-learn-more
+.cta-learn-more {
+    @apply flex items-center;
+
+    // .cta-learn-more img
+    img {
+        width: 10px;
+        margin-left: 10px;
+    }
+}
+
+// .cta-transparent
+.cta-transparent {
+    @apply uppercase inline-block font-aktivGrotesk font-medium;
+    font-size: 14px;
+    border: 1px solid white;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    letter-spacing: 0.05rem;
+    -webkit-transition: 0.2s ease-out;
+    transition: 0.2s ease-out;
+
+    // .cta-transparent:hover
+    &:hover {
+        @apply bg-black;
+        border: 1px solid black;
+    }
+}

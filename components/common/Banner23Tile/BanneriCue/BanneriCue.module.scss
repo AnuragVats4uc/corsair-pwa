@@ -1,0 +1,106 @@
+.banner-container {
+    @apply flex;
+}
+
+.content-group {
+    @apply flex w-full;
+    height: calc(40 * 100vw / 100);
+}
+
+.inner-content-logo {
+    @apply relative flex flex-col;
+    width: 30%;
+    padding: 2rem 2rem 2rem 3.5%;
+    justify-content: center;
+    background: #151335;
+}
+
+.inner-content {
+    @apply relative block;
+    width: 70%;
+}
+
+.image-container {
+    @apply relative block;
+    padding: 16px 16px 20% 16px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+
+    &:after {
+        @apply absolute overflow-hidden inset-0 w-full h-full;
+        box-shadow: inset 90px 90px 144px 0px #0000009e;
+        content: '';
+    }
+}
+
+.extra-info-container {
+    @apply w-full relative z-5 text-white;
+    font-weight: 300;
+    .logo-container {
+        width: 165px;
+        vertical-align: middle;
+    }
+    .heading {
+        @apply font-bebasNeue;
+        font-size: calc(40.08 * 100vw / 1440);
+        letter-spacing: unset !important;
+    }
+    .sub-heading {
+        @apply font-light font-aktivGrotesk;
+        margin: 1rem 0;
+        font-size: calc(18.08 * 100vw / 1440);
+        width: 70%;
+        text-shadow: 0px 1px 5px black;
+    }
+    .cta {
+        @apply flex items-baseline font-aktivGrotesk font-medium text-yellow;
+        font-size: calc(17.08 * 100vw / 1440);
+        text-shadow: 0px 1px 5px black;
+        line-height: 1.4;
+        .right-arrow-wrapper {
+            width: calc(12.08 * 100vw / 1440);
+            margin-bottom: 1px;
+            margin-left: 2px;
+            filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 1));
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .content-group {
+        @apply flex-col w-full;
+        height: calc(117.5 * 100vw / 100);
+    }
+    .inner-content-logo {
+        @apply relative flex-col w-full;
+        padding: 2rem 2rem 2rem 3.5%;
+        justify-content: center;
+        background: #151335;
+    }
+    .inner-content {
+        @apply relative flex-col w-full h-full;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .content-group {
+        height: calc(132.5 * 100vw / 100);
+    }
+    .extra-info-container {
+        .heading {
+            font-size: 30px;
+        }
+        .sub-heading {
+            font-size: 15px;
+        }
+        .cta {
+            font-size: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .content-group {
+        height: calc(145 * 100vw / 85);
+    }
+}

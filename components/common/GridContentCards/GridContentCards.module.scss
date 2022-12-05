@@ -1,0 +1,79 @@
+.contentCardGrid {
+    @apply grid auto-rows-fr;
+    padding: 40px 20px 43px;
+    gap: 24px;
+
+    @media (max-width: 1023px) {
+        grid-template-columns: none !important; // overriding dynamic inline style
+    }
+
+    @media (min-width: 1024px) {
+        max-width: 1440px;
+        padding: 100px;
+    }
+}
+
+.card {
+    .header {
+        background-color: #2e2e2e;
+        padding: 16px 24px 20px;
+    }
+
+    .heading {
+        font-size: 33px;
+    }
+
+    .subHeading {
+        color: var(--dark-bg-btn-primary);
+        font-size: 14px;
+        letter-spacing: 1.6px;
+        line-height: 1.286;
+        margin-top: 2px;
+    }
+
+    .copy {
+        font-size: 14px;
+        letter-spacing: 0.8px;
+        line-height: 1.286;
+        margin-bottom: 16px;
+    }
+
+    .copyNoCta {
+        margin-bottom: 0;
+        padding-bottom: 24px;
+
+        &::after {
+            @apply absolute h-px left-0 right-0 mx-auto my-0;
+            background: var(--dark-bg-btn-primary);
+            bottom: 40px;
+            content: '';
+            width: calc(100% - 48px);
+        }
+    }
+
+    .contentWrapper {
+        padding: 20px 24px 32px;
+
+        @media (min-width: 1024px) {
+            padding: 16px 24px 20px;
+        }
+    }
+
+    .cta {
+        font-size: 14px;
+        letter-spacing: 1.6px;
+        line-height: 1.286;
+
+        &::after {
+            @apply absolute;
+            border-right: 2px solid var(--text-base);
+            border-top: 2px solid var(--text-base);
+            content: '';
+            height: 7px;
+            right: -12px;
+            top: 40%;
+            transform: translateY(-50%) rotate(45deg);
+            width: 7px;
+        }
+    }
+}

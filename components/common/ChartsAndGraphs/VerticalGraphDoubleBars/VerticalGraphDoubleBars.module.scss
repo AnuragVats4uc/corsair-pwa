@@ -1,0 +1,113 @@
+.horizontal-graph-double-bars-container-transparent{
+    @apply bg-transparent mb-7;
+}
+
+.horizontal-graph-double-bars-container{
+    background: #000 url(/icons/pattern-scarif-dashboard-area.svg) 100% 100% repeat fixed;
+    background-size: 42px 68px;
+    @apply mb-7;
+
+        > div {
+            background: linear-gradient(
+                135deg,
+                rgba(24, 46, 40, 0),
+                #000 33%,
+                #000 66%,
+                transparent
+            );
+        }
+}
+.horizontal-graph-double-bars-container,
+.horizontal-graph-double-bars-container-transparent {
+
+
+    .content {
+        max-width: 1360px;
+        padding-left: 40px;
+        padding-right: 40px;
+
+        @screen md-max{
+            @apply px-2 -mx-8;
+        }
+
+        :global {
+            .left-right-text-container {
+                @apply p-0 #{!important};
+                margin-bottom: 6.154rem;
+            }
+
+            .left-right-text {
+                @apply p-0;
+            }
+        }
+
+        .graph-title {
+            margin-bottom: 30px;
+            font-size: 35px;
+            @apply text-center text-white;
+        }
+
+        .graph-container {
+            margin-bottom: 45px;
+        }
+
+        :global {
+            .graph-container {
+                margin-bottom: 24px;
+
+                .recharts-surface {
+                    @apply overflow-visible;
+
+                    .recharts-cartesian-grid {
+                        opacity: 0.4;
+                    }
+
+                    .chart-title {
+                        @apply font-secondary;
+                        font-size: 24px;
+                        font-weight: 700;
+                        line-height: 28px;
+                    }
+
+                    .recharts-text {
+                        @apply font-secondary text-white;
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                }
+
+                .recharts-legend-item svg {
+                    margin-top: -2px;
+                }
+
+                .recharts-legend-wrapper {
+                    bottom: -20px !important; // !important to override inline recharts css
+                    right: 10px !important; // !important to override inline recharts css
+
+                    span {
+                        @apply font-secondary;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .horizontal-graph-double-bars-container {
+        .content {
+            padding-left: 15px;
+            padding-right: 15px;
+
+            .graph-title {
+                margin-bottom: 30px;
+                font-size: 20px;
+                @apply text-center;
+            }
+            .graph-container {
+                margin-left: -25px;
+            }
+        }
+    }
+}

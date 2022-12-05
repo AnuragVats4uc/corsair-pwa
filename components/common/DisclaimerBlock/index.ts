@@ -1,0 +1,1 @@
+export { DisclaimerBlock } from './DisclaimerBlock'

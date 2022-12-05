@@ -1,0 +1,54 @@
+.dropdownMenu {
+  @apply bg-primary absolute top-12 -right-24 z-10 text-primary shadow-xl border border-accents-2 max-w-lg w-64;
+
+  &:before,
+  &:after {
+    content: '';
+    @apply border-solid absolute block w-0 h-0;
+  }
+
+  &:before {
+    @apply z-20;
+    border-color: transparent transparent #ffffff transparent;
+    right: 80px;
+    border-width: 12px;
+    top: -24px;
+  }
+
+  &:after {
+    @apply z-10;
+    border-color: transparent transparent #e9ecef transparent;
+    right: 79px;
+    border-width: 13px;
+    top: -26px;
+  }
+}
+
+.welcome-message {
+  @apply text-center text-lg py-5 px-7 font-semibold border-b border-accents-2;
+}
+
+.link {
+  @apply text-primary flex cursor-pointer px-6 py-3 transition ease-in-out duration-150 leading-6 font-medium items-center;
+  text-transform: capitalize;
+}
+
+.link:hover {
+  @apply bg-accents-1;
+}
+
+.link.active {
+  @apply font-bold;
+}
+
+.off {
+  @apply hidden;
+}
+
+.avatarButton {
+  @apply inline-flex justify-center rounded-full;
+}
+
+.avatarButton:focus {
+  @apply outline-none;
+}

@@ -1,0 +1,39 @@
+.package-contents {
+    @apply relative px-10 py-8 bg-black w-full h-auto;
+}
+
+.package-contents-item {
+    @apply font-aktivGrotesk font-normal py-4;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 1.214em;
+    color: #e6e6e6;
+    border-bottom: 1px solid gray;
+}
+
+@screen md {
+    .package-contents {
+        @apply inline-block px-8 pb-8;
+    }
+    .package-contents-item {
+        @apply ml-10;
+        width: 47%;
+    }
+}
+
+@screen lg {
+    .package-contents-item {
+        @apply ml-8;
+        width: 42.5%;
+    }
+}
+
+@screen xl {
+    .package-contents {
+        @apply px-12;
+    }
+    .package-contents-item {
+        @apply ml-24;
+        width: 40%;
+    }
+}

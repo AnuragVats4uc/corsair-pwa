@@ -1,0 +1,26 @@
+.product-content {
+    @apply flex justify-between relative;
+    padding: 0 80px;
+
+    @media screen and (max-width: 1024px) {
+        padding: 0 54px;
+    }
+
+    @media screen and (max-width: 821px) {
+        @apply p-0 #{!important};
+    }
+
+    &__image {
+        max-width: 828px;
+        z-index: 1;
+        width: 100%;
+    }
+
+    &__description {
+        color: #fff;
+        font-size: 22px;
+        letter-spacing: 0.8px;
+        line-height: 30px;
+        width: 380px;
+    }
+}

@@ -1,0 +1,191 @@
+.wishlist-container {
+    @apply relative text-primary;
+    :global {
+        .wishlist-create-btn {
+            @apply md:absolute md:right-0 md:top-15 underline;
+        }
+        .confirm-modal-inner {
+            @apply max-w-md;
+        }
+    }
+}
+.wishlist-create-btn-container {
+    > button {
+        @apply sm:absolute sm:right-0 underline text-lg mt-3 sm:mt-0;
+    }
+}
+.total-item-count {
+    @apply text-lg pb-5;
+}
+.wishlist-head {
+    @apply font-bold text-lg;
+}
+.wishlist-nav {
+    @apply flex flex-wrap mb-3 pb-3 space-x-2 border-b border-accents-3 md:pr-52;
+    &-list {
+        @apply flex flex-row flex-wrap;
+    }
+}
+.nav-list-item {
+    @apply text-left cursor-pointer font-bold mr-4 md:mx-2 lg:mx-4 mb-1;
+    &.active {
+        @apply border-b-2 border-p-1;
+    }
+}
+
+.wishlist-content {
+    &-head {
+        @apply pb-2 flex space-x-3;
+    }
+    &-title {
+        @apply font-primary font-normal text-3xl;
+    }
+}
+
+.edit-icon {
+    @apply cursor-pointer;
+}
+.edit-link {
+    @apply underline leading-8;
+}
+.wishlist-action {
+    &-grid {
+        @apply flex flex-wrap flex-col md:flex-row md:space-x-4 justify-between;
+    }
+    &-bottom {
+        @apply flex flex-col md:flex-row space-y-5 md:space-y-0 mt-5 mb-5;
+        button {
+            @apply mr-3;
+        }
+    }
+}
+/* Create Wishlist */
+.btn-container {
+    @apply flex justify-start items-center pb-10 space-x-2;
+    button {
+        @apply px-6 md:px-10;
+    }
+}
+.private {
+    @apply flex;
+    svg {
+        @apply mr-1;
+    }
+}
+/* No wishlist items */
+.no-wishlist-items {
+    @apply bg-alert-warning p-4 w-full rounded my-2 text-t-1;
+}
+/* wishlist items */
+.wishlist-items-container {
+    @apply grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start mt-5;
+}
+.wishlist-product-grid {
+    @apply mb-5 py-2 border-b border-accents-3 md:border-none md:py-5 md:px-3 md:mb-0 rounded;
+    &:hover {
+        @apply md:shadow-lg relative;
+        .wishlist-hidden-wrapper {
+            @apply md:visible;
+        }
+    }
+    &:first-child {
+        @apply border-t;
+    }
+}
+.wishlist-hidden {
+    &-wrapper {
+        @apply md:absolute md:invisible bg-primary rounded rounded-t-none md:shadow-lg left-0 py-3 md:p-3 z-1 mt-2 right-0;
+    }
+    &-mobile {
+        @apply hidden md:block;
+    }
+}
+
+.product-select-action {
+    @apply flex flex-wrap space-x-2;
+}
+.product-name {
+    @apply font-primary text-lg mb-1 cursor-pointer;
+}
+.wishlist-product {
+    &-price {
+        @apply font-bold mb-1;
+    }
+    &-img-link {
+        @apply cursor-pointer;
+    }
+}
+
+.delete-container {
+    @apply flex items-end;
+}
+/* Wishlist Error */
+.wishlist-error {
+    @apply text-alert-danger text-sm block italic;
+}
+/* wishlist Toolbar */
+.wishlist-info {
+    @apply space-x-2 flex;
+}
+.wishlist-top-toolbar {
+    @apply flex flex-wrap flex-col md:flex-row md:space-x-2 space-y-1 md:space-y-0;
+    label { 
+        @apply flex;
+        input {
+            @apply mr-1.5;
+        }
+    }
+}
+.form-checkbox {
+    @apply h-5 w-5 text-p-2 mr-1;
+}
+/* wishlist Dropdown */
+.add-to-wishlist {
+    @apply text-lg flex;
+}
+.dropdown-content {
+    @apply bg-primary absolute top-12 left-0 py-3 text-primary w-64 max-w-xs shadow-xl border border-accents-2;
+    li {
+        @apply py-1 px-6 cursor-pointer;
+        &:hover {
+            @apply bg-accents-2;
+        }
+    }
+}
+.select-icon {
+    @apply cursor-pointer absolute -right-8 top-3 px-2 text-p-2;
+}
+.wishlist-add-cart {
+    @apply flex space-x-2;
+    input {
+        @apply text-center border;
+        @apply w-12 p-1.5 #{!important};
+    }
+    button {
+        @apply px-5;
+    }
+}
+.create-wishlist-item {
+    @apply relative;
+    > svg {
+        @apply absolute left-1 top-1.5;
+    }
+    button {
+        &:hover {
+            @apply no-underline;
+        }
+    }
+}
+.copy-wishlist-link,
+.move-wishlist-link {
+    @apply relative mb-2 xl:inline-block;
+}
+.dropdown-label {
+    @apply flex;
+    button:hover {
+        @apply no-underline;
+    }
+}
+.wishlist-dropdown {
+    @apply top-10 w-56 z-1;
+}

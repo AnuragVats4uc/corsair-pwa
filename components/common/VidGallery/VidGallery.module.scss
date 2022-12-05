@@ -1,0 +1,267 @@
+.vidgallery-item-modal {
+    @apply w-full h-full overflow-hidden fixed inset-0 scrolling-touch flex items-center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    top: 0;
+    left: 0;
+
+    :global {
+        .modal-wrapper {
+            @apply w-full block items-center content-center overflow-hidden outline-none;
+            background-color: rgba(0, 0, 0, 0);
+            max-height: 600px;
+            height: calc((100vw - 20px) * 0.7);
+            position: relative;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        .modal-content {
+            @apply w-full;
+            background-color: rgba(0, 0, 0, 0);
+            height: 95%;
+            max-width: 900px;
+            padding: 0rem;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: none;
+        }
+        .modal-body {
+            @apply h-full w-full;
+        }
+        .modal:focus {
+            @apply outline-none;
+        }
+        .close-panel {
+            @apply absolute m-0;
+            height: 44px;
+            background-color: rgba(0, 0, 0, 0);
+            width: 100%;
+            top: -45px;
+            cursor: pointer !important;
+            &:hover > svg {
+                color: white;
+            }
+            &:focus {
+                @apply outline-none;
+            }
+        }
+        .close-panel > svg {
+            @apply transition ease-in-out duration-150 absolute text-gray-500;
+            right: -3px;
+            top: 10px;
+            &:hover {
+                color: white;
+            }
+            &:focus {
+                @apply outline-none;
+            }
+        }
+        .focus-trap {
+            width: 100%;
+        }
+    }
+}
+
+.vidgallery-container {
+    @apply m-0;
+}
+
+.content-group-on {
+    @apply flex flex-col w-full;
+}
+
+.content-group-below {
+    @apply flex flex-col;
+}
+
+.banner-vidgallery {
+    @apply flex flex-col;
+}
+
+.module-title {
+    @apply flex justify-center font-bebasNeue font-normal uppercase pt-8 pb-3;
+    font-size: 32px;
+    line-height: 1.25em;
+}
+
+.image-container-on {
+    @apply relative flex flex-col justify-center;
+    height: 250px;
+    margin: 1rem;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 85%), transparent 50%);
+    }
+}
+
+.extra-info-container-on {
+    @apply relative z-5;
+    .cta {
+        @apply m-0;
+    }
+    .play-button {
+        @apply mx-auto;
+        width: 162.5px;
+        height: 162.5px;
+
+        @screen md {
+            @apply absolute left-1/2;
+            top: -260px;
+            transform: translate(-50%);
+        }
+
+        &::after {
+            @screen md {
+                @apply absolute top-1/2 left-1/2 rounded-full -z-1;
+                content: '';
+                background-color: rgba(0, 0, 0, 0.7);
+                height: 78px;
+                width: 78px;
+                transform: translate(-50%, -38%);
+            }
+        }
+    }
+    .play-button > button > svg {
+        @apply mt-2.5 relative;
+        width: 162.5px;
+        height: 162.5px;
+    }
+    .play-button > button > svg > path {
+        width: 162.5px;
+        height: 162.5px;
+    }
+}
+
+.heading-on {
+    @apply text-left font-aktivGrotesk font-normal uppercase pl-5 pb-5 z-3 text-white;
+    height: 6vh;
+    overflow: hidden;
+    font-size: 24px;
+    line-height: 1em;
+
+    @screen md {
+        @apply absolute;
+    }
+}
+
+.image-container-below {
+    @apply relative flex flex-col justify-center items-center;
+    margin: 1rem auto;
+}
+
+.text-container-below {
+    @apply flex flex-col m-auto;
+    .heading-below {
+        @apply font-bebasNeue font-extrabold uppercase pl-0 pb-3;
+        font-size: 1.33em;
+        letter-spacing: 0.1em;
+        line-height: 1.15em;
+    }
+    .sub-heading {
+        @apply font-bebasNeue font-light pb-3;
+        font-size: 1em;
+        letter-spacing: 0.1em;
+        line-height: 1em;
+    }
+}
+
+.extra-info-container-below {
+    @apply relative flex flex-col z-5;
+    .cta {
+        @apply flex justify-center m-0;
+    }
+    .play-button {
+        width: 187px;
+        height: 187px;
+    }
+    .play-button > button > svg {
+        width: 187px;
+        height: 187px;
+    }
+    .play-button > button > svg > path {
+        width: 187px;
+        height: 187px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .image-container-below {
+        height: 335px;
+        width: 335px;
+    }
+    .text-container-below {
+        max-width: 335px;
+        .heading-below {
+            width: 335px;
+        }
+        .sub-heading {
+            width: 335px;
+        }
+    }
+}
+
+@screen md {
+    .content-group-on {
+        @apply flex-row justify-between mx-auto;
+        width: 90%;
+    }
+    .content-group-below {
+        @apply flex-row justify-between mx-auto;
+        width: 90%;
+    }
+    .banner-vidgallery {
+        @apply flex-row;
+    }
+    .module-title {
+        @apply pt-12 pb-7;
+        font-size: 60px;
+        line-height: 1em;
+    }
+    .info-container {
+        @apply flex-col w-full mx-3;
+    }
+    .image-container-on {
+        @apply w-full justify-end;
+        height: 292px;
+    }
+    .extra-info-container-on {
+        @apply h-full pb-0;
+        .play-button {
+            @apply mx-auto;
+            width: 179.5px;
+            height: 179.5px;
+        }
+        .play-button > button > svg {
+            @apply mt-3;
+            width: 179.5px;
+            height: 179.5px;
+        }
+        .play-button > button > svg > path {
+            width: 179.5px;
+            height: 179.5px;
+        }
+    }
+    .heading-on {
+        @apply mb-6;
+    }
+    .image-container-below {
+        @apply relative flex flex-col justify-center items-center w-full;
+        min-height: 27vh;
+    }
+    .text-container-below {
+        @apply flex flex-col m-auto;
+        .heading-below {
+            @apply font-aktivGrotesk font-semibold uppercase pl-0 pb-3;
+        }
+        .sub-heading {
+            @apply font-aktivGrotesk font-medium pb-3;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+/**
+ * HTML Block Utilites
+ */
+
+// .text-center
+.text-center {
+    text-align: center; // Cannot use @apply - creates a circular dependency
+
+    // .text-center img
+    img {
+        @apply m-auto;
+    }
+}
+
+// .yellow
+.yellow {
+    @apply text-yellow;
+}
+
+// .blue
+.blue {
+    color: #39b5fb;
+}
+
+// .show-on-mobile
+.show-on-mobile {
+    @apply hidden;
+
+    @media only screen and (max-width: 992px) {
+        @apply block;
+    }
+
+    @media only screen and (max-width: 768px) {
+        @apply block;
+    }
+}
+
+// .hide-on-mobile
+.hide-on-mobile {
+    @media only screen and (max-width: 992px) {
+        @apply hidden;
+    }
+
+    @media only screen and (max-width: 768px) {
+        @apply hidden;
+    }
+}
+
+// .half
+.half {
+    @apply inline-block relative align-top;
+    width: 47%;
+
+    @media only screen and (max-width: 768px) {
+        @apply w-full;
+        height: auto !important; // Inherited styles from legacy site
+    }
+}
+
+// .mobilewhite
+.mobilewhite {
+    @media only screen and (max-width: 768px) {
+        @apply text-white;
+    }
+}

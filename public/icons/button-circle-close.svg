@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>button-circle-close</title>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CRS-1499---Find-a-Retailer" transform="translate(-1140.000000, -64.000000)">
+            <g id="dialog" transform="translate(252.000000, 40.000000)">
+                <g id="button-circle-close" transform="translate(888.000000, 24.000000)">
+                    <circle id="Oval" stroke="#FFFFFF" cx="12" cy="12" r="11.5"></circle>
+                    <polygon id="Path" fill="#FFFFFF" transform="translate(12.000000, 12.000000) rotate(45.000000) translate(-12.000000, -12.000000) " points="12.5 8 12.5 11.499 16 11.5 16 12.5 12.5 12.5 12.5 16 11.5 16 11.5 12.5 8 12.5 8 11.5 11.5 11.5 11.5 8"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

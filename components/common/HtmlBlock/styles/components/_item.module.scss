@@ -1,0 +1,18 @@
+/**
+ * HTML Block Item
+ */
+
+// .item,
+// .item a,
+// .item a img
+.item,
+.item a,
+.item a img {
+    @apply outline-none;
+}
+
+// .item a.learn-more-btn
+.item a.learn-more-btn {
+    @apply inline-block;
+    background-color: #ccc;
+}

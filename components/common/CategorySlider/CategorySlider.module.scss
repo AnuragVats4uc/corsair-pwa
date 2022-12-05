@@ -1,0 +1,173 @@
+.category-slider {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    overflow-x: hidden;
+    margin-bottom: 16px;
+
+    // .category-slider :global
+    :global {
+        // .category-slider :global .slick
+        .slick {
+            // .category-slider :global .slick-prev,
+            // .category-slider :global .slick-next
+            &-prev,
+            &-next {
+                height: 27px;
+                width: 27px;
+                z-index: 2;
+
+                // .category-slider :global .slick-prev,
+                // .category-slider :global .slick-next
+                button {
+                    align-items: center;
+                    border: none;
+                    display: flex;
+                    height: 27px;
+                    justify-content: center;
+                    outline: none;
+                    width: 27px;
+                }
+
+                // .category-slider :global .slick-prev::before,
+                // .category-slider :global .slick-next::before
+                &:before {
+                    content: none;
+                }
+
+                // .category-slider :global .slick-prev svg,
+                // .category-slider :global .slick-next svg
+                svg {
+                    opacity: 0.75;
+                }
+            }
+
+            // .category-slider :global .slick-prev
+            &-prev {
+                left: 12px;
+
+                @screen md {
+                    left: 20px;
+                }
+            }
+
+            // .category-slider :global .slick-next
+            &-next {
+                right: 12px;
+
+                @screen md {
+                    right: 20px;
+                }
+            }
+
+            // .category-slider :global .slick-slider
+            &-slider {
+                padding: 1rem 2rem;
+            }
+        }
+    }
+
+    // .category-slider .text
+    .text {
+        color: #fff;
+        font-size: 44px;
+        width: 90%;
+        max-width: 1959px;
+        letter-spacing: unset;
+        line-height: 48.4px;
+        padding-top: 32px;
+        padding-left: 55px;
+
+        @screen md-max {
+            padding-left:0;
+            margin:0 auto;
+            @apply text-center pl-0 w-full;
+        }
+    }
+
+    // .category-slider .card
+    .card {
+        border: 2px solid #18151c;
+        display: block;
+        margin: 0 16px;
+        max-width: 240px;
+        position: relative;
+        transition: 225ms;
+        z-index: 2;
+
+        // .category-slider .card:hover
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                border: 2px solid #00faff;
+            }
+        }
+    }
+
+    // .category-slider .list
+    .list {
+        padding: 32px 6rem;
+        @screen lg{
+            padding-left:2.8rem;
+            padding-right:2.8rem;
+        }
+        @screen xl{
+            padding-left:4.8rem;
+            padding-right:4.8rem;
+        }
+        @screen md-max {
+            padding: 16px 32px;
+        }
+    }
+
+    // .category-slider .title
+    .title {
+        @apply font-bebasNeue;
+        background-color: #0000006e;
+        padding: 3.2px 0;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-align: center;
+
+        @screen md-max {
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+    }
+
+    // .category-slider .image
+    .image {
+        z-index: -1;
+
+        span {
+            display: block !important; // Next image style replace for full height image
+        }
+    }
+}
+
+@screen md {
+    .category-slider {
+        .text {
+        @apply w-full px-7;
+        }
+    }
+}
+
+@screen lg {
+    .category-slider {
+        .text {
+        padding-left: 4.25rem;
+        padding-right: 4.25rem;
+        }
+    }
+}
+
+@screen xl {
+    .category-slider {
+        .text {
+        padding-left: 6rem;
+        padding-right: 6rem;
+        }
+    }
+}

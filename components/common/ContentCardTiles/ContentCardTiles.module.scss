@@ -1,0 +1,240 @@
+.contentCardTiles {
+    .background {
+        background: linear-gradient(
+            135deg,
+            rgba(24, 46, 40, 0),
+            #000 33%,
+            #000 66%,
+            transparent
+        );
+        background-attachment: fixed;
+    }
+
+    .wrapper {
+        padding: 100px 26px;
+
+        @media (min-width: 640px) {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+
+        @screen lg {
+            padding-left: 64px;
+            padding-right: 64px;
+        }
+
+        @screen xl {
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+    }
+
+    .container {
+        @apply flex flex-col items-center justify-items-center w-11/12 mx-auto;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        @media (min-width: 640px) {
+            max-width: 1280px;
+        }
+
+        @screen md {
+            max-width: 768px;
+        }
+
+        @screen lg {
+            max-width: 1024px;
+        }
+
+        @media (min-width: 1280px) {
+            max-width: 1280px;
+        }
+
+        @media (min-width: 1440px) {
+            max-width: 1440px;
+        }
+    }
+
+    .grid {
+        margin-top: 58px;
+
+        @screen lg {
+            display: grid;
+            grid-auto-rows: auto;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-top: 45px;
+        }
+    }
+
+    .heading {
+        @apply font-bebasNeue font-semibold mb-4;
+        line-height: 3.2rem;
+        font-size: 3.2rem;
+        letter-spacing: 0.1rem;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        @screen md {
+            line-height: 3.5rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.3rem;
+        }
+
+        @screen lg {
+            line-height: 3.75rem;
+            font-size: 3.75rem;
+        }
+    }
+
+    .sub-heading {
+        @apply font-semibold font-aktivGrotesk;
+        color: var(--dark-bg-btn-primary);
+        line-height: 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.2rem;
+
+        @screen md {
+            font-size: 1rem;
+        }
+
+        @screen lg {
+            font-size: 0.875rem;
+        }
+    }
+
+    .header-content {
+        @apply font-normal font-aktivGrotesk text-center;
+        line-height: 1.5rem;
+        font-size: 1rem;
+        letter-spacing: 0.05rem;
+        margin-bottom: 3.125rem;
+
+        @screen md {
+            font-size: 1.3rem;
+            letter-spacing: 0.05rem;
+            line-height: 2.25rem;
+        }
+
+        @screen lg {
+            margin-bottom: 2.5rem;
+            max-width: 60%;
+        }
+    }
+}
+
+.contentCardTile {
+    background: linear-gradient(
+        180deg,
+        rgba(37, 37, 37, 0.4),
+        rgba(37, 37, 37, 0)
+    );
+    background-clip: content-box;
+    border-radius: 2px;
+    margin: 10px;
+
+    @screen lg {
+        flex-direction: column;
+    }
+
+    .content {
+        padding: 0 28px 10px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        @screen lg {
+            padding: 10px 75px 0;
+        }
+    }
+
+    .heading {
+        font-size: 40px;
+        line-height: 40px;
+
+        @screen lg {
+            margin-bottom: 16px;
+        }
+    }
+
+    hr {
+        @apply border-none h-0.5;
+        background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0),
+            rgb(97 97 97 / 53%),
+            rgba(0, 0, 0, 0)
+        );
+        margin-bottom: 32px;
+    }
+
+    .copy {
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 1px;
+
+        @screen lg {
+            font-size: 22px;
+            line-height: 36px;
+        }
+    }
+
+    .link {
+        color: var(--dark-bg-btn-primary);
+        font-size: 14px;
+        letter-spacing: 3px;
+        line-height: 14px;
+        margin: 32px 0 8px;
+        padding: 0 28px 10px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        @media (min-width: 1280px) {
+            padding: 10px 75px 0;
+        }
+    }
+
+    .list {
+        margin-top: 28px;
+    }
+
+    .description {
+        color: var(--text-tertiary);
+        letter-spacing: 3px;
+        line-height: 16.8px;
+        margin: 28px 0 16px;
+
+        @screen lg {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    .item {
+        margin-right: 20px;
+
+        &:last-child {
+            @apply mr-0;
+        }
+    }
+
+    .logo {
+        padding: 24px 0 56px;
+    }
+
+    .secondaryContent {
+        padding: 40px 28px 16px;
+
+        @media (min-width: 1280px) {
+            padding: 10px 75px 0;
+        }
+    }
+
+    .subTitle {
+        font-size: 22px;
+        letter-spacing: 3.48px;
+        line-height: 30.8px;
+
+        @screen md {
+            letter-spacing: 3px;
+        }
+    }
+}
